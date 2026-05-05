@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | MIRACO</title>
+  <meta name="description" content="MIRACOへのお問い合わせ・無料相談のご予約はこちらから。">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header scrolled" id="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">M</span>
+      <span class="logo-text">MIRACO</span>
+    </a>
+    <nav class="global-nav" id="global-nav">
+      <ul>
+        <li><a href="index.html#about">私たちについて</a></li>
+        <li><a href="index.html#services">サービス</a></li>
+        <li><a href="index.html#cases">事例</a></li>
+        <li><a href="https://note.com/miraco_1" target="_blank" rel="noopener">ブログ</a></li>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-nav">&#x1F4AC; LINE相談</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="inner-hero">
+  <div class="container">
+    <div class="section-label">CONTACT</div>
+    <h1>お問い合わせ</h1>
+    <p>お気軽にご相談ください。通常1営業日以内にご返信します。</p>
+  </div>
+</section>
+
+<main class="inner-content">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- 左：連絡先情報 -->
+      <div class="contact-info">
+        <h2 style="font-size: 1.2rem; font-weight: 700; color: var(--color-primary); margin-bottom: 2rem;">お問い合わせ窓口</h2>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">&#x1F4AC;</div>
+          <div>
+            <p class="contact-info-label">LINE公式アカウント（最速対応）</p>
+            <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener">
+              <p class="contact-info-value" style="color: var(--color-accent);">LINEで問い合わせる &rarr;</p>
+            </a>
+            <p class="contact-info-note">通常1営業日以内に返信</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">&#x1F310;</div>
+          <div>
+            <p class="contact-info-label">公式サイト</p>
+            <a href="https://miracobackoffice.com/" target="_blank" rel="noopener">
+              <p class="contact-info-value" style="color: var(--color-accent);">miracobackoffice.com &rarr;</p>
+            </a>
+            <p class="contact-info-note">サービス詳細はこちら</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">&#x1F4CD;</div>
+          <div>
+            <p class="contact-info-label">所在地</p>
+            <p class="contact-info-value">富山県氷見市</p>
+            <p class="contact-info-note">詳細住所はお問い合わせの際にご案内します</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">&#x23F0;</div>
+          <div>
+            <p class="contact-info-label">営業時間</p>
+            <p class="contact-info-value">平日 10:00〜17:00</p>
+            <p class="contact-info-note">土日祝を除く</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 2.5rem; padding: 1.5rem; background: var(--color-bg-gray); border-radius: var(--radius);">
+          <p style="font-size: .85rem; font-weight: 700; color: var(--color-primary); margin-bottom: .5rem;">&#x1F4AC; LINEでのご相談について</p>
+          <p style="font-size: .825rem; color: var(--color-text-mute); line-height: 1.8;">LINEが一番お気軽にご相談いただけます。課題が明確でなくても大歓迎です。ご状況をお聞きした上で、最適な方法をご提案します。</p>
+          <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">&#x1F4AC; LINEで相談する（無料）</a>
+        </div>
+      </div>
+
+      <!-- 右：フォーム -->
+      <div>
+        <div class="contact-form-card">
+          <form id="contact-form" novalidate>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="name">お名前<span class="required">必須</span></label>
+                <input class="form-input" type="text" id="name" name="name" placeholder="山田 太郎" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="kana">フリガナ</label>
+                <input class="form-input" type="text" id="kana" name="kana" placeholder="ヤマダ タロウ">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="company">会社名<span class="required">必須</span></label>
+              <input class="form-input" type="text" id="company" name="company" placeholder="株式会社サンプル" required>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="dept">部署名</label>
+                <input class="form-input" type="text" id="dept" name="dept" placeholder="経営企画部">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="role">役職</label>
+                <input class="form-input" type="text" id="role" name="role" placeholder="部長">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">メールアドレス<span class="required">必須</span></label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="taro@example.co.jp" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="tel">電話番号</label>
+              <input class="form-input" type="tel" id="tel" name="tel" placeholder="090-XXXX-XXXX">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="category">お問い合わせ種別<span class="required">必須</span></label>
+              <select class="form-select form-input" id="category" name="category" required>
+                <option value="" disabled selected>選択してください</option>
+                <option>無料相談を申し込みたい</option>
+                <option>AI導入コンサルティングについて</option>
+                <option>業務プロセス自動化について</option>
+                <option>生成AIシステム開発について</option>
+                <option>AI人材育成研修について</option>
+                <option>料金・見積りについて</option>
+                <option>その他</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="employees">従業員規模</label>
+              <select class="form-select form-input" id="employees" name="employees">
+                <option value="" disabled selected>選択してください（任意）</option>
+                <option>1〜10名</option>
+                <option>11〜50名</option>
+                <option>51〜100名</option>
+                <option>101〜500名</option>
+                <option>501〜1000名</option>
+                <option>1001名以上</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">お問い合わせ内容<span class="required">必須</span></label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="現在の課題や背景、ご要望などをお書きください。（例：受発注処理を自動化したい、ChatGPTを社内で活用したいが何から始めればよいかわからない、など）" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <div class="form-check">
+                <input type="checkbox" id="privacy" name="privacy" required>
+                <label for="privacy"><a href="privacy.html" target="_blank">プライバシーポリシー</a>を読み、個人情報の取り扱いに同意します。<span class="required">必須</span></label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">送信する</button>
+          </form>
+
+          <div id="form-success" class="form-success">
+            <div class="form-success-icon">&#x2705;</div>
+            <h3>送信が完了しました</h3>
+            <p>お問い合わせいただきありがとうございます。<br>通常1営業日以内に担当者よりご連絡いたします。</p>
+            <a href="index.html" class="btn btn-outline" style="margin-top: 1.5rem; border-color: var(--color-accent); color: var(--color-accent);">トップページへ戻る</a>
+          </div>
+        </div>
+
+        <p style="font-size: .78rem; color: var(--color-text-mute); margin-top: 1rem; line-height: 1.8; text-align: center;">ご入力いただいた情報は、お問い合わせへの返答および当社サービスのご案内のみに使用します。<br>詳細は<a href="privacy.html" style="color: var(--color-accent);">プライバシーポリシー</a>をご確認ください。</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo logo-light">
+        <span class="logo-mark">M</span>
+        <span class="logo-text">MIRACO</span>
+      </a>
+      <p class="footer-tagline">卓越した成果と創造的なアウトプットを、AIの力で。</p>
+      <p class="footer-location"><p class="footer-tagline">AIと人が共に創る、未来の仕事。</p>#x1F4CD; 富山県氷見市 ／ 全国・オンライン対応</p>
+      <div class="footer-sns"><a href="https://note.com/miraco_1" target="_blank" rel="noopener" class="footer-sns-link">note</a><a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="footer-sns-link">LINE</a><a href="https://miracobackoffice.com/" target="_blank" rel="noopener" class="footer-sns-link">Web</a></div>
+    </div>
+    <nav class="footer-nav">
+      <div class="footer-nav-col">
+        <p class="footer-nav-head">サービス</p>
+        <ul>
+          <li><a href="index.html#services">AI導入コンサルティング</a></li>
+          <li><a href="index.html#services">業務プロセス自動化</a></li>
+          <li><a href="index.html#services">生成AIシステム開発</a></li>
+          <li><a href="index.html#services">AI人材育成研修</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-col">
+        <p class="footer-nav-head">企業情報</p>
+        <ul>
+          <li><a href="index.html#about">私たちについて</a></li>
+          <li><a href="index.html#cases">導入事例</a></li>
+          <li><a href="faq.html">よくある質問</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-col">
+        <p class="footer-nav-head">法的情報</p>
+        <ul>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="legal.html">特定商取引法に基づく表記</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p class="copyright">&copy; 2026 MIRACO（ミラコ）All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
