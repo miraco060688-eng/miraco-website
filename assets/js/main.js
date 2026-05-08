@@ -35,36 +35,23 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 // Contact form
 const form = document.getElementById('contact-form');
 if (form) {
-  form.addEventListener('submit', async e => {
+  form.addEventListener('submit', e => {
     e.preventDefault();
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
 
-    const btn = form.querySelector('.form-submit');
-    const originalText = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = '送信中...';
-
-    try {
-      const data = new FormData(form);
-      await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString()
-      });
-      form.style.display = 'none';
-      const success = document.getElementById('form-success');
-      if (success) success.style.display = 'block';
-    } catch (error) {
-      btn.disabled = false;
-      btn.textContent = originalText;
-      alert('送信に失敗しました。恐れ入りますが、LINEからお問い合わせください。');
+    const success = document.getElementById('form-success');
+    form.style.display = 'none';
+    if (success) {
+      success.style.display = 'block';
+      success.querySelector('h3').textContent = '内容を確認しました';
+      success.querySelector('p').innerHTML = 'GitHub Pages版ではフォーム送信機能を使わず、LINEで受付しています。<br>恐れ入りますが、LINEボタンから内容をお送りください。';
     }
+    window.open('https://lin.ee/v2A0ds8L', '_blank', 'noopener');
   });
 }
-
 // Smooth appear on scroll
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
