@@ -99,7 +99,9 @@
       <!-- 右：フォーム -->
       <div>
         <div class="contact-form-card">
-          <form id="contact-form" novalidate>
+          <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+            <input type="hidden" name="form-name" value="contact">
+            <p class="hidden" style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
               <div class="form-group">
@@ -142,6 +144,7 @@
               <label class="form-label" for="category">お問い合わせ種別<span class="required">必須</span></label>
               <select class="form-select form-input" id="category" name="category" required>
                 <option value="" disabled selected>選択してください</option>
+                <option>初回モニター：事業の情報整理スターターについて</option>
                 <option>無料相談を申し込みたい</option>
                 <option>AI導入コンサルティングについて</option>
                 <option>業務プロセス自動化について</option>
@@ -167,7 +170,7 @@
 
             <div class="form-group">
               <label class="form-label" for="message">お問い合わせ内容<span class="required">必須</span></label>
-              <textarea class="form-textarea" id="message" name="message" placeholder="現在の課題や背景、ご要望などをお書きください。（例：受発注処理を自動化したい、ChatGPTを社内で活用したいが何から始めればよいかわからない、など）" required></textarea>
+              <textarea class="form-textarea" id="message" name="message" placeholder="現在の課題や背景、ご要望などをお書きください。（例：PCやクラウドの中身が把握できていない、顧客別のフォルダを作りたい、請求書や提案資料の置き場を整えたい、など）" required></textarea>
             </div>
 
             <div class="form-group">
