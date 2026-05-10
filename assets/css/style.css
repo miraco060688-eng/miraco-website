@@ -1430,3 +1430,313 @@ img { max-width: 100%; display: block; }
   .guidebot-panel { grid-template-columns: 1fr; }
   .guidebot-widget { padding: 1rem; }
 }
+
+/* --- Signup / Seminar Page --- */
+.signup-hero {
+  position: relative;
+  background: var(--color-primary);
+  padding: calc(var(--header-h) + 4rem) 0 5rem;
+  overflow: hidden;
+}
+.signup-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 80% at 80% 40%, rgba(0,229,196,.13) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 10% 80%, rgba(123,111,255,.12) 0%, transparent 60%);
+}
+.signup-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+.signup-event-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: rgba(0,229,196,.15);
+  border: 1px solid rgba(0,229,196,.35);
+  color: var(--color-accent);
+  font-size: .78rem;
+  font-weight: 700;
+  padding: .4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+  letter-spacing: .05em;
+}
+.signup-hero-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.35;
+  margin-bottom: 1.25rem;
+  letter-spacing: -.01em;
+}
+.signup-hero-title em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+.signup-hero-lead {
+  font-size: 1rem;
+  color: rgba(255,255,255,.72);
+  line-height: 1.9;
+  max-width: 54ch;
+  margin-bottom: 2rem;
+}
+.signup-hero-trust {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+.signup-hero-trust span {
+  font-size: .82rem;
+  color: rgba(255,255,255,.6);
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+
+.signup-detail-section {
+  background: var(--color-bg-gray);
+}
+.signup-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+/* Detail card */
+.signup-detail-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+}
+.signup-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.signup-detail-item:first-child { padding-top: 0; }
+.signup-detail-item:last-child { border-bottom: none; padding-bottom: 0; }
+.signup-detail-icon {
+  font-size: 1.3rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,196,161,.1);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.signup-detail-label {
+  font-size: .75rem;
+  color: var(--color-text-mute);
+  margin-bottom: .25rem;
+}
+.signup-detail-value {
+  font-size: .97rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.5;
+}
+.signup-detail-sub {
+  font-size: .82rem;
+  font-weight: 400;
+  color: var(--color-text-mute);
+}
+
+/* Agenda */
+.signup-agenda {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+}
+.signup-agenda-title {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+}
+.signup-agenda-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+.signup-agenda-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  counter-increment: agenda;
+  padding: .65rem .75rem;
+  border-radius: 8px;
+  background: var(--color-bg-gray);
+}
+.signup-agenda-time {
+  font-family: var(--font-en);
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 60px;
+}
+.signup-agenda-content {
+  font-size: .9rem;
+  color: var(--color-text);
+}
+
+/* Speaker */
+.signup-speaker {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+.signup-speaker-title {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+.signup-speaker-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.signup-speaker-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: .2rem;
+}
+.signup-speaker-role {
+  font-size: .78rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+.signup-speaker-bio {
+  font-size: .875rem;
+  color: var(--color-text-mute);
+  line-height: 1.8;
+}
+
+/* Form column */
+.signup-form-wrap {
+  position: sticky;
+  top: calc(var(--header-h) + 1.5rem);
+}
+.signup-form-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: .4rem;
+}
+.signup-form-note {
+  font-size: .82rem;
+  color: var(--color-text-mute);
+  margin-bottom: 1.5rem;
+}
+
+/* Seminar banner on top page */
+.seminar-banner-section {
+  background: linear-gradient(135deg, #050D1F 0%, #0D1535 60%, #050D1F 100%);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.seminar-banner-section::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px; height: 350px;
+  background: radial-gradient(ellipse, rgba(0,229,196,.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.seminar-banner-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.seminar-banner-label {
+  font-family: var(--font-en);
+  font-size: .7rem;
+  letter-spacing: .2em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: .75rem;
+}
+.seminar-banner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: rgba(0,229,196,.12);
+  border: 1px solid rgba(0,229,196,.3);
+  color: var(--color-accent);
+  font-size: .72rem;
+  font-weight: 700;
+  padding: .3rem .85rem;
+  border-radius: 999px;
+  margin-bottom: .75rem;
+}
+.seminar-banner-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: .75rem;
+}
+.seminar-banner-desc {
+  font-size: .95rem;
+  color: rgba(255,255,255,.65);
+  line-height: 1.85;
+  max-width: 52ch;
+}
+.seminar-banner-tags {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.seminar-banner-tags span {
+  font-size: .75rem;
+  color: rgba(255,255,255,.55);
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  padding: .3rem .75rem;
+  border-radius: 999px;
+}
+.seminar-banner-actions {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 960px) {
+  .signup-detail-grid { grid-template-columns: 1fr; }
+  .signup-form-wrap { position: static; }
+  .seminar-banner-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .seminar-banner-actions { flex-direction: row; flex-wrap: wrap; }
+}
+@media (max-width: 640px) {
+  .signup-hero { padding-bottom: 3.5rem; }
+  .signup-hero-trust { flex-direction: column; gap: .5rem; }
+  .signup-detail-card { padding: 1.25rem; }
+}
