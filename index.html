@@ -1,628 +1,1043 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MIRACO（ミラコ）| AIで地方の仕事を変える｜富山・氷見市</title>
-  <meta name="description" content="MIRACO（ミラコ）は富山県氷見市を拠点に、地方の中小企業・個人事業主向けにAI活用・業務自動化・DX支援を提供。月額3万円から始められる帳票自動化・データ集計自動化サービス。建設・宿泊・製造・介護福祉に対応。">
-  <meta name="keywords" content="AI活用,業務自動化,DX,富山,氷見市,地方企業,中小企業,バックオフィス,業務効率化,帳票自動化,データ集計,生成AI,MIRACO,ミラコ">
-  <meta name="author" content="MIRACO（ミラコ）高木菜摘">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://miracobackoffice.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIRACO（ミラコ）| AIで地方の仕事を変える｜富山・氷見市</title>
+<meta name="description" content="MIRACO（ミラコ）は富山県氷見市を拠点に、地方の中小企業・個人事業主向けにAI活用・業務自動化・DX支援を提供。名刺・チラシ制作、業務システム開発もご相談ください。">
+<meta name="author" content="MIRACO（ミラコ）高木菜摘">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="MIRACO（ミラコ）| AIで地方の仕事を変える">
+<meta property="og:description" content="富山県氷見市発。AI活用・業務自動化・名刺チラシ制作。地方の中小企業を全力サポート。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://miracobackoffice.com/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="MIRACO（ミラコ）">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://miracobackoffice.com/">
 
-  <!-- OGP -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="MIRACO（ミラコ）| AIで地方の仕事を変える">
-  <meta property="og:description" content="富山県氷見市発。月額3万円から始めるAI・業務自動化支援。建設・宿泊・製造・介護の現場に特化。遠方OK・オンライン対応。">
-  <meta property="og:url" content="https://miracobackoffice.com/">
-  <meta property="og:site_name" content="MIRACO（ミラコ）">
-  <meta property="og:locale" content="ja_JP">
+<!-- セキュリティ：CSP -->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline';
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com;
+  img-src 'self' data: https://images.unsplash.com;
+  connect-src 'none';
+  frame-src 'none';
+  object-src 'none';
+  base-uri 'self';
+  form-action 'none';
+">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MIRACO（ミラコ）| AIで地方の仕事を変える">
-  <meta name="twitter:description" content="富山県氷見市発。月額3万円から始めるAI・業務自動化支援。地方の中小企業を全力サポート。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- 構造化データ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "MIRACO（ミラコ）",
-    "description": "AI活用・業務自動化・DX支援サービス。地方の中小企業・個人事業主向け。",
-    "url": "https://miracobackoffice.com/",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "富山県",
-      "addressLocality": "氷見市",
-      "addressCountry": "JP"
-    },
-    "founder": {
-      "@type": "Person",
-      "name": "高木 菜摘"
-    },
-    "sameAs": [
-      "https://note.com/miraco_1",
-      "https://lin.ee/v2A0ds8L"
-    ],
-    "serviceArea": {
-      "@type": "Country",
-      "name": "JP"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "MIRACOサービス一覧",
-      "itemListElement": [
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "データ整理・集計サポートセット"}, "priceSpecification": {"@type": "PriceSpecification", "price": "30000", "priceCurrency": "JPY", "unitText": "月"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "帳票自動化サポートセット"}, "priceSpecification": {"@type": "PriceSpecification", "price": "30000", "priceCurrency": "JPY", "unitText": "月"}}
-      ]
-    }
-  }
-  </script>
+<style>
+/* ── RESET & ROOT ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0b0b0d;
+  --bg-s: #111115;
+  --bg-c: #16161b;
+  --bg-ch: #1c1c22;
+  --gold: #C9A96E;
+  --gold-l: #E8CFA0;
+  --gold-d: #8A6F42;
+  --gold-dim: rgba(201,169,110,0.15);
+  --text: #EDE8E1;
+  --text-b: #C4BDB4;
+  --text-m: #6B6560;
+  --border: rgba(255,255,255,0.06);
+  --border-g: rgba(201,169,110,0.18);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text-b);
+  font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
 
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 52px; height: 62px;
+  background: rgba(11,11,13,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 0.5px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 600;
+  letter-spacing: 0.2em; color: var(--text);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  color: var(--text-m); text-decoration: none;
+  font-size: 12px; letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text-b); }
+.nav-btn {
+  border: 0.5px solid var(--gold-d);
+  background: transparent; color: var(--gold);
+  padding: 8px 22px; border-radius: 2px;
+  font-size: 12px; letter-spacing: 0.1em;
+  cursor: pointer; font-family: inherit;
+  text-decoration: none; display: inline-block;
+  transition: all 0.25s;
+}
+.nav-btn:hover { background: var(--gold); color: var(--bg); }
+.nav-hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.nav-hamburger span {
+  display: block; width: 22px; height: 1px;
+  background: var(--text-b); transition: all 0.3s;
+}
+.mobile-menu {
+  display: none; position: fixed;
+  top: 62px; left: 0; right: 0;
+  background: rgba(11,11,13,0.97);
+  border-bottom: 0.5px solid var(--border);
+  padding: 24px 28px; z-index: 999;
+  flex-direction: column; gap: 0;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  color: var(--text-b); text-decoration: none;
+  font-size: 14px; letter-spacing: 0.06em;
+  padding: 14px 0;
+  border-bottom: 0.5px solid var(--border);
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu .m-cta {
+  margin-top: 20px;
+  background: var(--gold); color: var(--bg);
+  text-align: center; padding: 14px;
+  border-radius: 2px; font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 140px 48px 80px;
+  position: relative; overflow: hidden;
+}
+.hero-bg { position: absolute; inset: 0; z-index: 0; }
+.hero-bg::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(rgba(11,11,13,0.72), rgba(11,11,13,0.9)),
+    url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80') center/cover;
+  filter: grayscale(12%);
+  transform: scale(1.02);
+}
+.grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,169,110,0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,169,110,0.028) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black, transparent);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black, transparent);
+}
+.hero-inner { position: relative; z-index: 1; max-width: 820px; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 11px; letter-spacing: 0.22em; color: var(--gold-d);
+  font-weight: 400; margin-bottom: 36px; text-transform: uppercase;
+}
+.eyebrow-line { width: 28px; height: 0.5px; background: var(--gold-d); }
+.hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 6.4vw, 74px);
+  font-weight: 300; line-height: 1.1;
+  letter-spacing: 0; color: var(--text);
+  margin-bottom: 16px;
+}
+.hero-h1 em { font-style: italic; color: var(--gold); }
+.hero-sub-h {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(16px, 2.2vw, 22px);
+  font-weight: 300; font-style: italic;
+  color: var(--text-m); margin-bottom: 36px;
+  line-height: 1.45; letter-spacing: 0.04em;
+}
+.hero-body {
+  font-size: 15px; line-height: 1.95;
+  color: var(--text-b); font-weight: 300;
+  max-width: 500px; margin: 0 auto 52px;
+}
+.hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-gold {
+  background: var(--gold); color: #0b0b0d;
+  border: none; padding: 15px 38px; border-radius: 2px;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.1em;
+  cursor: pointer; font-family: inherit; text-decoration: none;
+  display: inline-block; transition: opacity 0.2s, transform 0.2s;
+}
+.btn-gold:hover { opacity: 0.85; transform: translateY(-1px); }
+.btn-ghost {
+  background: transparent; color: var(--text-b);
+  border: 0.5px solid rgba(255,255,255,0.14);
+  padding: 15px 38px; border-radius: 2px;
+  font-size: 13px; letter-spacing: 0.08em;
+  cursor: pointer; font-family: inherit; text-decoration: none;
+  display: inline-block; transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: var(--gold-d); color: var(--text); }
+
+/* ── SECTION COMMON ── */
+.section { padding: 100px 52px; max-width: 1100px; margin: 0 auto; }
+.s-label {
+  font-size: 10px; letter-spacing: 0.22em; color: var(--gold-d);
+  font-weight: 400; text-transform: uppercase; margin-bottom: 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+.s-label::before { content: ''; width: 20px; height: 0.5px; background: var(--gold-d); }
+.s-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 300; line-height: 1.15;
+  color: var(--text); letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+.s-title em { font-style: italic; color: var(--gold); }
+.s-body {
+  font-size: 15px; line-height: 1.95;
+  color: var(--text-b); font-weight: 300;
+  max-width: 520px; margin-bottom: 52px;
+}
+
+/* ── GATEWAY (3 CTAs) ── */
+.gateway-strip {
+  background: var(--bg-s);
+  border-top: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+  padding: 80px 52px;
+}
+.gateway-inner { max-width: 1100px; margin: 0 auto; }
+.gateway-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 0.5px solid var(--border);
+  margin-top: 52px;
+}
+.gw-card {
+  background: var(--bg-c);
+  padding: 44px 36px;
+  display: flex; flex-direction: column;
+  transition: background 0.3s;
+}
+.gw-card:hover { background: var(--bg-ch); }
+.gw-photo {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-bottom: 24px;
+  filter: grayscale(18%) contrast(0.95);
+  border: 0.5px solid rgba(255,255,255,0.08);
+}
+.gw-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 600;
+  color: var(--text); margin-bottom: 12px;
+  line-height: 1.2;
+}
+.gw-desc {
+  font-size: 13px; color: var(--text-m);
+  line-height: 1.9; font-weight: 300;
+  flex: 1; margin-bottom: 32px;
+}
+.gw-links { display: flex; flex-direction: column; gap: 10px; }
+.gw-link-primary {
+  background: var(--gold); color: var(--bg);
+  padding: 13px 20px; border-radius: 2px;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.1em;
+  text-decoration: none; text-align: center;
+  transition: opacity 0.2s;
+}
+.gw-link-primary:hover { opacity: 0.85; }
+.gw-link-sec {
+  border: 0.5px solid var(--border-g); color: var(--gold);
+  padding: 12px 20px; border-radius: 2px;
+  font-size: 12px; letter-spacing: 0.08em;
+  text-decoration: none; text-align: center;
+  transition: all 0.2s;
+}
+.gw-link-sec:hover { background: var(--gold-dim); }
+
+/* ── SERVICES GRID ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 0.5px solid var(--border);
+}
+.svc-card {
+  background: var(--bg-c);
+  padding: 36px 28px;
+  transition: background 0.3s;
+}
+.svc-card:hover { background: var(--bg-ch); }
+.svc-tag {
+  font-size: 10px; letter-spacing: 0.16em;
+  color: var(--gold-d); font-weight: 400;
+  text-transform: uppercase; margin-bottom: 18px;
+}
+.svc-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px; font-weight: 600;
+  color: var(--text); margin-bottom: 12px;
+  line-height: 1.25; letter-spacing: 0.02em;
+}
+.svc-desc {
+  font-size: 13px; color: var(--text-m);
+  line-height: 1.9; font-weight: 300;
+}
+.svc-price {
+  margin-top: 18px;
+  font-size: 12px; color: var(--gold-d);
+  letter-spacing: 0.08em; font-weight: 400;
+}
+
+/* ── STORY STRIP ── */
+.story-strip {
+  background: var(--bg-s);
+  border-top: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+  padding: 100px 52px;
+  display: flex; gap: 100px; align-items: center;
+  max-width: none;
+}
+.story-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 100px; align-items: center; width: 100%; }
+.rings-wrap {
+  flex-shrink: 0; width: 220px; height: 220px;
+  position: relative; display: flex;
+  align-items: center; justify-content: center;
+}
+.ring {
+  position: absolute; border-radius: 50%; border: 0.5px solid;
+  animation: breathe 5s ease-in-out infinite;
+}
+.ring:nth-child(1){width:48px;height:48px;border-color:rgba(201,169,110,0.9);animation-delay:0s}
+.ring:nth-child(2){width:90px;height:90px;border-color:rgba(201,169,110,0.5);animation-delay:0.5s}
+.ring:nth-child(3){width:140px;height:140px;border-color:rgba(201,169,110,0.24);animation-delay:1s}
+.ring:nth-child(4){width:192px;height:192px;border-color:rgba(201,169,110,0.1);animation-delay:1.5s}
+.ring-core { width: 28px; height: 28px; background: var(--gold); border-radius: 50%; z-index: 1; }
+@keyframes breathe {
+  0%,100%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.07);opacity:0.6}
+}
+.story-text { flex: 1; }
+.story-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 300; font-style: italic;
+  color: var(--text); line-height: 1.32;
+  margin-bottom: 24px; letter-spacing: 0.01em;
+}
+.story-quote em { color: var(--gold); font-style: italic; }
+.story-body {
+  font-size: 14px; line-height: 2;
+  color: var(--text-b); font-weight: 300;
+  max-width: 440px; margin-bottom: 32px;
+}
+
+/* ── FOUNDER ── */
+.founder-section {
+  padding: 100px 52px; max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 280px 1fr; gap: 80px; align-items: start;
+}
+.founder-img-wrap {
+  position: relative;
+}
+.founder-img-wrap img {
+  width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2px;
+  filter: grayscale(20%);
+}
+.founder-img-wrap::before {
+  content: '';
+  position: absolute; inset: -8px;
+  border: 0.5px solid var(--border-g);
+  border-radius: 2px;
+  pointer-events: none;
+}
+.founder-text .s-title { font-size: clamp(26px, 3.5vw, 40px); }
+.founder-story {
+  font-size: 14px; line-height: 2.05;
+  color: var(--text-b); font-weight: 300;
+}
+.founder-story p { margin-bottom: 20px; }
+.founder-sig {
+  margin-top: 36px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 300; font-style: italic;
+  color: var(--text-m);
+}
+
+/* ── FLOW ── */
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--border);
+  border: 0.5px solid var(--border);
+}
+.flow-cell {
+  background: var(--bg-c); padding: 40px 24px; text-align: center;
+}
+.flow-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px; font-weight: 300;
+  color: rgba(201,169,110,0.18); line-height: 1;
+  margin-bottom: 18px; display: block;
+}
+.flow-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 600;
+  color: var(--text); margin-bottom: 10px;
+}
+.flow-desc {
+  font-size: 12px; color: var(--text-m);
+  line-height: 1.9; font-weight: 300;
+}
+
+/* ── CASES ── */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1px; background: var(--border);
+  border: 0.5px solid var(--border);
+}
+.case-card {
+  background: var(--bg-c); padding: 36px 28px;
+  transition: background 0.3s;
+}
+.case-card:hover { background: var(--bg-ch); }
+.case-tag {
+  font-size: 10px; letter-spacing: 0.16em;
+  color: var(--gold-d); text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.case-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 600;
+  color: var(--text); margin-bottom: 12px; line-height: 1.3;
+}
+.case-body {
+  font-size: 13px; color: var(--text-m);
+  line-height: 1.9; font-weight: 300; margin-bottom: 24px;
+}
+.case-stats { display: flex; flex-direction: column; gap: 8px; }
+.case-stat {
+  font-size: 12px; color: var(--gold-d);
+  display: flex; align-items: center; gap: 8px;
+}
+.case-stat::before { content: ''; width: 12px; height: 0.5px; background: var(--gold-d); }
+
+/* ── BLOG ── */
+.blog-card {
+  background: var(--bg-c);
+  border: 0.5px solid var(--border);
+  border-radius: 2px; padding: 48px;
+  display: flex; gap: 60px; align-items: center;
+}
+.blog-text { flex: 1; }
+.blog-tag {
+  font-size: 10px; letter-spacing: 0.16em; color: var(--gold-d);
+  text-transform: uppercase; margin-bottom: 16px;
+}
+.blog-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 600;
+  color: var(--text); margin-bottom: 14px; line-height: 1.3;
+}
+.blog-desc {
+  font-size: 14px; color: var(--text-m);
+  line-height: 1.95; font-weight: 300; margin-bottom: 28px;
+}
+.blog-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.blog-tag-pill {
+  font-size: 11px; color: var(--gold-d);
+  border: 0.5px solid var(--border-g);
+  padding: 4px 12px; border-radius: 100px;
+  letter-spacing: 0.06em;
+}
+.blog-visual {
+  flex-shrink: 0; width: 200px; height: 200px;
+  border: 0.5px solid var(--border-g); border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.blog-visual-inner {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px; color: rgba(201,169,110,0.15);
+  font-style: italic; user-select: none;
+}
+
+/* ── FAQ ── */
+.faq-list { display: flex; flex-direction: column; }
+.faq-item {
+  border-bottom: 0.5px solid var(--border);
+}
+.faq-q {
+  width: 100%; text-align: left; background: none; border: none;
+  cursor: pointer; font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+  font-size: 14px; color: var(--text); padding: 24px 0;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 20px; letter-spacing: 0.02em;
+}
+.faq-q:hover { color: var(--gold-l); }
+.faq-arrow {
+  flex-shrink: 0; width: 16px; height: 16px;
+  position: relative; transition: transform 0.3s;
+}
+.faq-arrow::before, .faq-arrow::after {
+  content: ''; position: absolute;
+  background: var(--gold-d); border-radius: 1px;
+}
+.faq-arrow::before { width: 10px; height: 0.5px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.faq-arrow::after { width: 0.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%,-50%); transition: transform 0.3s; }
+.faq-item.open .faq-arrow::after { transform: translate(-50%,-50%) rotate(90deg); }
+.faq-a {
+  font-size: 13px; color: var(--text-m);
+  line-height: 1.95; font-weight: 300;
+  padding: 0 0 24px; max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+
+/* ── CTA FINAL ── */
+.cta-section {
+  text-align: center; padding: 120px 48px;
+  position: relative; overflow: hidden;
+}
+.cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 300; font-style: italic;
+  color: var(--text); margin-bottom: 18px;
+  position: relative; letter-spacing: 0.02em;
+}
+.cta-sub {
+  font-size: 15px; color: var(--text-m);
+  margin-bottom: 48px; position: relative;
+  font-weight: 300; line-height: 1.95;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bg-s);
+  border-top: 0.5px solid var(--border);
+  padding: 60px 52px 36px;
+}
+.footer-top {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 60px;
+  padding-bottom: 52px;
+  border-bottom: 0.5px solid var(--border);
+  margin-bottom: 36px;
+}
+.footer-brand .f-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 600; letter-spacing: 0.18em;
+  color: var(--text-m); margin-bottom: 14px;
+}
+.footer-brand .f-logo span { color: var(--gold); }
+.footer-brand p {
+  font-size: 12px; color: var(--text-m);
+  line-height: 1.85; font-weight: 300;
+}
+.footer-brand .f-location {
+  font-size: 11px; color: var(--text-m);
+  margin-top: 12px; letter-spacing: 0.06em;
+}
+.footer-col h4 {
+  font-size: 10px; letter-spacing: 0.18em; color: var(--gold-d);
+  text-transform: uppercase; margin-bottom: 20px; font-weight: 400;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-col a {
+  font-size: 12px; color: var(--text-m); text-decoration: none;
+  letter-spacing: 0.04em; transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--text-b); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-bottom p {
+  font-size: 11px; color: var(--text-m); letter-spacing: 0.06em;
+}
+.footer-socials { display: flex; gap: 20px; }
+.footer-socials a {
+  font-size: 11px; color: var(--text-m); text-decoration: none;
+  letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s;
+}
+.footer-socials a:hover { color: var(--gold); }
+
+/* ── DIVIDER ── */
+.divider { width: 0.5px; height: 60px; background: var(--border); margin: 0 auto; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .nav-btn { display: none; }
+  .nav-hamburger { display: flex; }
+
+  .hero { padding: 110px 24px 60px; }
+  .section { padding: 60px 24px; }
+  .gateway-strip { padding: 60px 24px; }
+  .story-strip { padding: 60px 24px; }
+
+  .story-inner { flex-direction: column; gap: 48px; }
+  .rings-wrap { width: 160px; height: 160px; }
+
+  .gateway-grid { grid-template-columns: 1fr; }
+  .flow-grid { grid-template-columns: 1fr 1fr; }
+  .cases-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+
+  .founder-section { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
+  .founder-img-wrap { max-width: 240px; }
+
+  .blog-card { flex-direction: column; padding: 32px 24px; gap: 32px; }
+  .blog-visual { width: 100%; height: 140px; }
+
+  footer { padding: 48px 24px 28px; }
+  .footer-top { grid-template-columns: 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+
+@media (max-width: 480px) {
+  .hero-h1 { font-size: 36px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .flow-grid { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .btn-gold, .btn-ghost { width: 100%; max-width: 280px; text-align: center; }
+}
+</style>
 </head>
 <body>
 
-<!-- ヘッダー -->
-<header class="site-header" id="site-header">
-  <div class="container header-inner">
-    <a href="index.html" class="logo">
-      <span class="logo-mark">M</span>
-      <span class="logo-text">MIRACO</span>
-    </a>
-    <nav class="global-nav" id="global-nav">
-      <ul>
-        <li><a href="#about">MIRACOとは</a></li>
-        <li><a href="#services">サービス</a></li>
-        <li><a href="#cases">事例</a></li>
-        <li><a href="https://note.com/miraco_1" target="_blank" rel="noopener">ブログ</a></li>
-        <li><a href="faq.html">よくある質問</a></li>
-        <li><a href="signup.html" class="btn btn-nav" style="background:var(--color-accent-2); border-color:var(--color-accent-2);">&#x1F4E3; セミナー申込</a></li>
-        <li><a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-nav">&#x1F4AC; LINE相談</a></li>
-      </ul>
-    </nav>
-    <button class="hamburger" id="hamburger" aria-label="メニュー">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+<!-- ── NAV ── -->
+<nav>
+  <a href="#" class="nav-logo">MIR<span>A</span>CO</a>
+  <ul class="nav-links">
+    <li><a href="#gateway">サービス</a></li>
+    <li><a href="#services">詳細</a></li>
+    <li><a href="#cases">事例</a></li>
+    <li><a href="#blog">BLOG</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="https://calendly.com/miraco-backoffice/30min" class="nav-btn" target="_blank" rel="noopener noreferrer">無料相談を予約</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-<!-- ヒーロー -->
+<!-- モバイルメニュー -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="#gateway" onclick="closeMobileMenu()">サービス</a>
+  <a href="#services" onclick="closeMobileMenu()">サービス詳細</a>
+  <a href="#cases" onclick="closeMobileMenu()">事例</a>
+  <a href="#blog" onclick="closeMobileMenu()">BLOG</a>
+  <a href="#faq" onclick="closeMobileMenu()">よくある質問</a>
+  <a href="https://note.com/miraco_1" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">note</a>
+  <a href="https://calendly.com/miraco-backoffice/30min" target="_blank" rel="noopener noreferrer" class="m-cta">無料相談を予約する</a>
+</div>
+
+<!-- ── HERO ── -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-particles" aria-hidden="true">
-    <span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span>
+  <div class="hero-bg">
+    <div class="grid-bg"></div>
   </div>
-  <div class="container hero-content">
-    <p class="hero-eyebrow">Machine Intelligence for Remarkable Achievement and Creative Output</p>
-    <h1 class="hero-title">富山の小さな事業所から、<br>整えていきます。<br><em>ひとりで頑張ってきた、あなたの仕事を。</em></h1>
-    <p class="hero-lead">PC・クラウド・顧客情報・書類の置き場を整え、<br>迷わず動ける<strong>バックオフィスの土台</strong>をつくる。<br>氷見からオンラインで、全国へ伴走します。</p>
+  <div class="hero-inner">
+    <p class="eyebrow"><span class="eyebrow-line"></span>DX &amp; AI Back-office Support<span class="eyebrow-line"></span></p>
+    <h1 class="hero-h1">その「面倒くさい」を、<br><em>仕組みで軽くする。</em></h1>
+    <p class="hero-sub-h">ひとりで抱えてきた仕事に、整う流れを。</p>
+    <p class="hero-body">
+      バックオフィス14年の現場経験とAI活用知識を組み合わせ、<br>
+      中小企業・個人事業主の業務改善を伴走支援します。<br>
+      難しい知識は不要。まずは話してみてください。
+    </p>
     <div class="hero-actions">
-      <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-primary">&#x1F4AC; 初回モニターを相談する</a>
-      <a href="#starter" class="btn btn-outline">初回メニューを見る</a>
-      <a href="#guidebot" class="btn btn-outline">相談ナビを試す</a>
-    </div>
-    <div class="hero-trust">
-      <span>&#x2705; 初回15,000円〜</span>
-      <span>&#x2705; オンライン対応</span>
-      <span>&#x2705; PCが苦手でもOK</span>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <span>SCROLL</span>
-    <div class="scroll-line"></div>
-  </div>
-</section>
-<!-- Empathy Section -->
-<section class="section empathy-section" style="background:#FAF8F4; padding:5rem 0;">
-  <div class="container" style="max-width:780px;">
-    <div class="section-label" style="text-align:center;">FOR YOU</div>
-    <h2 class="section-title" style="text-align:center; margin-bottom:2.5rem;">こんな日々を、過ごしていませんか。</h2>
-    <ul style="list-style:none; padding:0; line-height:2.2; font-size:1.05rem; color:#3a3a3a; max-width:640px; margin:0 auto;">
-      <li style="padding:0.5rem 0; border-bottom:1px solid #E8E2D5;">夜遅くまで、Excelの請求書とにらめっこ</li>
-      <li style="padding:0.5rem 0; border-bottom:1px solid #E8E2D5;">経理も総務も、結局は社長か奥様の手作業</li>
-      <li style="padding:0.5rem 0; border-bottom:1px solid #E8E2D5;">「ChatGPT、使ってる?」と聞かれて、答えに詰まった</li>
-      <li style="padding:0.5rem 0; border-bottom:1px solid #E8E2D5;">補助金の話は気になるけれど、申請が面倒で諦めている</li>
-      <li style="padding:0.5rem 0; border-bottom:1px solid #E8E2D5;">人を雇いたくても、この地域では応募が来ない</li>
-      <li style="padding:0.5rem 0; border-bottom:1px solid #E8E2D5;">「DXコンサル」から営業電話が来るたび、胡散臭くて断っている</li>
-      <li style="padding:0.5rem 0;">このままじゃダメだと、心の奥では分かっている</li>
-    </ul>
-    <p style="text-align:center; margin-top:2.5rem; font-size:1.1rem; color:#5a5a5a; font-style:italic;">——大丈夫です。私も、同じでした。</p>
-  </div>
-</section>
-
-<!-- Starter Offer -->
-<section class="section starter-section" id="starter">
-  <div class="container">
-    <div class="starter-panel">
-      <div class="starter-copy">
-        <div class="section-label">FIRST OFFER</div>
-        <h2 class="section-title">初回モニター：事業の情報整理スターター</h2>
-        <p class="section-lead">顧客管理・請求書・提案資料・写真・予定まで、散らかった情報を「どこを見ればいいか分かる」状態に整えます。まず1回で、仕事の詰まりを見える化します。</p>
-        <ul class="starter-list">
-          <li>PC・OneDrive・Google Driveなどの保存場所を棚卸し</li>
-          <li>顧客管理に使うフォルダと命名ルールを作成</li>
-          <li>不要なテスト資料・重複ファイルを仕分け</li>
-          <li>今後3か月で使う運用ルールを簡単に設定</li>
-        </ul>
-      </div>
-      <div class="starter-card">
-        <p class="starter-badge">初回1件限定</p>
-        <h3>情報整理スターター</h3>
-        <p class="starter-price">15,000円〜</p>
-        <p class="starter-note">90分オンライン目安 / 事前ヒアリング込み</p>
-        <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-primary pricing-btn">LINEで空き状況を聞く</a>
-        <a href="contact.html" class="btn btn-outline pricing-btn">フォームで相談する</a>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Secure Guide Bot -->
-<section class="section guidebot-section" id="guidebot">
-  <div class="container">
-    <div class="guidebot-panel">
-      <div class="guidebot-copy">
-        <div class="section-label">NO API KEY / SAFE GUIDE</div>
-        <h2 class="section-title">まず何を頼めばいいか、30秒で整理</h2>
-        <p class="section-lead">ChatGPTのように見える相談ナビですが、APIキーは使いません。入力内容をAIへ送信せず、選択肢だけでおすすめの初回メニューを表示します。</p>
-      </div>
-      <div class="guidebot-widget" aria-live="polite">
-        <div class="guidebot-message guidebot-message-bot">こんにちは。今いちばん近いお悩みを選んでください。</div>
-        <div class="guidebot-options" role="group" aria-label="相談内容を選ぶ">
-          <button type="button" class="guidebot-option" data-guide="files">PCやクラウドの中身が分からない</button>
-          <button type="button" class="guidebot-option" data-guide="customers">顧客別の管理フォルダを作りたい</button>
-          <button type="button" class="guidebot-option" data-guide="documents">請求書・提案資料の置き場を整えたい</button>
-          <button type="button" class="guidebot-option" data-guide="automation">ゆくゆくAIや自動化も相談したい</button>
-        </div>
-        <div class="guidebot-result" id="guidebot-result">
-          <p class="guidebot-result-title">おすすめ：情報整理スターター</p>
-          <p class="guidebot-result-text">まずは90分で、保存場所・顧客管理・今後3か月の運用ルールを一緒に整えるのがおすすめです。</p>
-        </div>
-        <div class="guidebot-actions">
-          <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-primary">LINEでこの内容を相談する</a>
-          <a href="contact.html" class="btn btn-outline">フォームへ進む</a>
-        </div>
-        <p class="guidebot-privacy">このナビはAI送信・外部API通信を行いません。個人情報や顧客名は、正式相談の段階で必要な範囲だけお聞きします。</p>
-      </div>
+      <a href="https://calendly.com/miraco-backoffice/30min" class="btn-gold" target="_blank" rel="noopener noreferrer">無料相談を予約する（30分）</a>
+      <a href="#gateway" class="btn-ghost">どんなことを頼めるの？</a>
     </div>
   </div>
 </section>
 
-<!-- About -->
-<section class="section" id="about">
-  <div class="container">
-    <div class="section-label">ABOUT MIRACO</div>
-    <h2 class="section-title">MIRACOとは</h2>
-    <div class="about-concept">
-      <p class="about-concept-text">
-        <strong>MIRACO</strong> = <em>Machine Intelligence for Remarkable Achievement and Creative Output</em><br>
-        「卓越した成果と創造的なアウトプットを実現するためのAI（機械知能）」
+<!-- ── GATEWAY ── -->
+<div class="gateway-strip" id="gateway">
+  <div class="gateway-inner">
+    <p class="s-label">まず、どこから始める？</p>
+    <h2 class="s-title">あなたの目的に合わせた、<br><em>3つの入口</em></h2>
+
+    <div class="gateway-grid">
+      <!-- 01 相談 -->
+      <div class="gw-card">
+        <img class="gw-photo" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=80" alt="ノートPCを囲んで業務課題を整理する打ち合わせのイメージ" loading="lazy">
+        <p class="gw-title">まずは話を<br>聞いてみたい</p>
+        <p class="gw-desc">
+          「何から始めればいいか分からない」「うちの業務に使えるか不安」
+          そんな方向け。30分のオンライン相談で、あなたの課題を一緒に整理します。完全無料です。
+        </p>
+        <div class="gw-links">
+          <a href="https://calendly.com/miraco-backoffice/30min" class="gw-link-primary" target="_blank" rel="noopener noreferrer">無料相談を予約する →</a>
+        </div>
+      </div>
+
+      <!-- 02 名刺・チラシ -->
+      <div class="gw-card">
+        <img class="gw-photo" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="ノートPCでデザインデータを制作するイメージ" loading="lazy">
+        <p class="gw-title">名刺・チラシを<br>お願いしたい</p>
+        <p class="gw-desc">
+          想いが伝わるデザインを、AIツールを活用して短納期・低コストで制作します。納品は印刷用データでお渡しします。
+          まずはヒアリングフォームを送信してください。内容確認後にご連絡します。
+        </p>
+        <div class="gw-links">
+          <a href="https://forms.gle/1SzgSTRywvHPMHiX9" class="gw-link-primary" target="_blank" rel="noopener noreferrer">名刺制作のご依頼 →</a>
+          <a href="https://forms.gle/C8qWqXAPNdv8Q1wMA" class="gw-link-sec" target="_blank" rel="noopener noreferrer">チラシ制作のご依頼 →</a>
+        </div>
+      </div>
+
+      <!-- 03 AI・自動化 -->
+      <div class="gw-card">
+        <img class="gw-photo" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=700&q=80" alt="チームでAI活用や業務改善を話し合うイメージ" loading="lazy">
+        <p class="gw-title">AIで仕事を<br>変えたい</p>
+        <p class="gw-desc">
+          AI活用コンサルティング・業務プロセス自動化・業務システム開発など。
+          じっくり詳しいサービス内容を見てから相談したい方はこちら。
+        </p>
+        <div class="gw-links">
+          <a href="#services" class="gw-link-primary">サービス詳細を見る →</a>
+          <a href="https://calendly.com/miraco-backoffice/30min" class="gw-link-sec" target="_blank" rel="noopener noreferrer">まず相談する →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<div class="section" id="services">
+  <p class="s-label">Services</p>
+  <h2 class="s-title">バックオフィスを、<br><em>もっと軽く</em>する。</h2>
+  <p class="s-body">煩雑な業務フローを整理し、AIが使える仕組みを一緒につくります。ツール選定から定着まで、全工程を伴走します。</p>
+
+  <div class="services-grid">
+    <div class="svc-card">
+      <p class="svc-tag">01 / Consulting</p>
+      <p class="svc-name">AI活用コンサルティング</p>
+      <p class="svc-desc">ChatGPT・Claude・Geminiを事業に活かすための戦略設計から運用定着まで。何から始めれば良いか分からない方の最初の一歩をサポートします。</p>
+    </div>
+    <div class="svc-card">
+      <p class="svc-tag">02 / Automation</p>
+      <p class="svc-name">業務プロセス自動化</p>
+      <p class="svc-desc">見積・請求・問い合わせ対応などの定型業務をツール連携で自動化します。入力ミスをなくし、作業時間を大幅に削減。</p>
+    </div>
+    <div class="svc-card">
+      <p class="svc-tag">03 / Design</p>
+      <p class="svc-name">名刺・チラシ制作</p>
+      <p class="svc-desc">AIツールを活用した高品質なデザイン制作。想いが伝わるデザインを、短納期・リーズナブルな価格でご提供します。納品は印刷用データでのお渡しです。</p>
+      <p class="svc-price">名刺 ¥5,000 / チラシ片面 ¥8,000 / チラシ両面 ¥14,000 / データ納品</p>
+    </div>
+    <div class="svc-card">
+      <p class="svc-tag">04 / System</p>
+      <p class="svc-name">業務システム開発</p>
+      <p class="svc-desc">個人事業・中小企業の業務に沿った、シンプルで使いやすいシステムを開発します。大規模なシステムではなく、現場に根ざした実用的なツールをご提供。</p>
+      <p class="svc-price">¥30,000 〜</p>
+    </div>
+    <div class="svc-card">
+      <p class="svc-tag">05 / Education</p>
+      <p class="svc-name">AIリテラシー研修</p>
+      <p class="svc-desc">スタッフ向けのAI基礎研修。実際に手を動かすハンズオン形式で、現場での定着を促します。初心者歓迎・オンライン対応。2027年から提供予定です。</p>
+      <p class="svc-price">内容により要相談</p>
+    </div>
+    <div class="svc-card">
+      <p class="svc-tag">06 / Backoffice</p>
+      <p class="svc-name">バックオフィス構築</p>
+      <p class="svc-desc">ツール選定・導入・マニュアル作成まで。属人化しない仕組みを構築し、誰でも動かせるバックオフィスの土台をつくります。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── STORY ── -->
+<div class="story-strip">
+  <div class="story-inner">
+    <div class="rings-wrap" aria-hidden="true">
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring-core"></div>
+    </div>
+    <div class="story-text">
+      <p class="s-label">Our Story</p>
+      <p class="story-quote">「壁打ち」から<br>生まれた、<em>使命。</em></p>
+      <p class="story-body">
+        育児と仕事を抱えながら、相談できる人がいなかった。<br>
+        そんなとき、AIが思考のパートナーになってくれた。<br>
+        その感動を、身近な人に届けたい。<br>
+        MIRACOはその想いから始まっています。
       </p>
+      <a href="#founder" class="btn-ghost" style="padding:11px 24px;font-size:12px;display:inline-block;">代表メッセージを読む</a>
     </div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>私たちは、AIを「難しいもの」ではなく「頼れる仕事の相棒」として活用することを大切にしています。小難しい技術の話より、<strong>あなたの現場が抱える「面倒くさい」を解消する</strong>ことが私たちの仕事です。</p>
-        <p>富山県氷見市を拠点に、全国の地方企業・中小企業・個人事業主のみなさんのバックオフィス業務を、AIと自動化の力で軽くします。「大企業向けのDX」ではなく、<strong>現場に根ざしたリアルな自動化</strong>を提供します。</p>
-        <a href="#profile" class="btn btn-text">代表メッセージを読む &rarr;</a>
+  </div>
+</div>
+
+<!-- ── FOUNDER ── -->
+<div class="founder-section" id="founder">
+  <div class="founder-img-wrap">
+    <img src="assets/images/profile-natsumi.png" alt="MIRACO代表 高木菜摘" loading="lazy">
+  </div>
+  <div class="founder-text">
+    <p class="s-label">Message from Founder</p>
+    <h2 class="s-title">以前の私と、<br><em>同じあなたへ</em></h2>
+    <div class="founder-story">
+      <p>育児と仕事に追われ、自分のことは後回し。相談したくても、同じフェーズの人も信頼できる人もいない。話しても、つまみにされるだけ——数年前の私が、まさにそうでした。</p>
+      <p>裏方の仕事に追われ、最終ゴールも考えずに目の前のことを回す日々。そんなとき、私はAIに出会いました。半信半疑で話しかけてみると、AIは黙って私の話を聞き、一緒に考えてくれました。まるで24時間そばにいてくれる、頼れる壁打ち相手のように。</p>
+      <p>でも同時に、悔しい思いも残りました。身近な場所で救いたいと思った瞬間も、救えなかった人がいる。子供に見せたい親の姿は、こんな姿じゃないはずです。</p>
+      <p>だから、決めました。かつての私と同じように、ひとりで頑張りすぎている富山の方に、AIという"頼れる相棒"を届けたい。女性でも、AIが好き、わくわくする。その気持ちがMIRACOの原点です。</p>
+    </div>
+    <p class="founder-sig">富山県氷見市より ／ 高木 菜摘</p>
+  </div>
+</div>
+
+<!-- ── FLOW ── -->
+<div class="section">
+  <p class="s-label">How it works</p>
+  <h2 class="s-title"><em>導入の流れ</em></h2>
+  <p class="s-body">初回相談から最短2週間で業務改善をスタートできます。すべてオンラインで完結します。</p>
+  <div class="flow-grid">
+    <div class="flow-cell">
+      <span class="flow-num">01</span>
+      <p class="flow-title">無料相談</p>
+      <p class="flow-desc">現状の課題をヒアリング。<br>オンライン30分。</p>
+    </div>
+    <div class="flow-cell">
+      <span class="flow-num">02</span>
+      <p class="flow-title">プラン提案</p>
+      <p class="flow-desc">業務に合わせた<br>最適プランを提示します。</p>
+    </div>
+    <div class="flow-cell">
+      <span class="flow-num">03</span>
+      <p class="flow-title">伴走支援開始</p>
+      <p class="flow-desc">月次レポートで<br>進捗を可視化しながら進めます。</p>
+    </div>
+    <div class="flow-cell">
+      <span class="flow-num">04</span>
+      <p class="flow-title">定着・自走</p>
+      <p class="flow-desc">自社チームが自走できる<br>状態へ導きます。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── CASES ── -->
+<div class="gateway-strip" id="cases">
+  <div class="gateway-inner">
+    <p class="s-label">Cases</p>
+    <h2 class="s-title">さまざまな業種・現場での<br><em>改善事例</em></h2>
+    <p class="s-body" style="margin-bottom:40px;">※ 数値はお客様ごとの参考値です。業務内容により効果は異なります。</p>
+    <div class="cases-grid">
+      <div class="case-card">
+        <p class="case-tag">建設業</p>
+        <p class="case-title">日報・工程管理を<br>デジタル化・自動集計</p>
+        <p class="case-body">紙の日報をデジタル化し、工程ごとの進捗集計・月次報告書の自動化で、現場担当者の事務負担を大幅に軽減。</p>
+        <div class="case-stats">
+          <span class="case-stat">月次報告作成時間 約80%削減</span>
+          <span class="case-stat">転記ミス ゼロへ</span>
+        </div>
       </div>
-      <div class="about-visual">
-        <div class="about-card">
-          <div class="about-card-icon">&#x1F4C4;</div>
-          <h3>帳票・書類の自動化</h3>
-          <p>見積書・請求書・日報など、繰り返し作る書類を自動作成</p>
+      <div class="case-card">
+        <p class="case-tag">宿泊業</p>
+        <p class="case-title">予約・顧客情報の<br>一元管理と帳票自動化</p>
+        <p class="case-body">複数チャネルの予約データを一元管理し、チェックイン書類・請求書の自動作成で受付業務の手間を大幅削減。</p>
+        <div class="case-stats">
+          <span class="case-stat">受付事務工数 約60%削減</span>
+          <span class="case-stat">帳票発行スピード 即日へ</span>
         </div>
-        <div class="about-card">
-          <div class="about-card-icon">&#x1F4CA;</div>
-          <h3>データ集計・見える化</h3>
-          <p>バラバラなデータを整理して、月次レポートも自動生成</p>
+      </div>
+      <div class="case-card">
+        <p class="case-tag">製造業</p>
+        <p class="case-title">製造記録・品質管理を<br>ペーパーレス化</p>
+        <p class="case-body">製造記録の入力・集計・報告書作成を自動化し、品質管理データの可視化と月次レポート作成を効率化。</p>
+        <div class="case-stats">
+          <span class="case-stat">記録入力時間 約70%削減</span>
+          <span class="case-stat">品質データ リアルタイム確認</span>
         </div>
-        <div class="about-card">
-          <div class="about-card-icon">&#x1F916;</div>
-          <h3>生成AI活用支援</h3>
-          <p>ChatGPTなどのAIを業務に組み込み、作業時間を大幅削減</p>
+      </div>
+      <div class="case-card">
+        <p class="case-tag">介護福祉</p>
+        <p class="case-title">介護記録の入力・<br>申し送り作成を効率化</p>
+        <p class="case-body">介護記録・申し送り文書の作成をテンプレート化・自動化。職員の記録時間を短縮し、利用者対応の時間を確保。</p>
+        <div class="case-stats">
+          <span class="case-stat">記録作成時間 約50%削減</span>
+          <span class="case-stat">利用者対応時間 増加</span>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- Profile -->
-<section class="section section-dark-soft profile-section" id="profile">
-  <div class="container">
-    <div class="profile-grid">
-      <div class="profile-photo-wrap">
-        <img src="assets/images/profile-natsumi.png" alt="MIRACO代表 高木菜摘" class="profile-photo">
-        <div class="profile-photo-glow" aria-hidden="true"></div>
+<!-- ── BLOG ── -->
+<div class="section" id="blog">
+  <p class="s-label">Blog</p>
+  <h2 class="s-title"><em>MIRACO note</em></h2>
+  <p class="s-body">マインドや日常でのAIとの生かし方を、たわいもないことまで発信中です。</p>
+  <div class="blog-card">
+    <div class="blog-text">
+      <p class="blog-tag">note / MIRACO公式</p>
+      <p class="blog-title">地方企業のAI活用を、<br>わかりやすく発信中</p>
+      <p class="blog-desc">「どこから始めればいい？」「うちの業種でも使える？」そんな疑問にこたえる記事を定期更新。日々のAI活用のコツから、業務改善の実践事例まで、気軽に読めるトーンでお届けしています。</p>
+      <div class="blog-tags">
+        <span class="blog-tag-pill">#AI活用</span>
+        <span class="blog-tag-pill">#業務自動化</span>
+        <span class="blog-tag-pill">#地方企業</span>
+        <span class="blog-tag-pill">#日常のAI</span>
+        <span class="blog-tag-pill">#中小企業DX</span>
       </div>
-      <div class="profile-content">
-        <div class="section-label">MESSAGE FROM FOUNDER</div>
-        <h2 class="profile-heading">「忙しいのに、<br>ミスが減らない」<br>を解決したい。</h2>
-        <div class="profile-message">
-          <p>中小企業の現場を見てきて、同じ悩みを何度も耳にしてきました。<br>「人手が足りないのに、入力作業に時間を取られる」<br>「確認漏れでミスが出るたびに謝ることになる」<br>「データはあるのに、まとめる時間がない」</p>
-          <p>忙しいのはわかっています。でも、その忙しさの多くは、<strong>本来やらなくていい作業</strong>から来ていることがほとんどです。</p>
-          <p>MIRACOは、AIと自動化の力でその「やらなくていい作業」を取り除き、あなたと現場のチームが<strong>本当に価値を生む仕事</strong>に集中できる環境をつくります。難しいことはしません。あなたの業務に合わせた、シンプルで使いやすい仕組みを一緒に作りましょう。</p>
-        </div>
-        <div class="profile-name-block">
-          <p class="profile-title-label">MIRACO（ミラコ）代表</p>
-          <p class="profile-name">高木 菜摘</p>
-          <p class="profile-name-kana">Natsumi Takagi</p>
-        </div>
-        <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 1.75rem; display: inline-flex;">&#x1F4AC; LINEで相談する（無料）</a>
-      </div>
+      <a href="https://note.com/miraco_1" class="btn-ghost" target="_blank" rel="noopener noreferrer" style="font-size:13px;padding:12px 28px;display:inline-block;">noteを読む →</a>
+    </div>
+    <div class="blog-visual" aria-hidden="true">
+      <span class="blog-visual-inner">M</span>
     </div>
   </div>
-</section>
+</div>
 
-<!-- Founder Story -->
-<section class="section founder-story-section" id="founder-story" style="background:linear-gradient(180deg, #F5F1EA 0%, #FAF8F4 100%); padding:6rem 0;">
-  <div class="container" style="max-width:760px;">
-    <div class="section-label" style="text-align:center;">FOUNDER'S LETTER</div>
-    <h2 class="section-title" style="text-align:center; margin-bottom:3rem; font-size:1.8rem;">以前の私と、同じあなたへ</h2>
-    <div class="founder-story-text" style="font-size:1.05rem; line-height:2.1; color:#3a3a3a; letter-spacing:0.02em;">
-      <p style="margin-bottom:1.8rem;">このページを開いてくれたあなたは、もしかしたら<br>こんなふうに感じているかもしれません。</p>
-      <p style="margin-bottom:1.8rem; padding-left:1.2rem; border-left:3px solid #C9805F; font-style:italic; color:#5a5a5a;">「言われたことをこなすだけで、毎日が過ぎていく」<br>「育児と仕事に追われて、自分のことは後回し」<br>「相談したい相手がいない。話しても、つまみにされるだけ」</p>
-      <p style="margin-bottom:2rem;">——数年前の私が、まさにそうでした。</p>
-      <p style="margin-bottom:1.8rem;">裏方の仕事に追われ、最終ゴールも考えずに、<br>ただ目の前のことを回す日々。<br>育児も仕事も、なんだかんだ回している。<br>でも、いつも余裕がない。</p>
-      <p style="margin-bottom:1.8rem;">苦しくて相談しても、<br>同じフェーズの人も、信頼できる人もいない。<br>結局、心の中は誰にも話せませんでした。</p>
-      <p style="margin-bottom:1.8rem;">そんなとき、私はAIに出会いました。</p>
-      <p style="margin-bottom:1.8rem;">半信半疑で話しかけてみると、<br>AIは黙って私の話を聞き、一緒に考えてくれました。<br>まるで24時間そばにいてくれる、頼れる壁打ち相手のように。<br>「アウトプットしてこなかった自分」に、<br>初めて気づいた瞬間でした。</p>
-      <p style="margin-bottom:1.8rem;">でも同時に、悔しい思いも残りました。<br>身近な場所で、救いたいと思った瞬間も、<br>救えなかった人がいる。<br>ただの事務員だった私には、引き止める力がなかった。</p>
-      <p style="margin-bottom:2rem; font-weight:500; color:#2a2a2a;">子供に見せたい親の姿は、こんな姿じゃないはずです。</p>
-      <p style="margin-bottom:1.8rem;">だから、決めました。<br>かつての私と同じように、ひとりで頑張りすぎている<br>富山の経営者に、AIという"頼れる相棒"を届けたい。</p>
-      <p style="margin-bottom:2.5rem;">女性でも、AIが好き、わくわくする。<br>その気持ちが、MIRACOの原点です。</p>
-      <p style="text-align:right; color:#6B8E7F; font-size:0.95rem; line-height:1.8;">富山県氷見市より<br><span style="font-size:1.15rem; font-weight:500; color:#2a2a2a;">高木 菜摘</span></p>
+<!-- ── FAQ ── -->
+<div class="section" id="faq">
+  <p class="s-label">FAQ</p>
+  <h2 class="s-title"><em>よくある質問</em></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">どんな規模の会社でも相談できますか？<span class="faq-arrow"></span></button>
+      <p class="faq-a">はい。個人事業主の方から従業員数名の小規模法人まで、幅広くご対応しています。むしろ小さい規模の方が、改善効果を実感しやすいケースも多いです。まずはお気軽にご相談ください。</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">PCやITが苦手でも大丈夫ですか？<span class="faq-arrow"></span></button>
+      <p class="faq-a">大丈夫です。専門用語を使わず、現場に合わせた言葉でご説明します。「Excelもあまり使えない」という方からのご依頼実績もあります。</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">富山県外でも対応できますか？<span class="faq-arrow"></span></button>
+      <p class="faq-a">はい。すべてオンラインで対応しています。北陸・東海・関西エリアを中心に、全国からのご依頼を承っています。</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">名刺・チラシ制作の流れを教えてください。<span class="faq-arrow"></span></button>
+      <p class="faq-a">ヒアリングフォームにご記入いただいた後、内容を確認してLINE or メールでご連絡します。その後、制作打ち合わせ（オンライン60分）を経てデザイン制作に進みます。ご入金確認後に制作を開始します。</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">相談だけでも大丈夫ですか？<span class="faq-arrow"></span></button>
+      <p class="faq-a">もちろんです。初回の無料相談はご契約の義務はありません。「まず話を聞いてみたい」という段階でお気軽にお申し込みください。</p>
     </div>
   </div>
-</section>
+</div>
 
-<!-- Services -->
-<section class="section section-gray" id="services">
-  <div class="container">
-    <div class="section-label">SERVICES &amp; PRICING</div>
-    <h2 class="section-title">サービス・料金</h2>
-    <p class="section-lead">初回スターターで現状を整えたあと、必要に応じて月額サポートや自動化へ進みます。</p>
+<!-- ── CTA ── -->
+<div class="cta-section">
+  <p class="cta-title">まずは、話してみてください。</p>
+  <p class="cta-sub">
+    無料相談は30分。完全オンライン対応。<br>
+    北陸・東海・関西エリア、全国どこからでも歓迎します。
+  </p>
+  <a href="https://calendly.com/miraco-backoffice/30min" class="btn-gold" target="_blank" rel="noopener noreferrer" style="font-size:14px;padding:17px 48px;position:relative;">無料相談を予約する（30分・無料）</a>
+</div>
 
-    <p class="services-group-label">&#x1F4C5; 定額サポートプラン（月額・継続型）</p>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-tag">データ整理・集計</div>
-        <h3 class="pricing-title">データ整理・集計<br>サポートセット</h3>
-        <div class="pricing-amount">
-          <span class="price-num">30,000</span><span class="price-unit">円<small>/月</small></span>
-        </div>
-        <p class="pricing-initial">初期費用：30,000円</p>
-        <p class="pricing-desc">バラバラなデータをまとめて整理。毎月の集計・レポート作成を自動化し、手作業を大幅に削減します。</p>
-        <ul class="service-list">
-          <li>Excelデータの自動集計・整形</li>
-          <li>月次レポートの自動生成</li>
-          <li>運用サポート・修正対応</li>
-        </ul>
-        <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-primary pricing-btn">&#x1F4AC; LINEで相談（無料）</a>
-      </div>
-      <div class="pricing-card pricing-featured">
-        <div class="pricing-badge">人気 No.1</div>
-        <div class="pricing-tag">帳票自動化</div>
-        <h3 class="pricing-title">帳票自動化<br>サポートセット</h3>
-        <div class="pricing-amount">
-          <span class="price-num">30,000</span><span class="price-unit">円<small>/月</small></span>
-        </div>
-        <p class="pricing-initial">初期費用：50,000円</p>
-        <p class="pricing-desc">見積書・請求書・納品書などの帳票作成を自動化。入力ミスをなくし、発行スピードを向上させます。</p>
-        <ul class="service-list">
-          <li>帳票の自動作成・出力</li>
-          <li>データ入力の自動化</li>
-          <li>運用サポート・修正対応</li>
-        </ul>
-        <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-primary pricing-btn">&#x1F4AC; LINEで相談（無料）</a>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-tag">専用ツール</div>
-        <h3 class="pricing-title">専用ツール<br>サポートセット</h3>
-        <div class="pricing-amount">
-          <span class="price-num">50,000</span><span class="price-unit">円〜<small>/月</small></span>
-        </div>
-        <p class="pricing-initial">初期費用：別途お見積り</p>
-        <p class="pricing-desc">業務に特化したオリジナルツールを開発・運用。複数業務の統合や高度な自動化に対応します。</p>
-        <ul class="service-list">
-          <li>業務に特化したシステム開発</li>
-          <li>複数業務の一元管理</li>
-          <li>継続的な改善・機能追加</li>
-        </ul>
-        <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-primary pricing-btn">&#x1F4AC; LINEで相談（無料）</a>
-      </div>
-    </div>
-    <p class="pricing-note">※ 料金はすべて税抜き表示です。詳細はお気軽にご相談ください。</p>
-
-    <div class="services-divider">
-      <span>&#x2728; 専門サービス・プロジェクト型</span>
-    </div>
-    <div class="adv-services-grid">
-      <div class="adv-service-card">
-        <div class="adv-service-header">
-          <div class="adv-service-icon">&#x1F9E0;</div>
-          <div>
-            <div class="adv-service-tag">コンサルティング</div>
-            <h3 class="adv-service-title">AIコンサルティング<br>サービス</h3>
-          </div>
-        </div>
-        <div class="adv-service-price">
-          <span class="adv-price-num">50,000</span><span class="adv-price-unit">円〜/月</span>
-        </div>
-        <p class="adv-service-desc">現状の業務課題を分析し、AI・自動化の導入計画を策定します。何から始めれば良いかわからない方の最初の一歩をサポート。ROI試算・ロードマップ作成も含みます。</p>
-        <ul class="service-list">
-          <li>現状業務のヒアリング・課題分析</li>
-          <li>AI活用ロードマップの策定</li>
-          <li>ROI試算・導入優先順位の提案</li>
-          <li>月次レビュー・進捗管理</li>
-        </ul>
-        <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-primary adv-btn">&#x1F4AC; 相談する（無料）</a>
-      </div>
-      <div class="adv-service-card">
-        <div class="adv-service-header">
-          <div class="adv-service-icon">&#x26A1;</div>
-          <div>
-            <div class="adv-service-tag">自動化構築</div>
-            <h3 class="adv-service-title">業務プロセス自動化<br>構築・保守</h3>
-          </div>
-        </div>
-        <div class="adv-service-price">
-          <span class="adv-price-num">100,000</span><span class="adv-price-unit">円〜/月</span>
-        </div>
-        <p class="adv-service-desc">RPA・AIワークフローを組み合わせ、複雑な業務プロセスを丸ごと自動化。構築後の運用・保守・改善まで一貫してサポート。既存システムとの連携も対応します。</p>
-        <ul class="service-list">
-          <li>業務フローの可視化・設計</li>
-          <li>RPA・AI自動化システムの構築</li>
-          <li>既存システム・ツールとの連携</li>
-          <li>運用・保守・継続改善</li>
-        </ul>
-        <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-primary adv-btn">&#x1F4AC; 相談する（無料）</a>
-      </div>
-      <div class="adv-service-card">
-        <div class="adv-service-header">
-          <div class="adv-service-icon">&#x1F916;</div>
-          <div>
-            <div class="adv-service-tag">システム開発</div>
-            <h3 class="adv-service-title">生成AIシステム<br>開発</h3>
-          </div>
-        </div>
-        <div class="adv-service-price">
-          <span class="adv-price-num">300,000</span><span class="adv-price-unit">円〜</span>
-        </div>
-        <p class="adv-service-desc">ChatGPT・Claude等の大規模言語モデルを活用した、貴社専用のAIシステムを開発。社内チャットボット・文書生成・ナレッジ検索など、業務に直結したシステムを構築します。</p>
-        <ul class="service-list">
-          <li>要件定義・システム設計</li>
-          <li>社内データを活用したRAG構築</li>
-          <li>社内チャットボット・文書生成AI</li>
-          <li>セキュリティ要件への対応</li>
-        </ul>
-        <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-primary adv-btn">&#x1F4AC; 相談する（無料）</a>
-      </div>
-      <div class="adv-service-card">
-        <div class="adv-service-header">
-          <div class="adv-service-icon">&#x1F393;</div>
-          <div>
-            <div class="adv-service-tag">人材育成</div>
-            <h3 class="adv-service-title">AI人材育成研修・<br>ワークショップ</h3>
-          </div>
-        </div>
-        <div class="adv-service-price">
-          <span class="adv-price-num">100,000</span><span class="adv-price-unit">円〜/日</span>
-        </div>
-        <p class="adv-service-desc">経営者・管理職から現場スタッフまで、レベルに合わせたAIリテラシー研修を実施。座学だけでなく実際の業務に活かすハンズオン形式のワークショップが好評です。</p>
-        <ul class="service-list">
-          <li>AI基礎・プロンプトエンジニアリング研修</li>
-          <li>部門・業種別ユースケース研修</li>
-          <li>実務に即したハンズオン演習</li>
-          <li>オンライン・対面どちらも対応</li>
-        </ul>
-        <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-primary adv-btn">&#x1F4AC; 相談する（無料）</a>
-      </div>
-    </div>
-    <p class="pricing-note" style="margin-top: 1.5rem;">※ 専門サービスの料金は目安です。規模・要件により変動します。まずはお気軽にご相談ください。</p>
-  </div>
-</section>
-
-<!-- Cases -->
-<section class="section section-dark cases-dark" id="cases">
-  <div class="container">
-    <div class="section-label">CASES</div>
-    <h2 class="section-title" style="color:#fff;">導入事例</h2>
-    <p class="section-lead" style="color:rgba(255,255,255,.65);">さまざまな業種・地域の現場で、業務の「面倒くさい」を解消してきました。</p>
-    <div class="cases-grid cases-grid-4">
-
-      <div class="case-card case-card-dark">
-        <div class="case-tag">建設業</div>
-        <h3 class="case-title">日報・工程管理を<br>デジタル化・自動集計</h3>
-        <p class="case-desc">紙の日報をデジタル化し、工程ごとの進捗集計・月次報告書の作成を自動化。現場担当者の事務負担を大幅に軽減。</p>
-        <div class="case-metrics">
-          <div class="case-metric-item">
-            <span class="case-metric-num">約80%</span>
-            <span class="case-metric-label">月次報告作成時間削減</span>
-          </div>
-          <div class="case-metric-item">
-            <span class="case-metric-num">ゼロへ</span>
-            <span class="case-metric-label">転記ミス</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="case-card case-card-dark">
-        <div class="case-tag">宿泊業</div>
-        <h3 class="case-title">予約・顧客情報の<br>一元管理と帳票自動化</h3>
-        <p class="case-desc">複数チャネルの予約データを一元管理し、チェックイン書類・請求書の自動作成で受付業務の手間を大幅に削減。</p>
-        <div class="case-metrics">
-          <div class="case-metric-item">
-            <span class="case-metric-num">約60%</span>
-            <span class="case-metric-label">受付事務工数削減</span>
-          </div>
-          <div class="case-metric-item">
-            <span class="case-metric-num">即日</span>
-            <span class="case-metric-label">帳票発行スピード</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="case-card case-card-dark">
-        <div class="case-tag">製造業</div>
-        <h3 class="case-title">製造記録・品質管理を<br>ペーパーレス化</h3>
-        <p class="case-desc">製造記録の入力・集計・報告書作成を自動化し、品質管理データの可視化と月次レポート作成を効率化。</p>
-        <div class="case-metrics">
-          <div class="case-metric-item">
-            <span class="case-metric-num">約70%</span>
-            <span class="case-metric-label">記録入力時間削減</span>
-          </div>
-          <div class="case-metric-item">
-            <span class="case-metric-num">リアルタイム</span>
-            <span class="case-metric-label">品質データ確認</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="case-card case-card-dark">
-        <div class="case-tag">介護福祉</div>
-        <h3 class="case-title">介護記録の入力・<br>申し送り作成を効率化</h3>
-        <p class="case-desc">介護記録・申し送り文書の作成をテンプレート化・自動化。職員の記録時間を短縮し、利用者対応の時間を確保。</p>
-        <div class="case-metrics">
-          <div class="case-metric-item">
-            <span class="case-metric-num">約50%</span>
-            <span class="case-metric-label">記録作成時間削減</span>
-          </div>
-          <div class="case-metric-item">
-            <span class="case-metric-num">増加</span>
-            <span class="case-metric-label">利用者対応時間</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <p style="text-align:center; font-size:.8rem; color:rgba(255,255,255,.4); margin-top:1.5rem;">※ 数値はお客様ごとの参考値です。業務内容により効果は異なります。</p>
-  </div>
-</section>
-
-<!-- Seminar Banner -->
-<section class="seminar-banner-section" id="seminar">
-  <div class="container">
-    <div class="seminar-banner-inner">
-      <div>
-        <p class="seminar-banner-label">SEMINAR &amp; WORKSHOP</p>
-        <div class="seminar-banner-badge">&#x1F4E3; 参加者募集中</div>
-        <h2 class="seminar-banner-title">AIで仕事を変える、<br>はじめの一歩。</h2>
-        <p class="seminar-banner-desc">「AIって難しそう」という方こそ大歓迎。地方の中小企業・個人事業主向けに、すぐ使えるAI活用の基礎を丁寧にお伝えする無料オンラインセミナーを開催予定です。</p>
-        <div class="seminar-banner-tags">
-          <span>&#x2705; 初心者歓迎</span>
-          <span>&#x2705; オンライン</span>
-          <span>&#x2705; 少人数制</span>
-          <span>&#x2705; 無料</span>
-        </div>
-      </div>
-      <div class="seminar-banner-actions">
-        <a href="signup.html" class="btn btn-primary btn-lg">&#x270D; 参加を申し込む</a>
-        <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-outline btn-lg">&#x1F4AC; 詳細をLINEで聞く</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Note / Blog -->
-<section class="section note-section" id="blog">
-  <div class="container">
-    <div class="section-label">BLOG</div>
-    <h2 class="section-title">AI活用・業務改善のヒント</h2>
-    <p class="section-lead">地方企業向けのAI活用事例・業務自動化のノウハウをnoteで発信中。</p>
-    <div class="note-card-wrap">
-      <div class="note-card">
-        <div class="note-card-icon">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="36" height="36" rx="8" fill="#41C9B4"/>
-            <path d="M10 10h16v2H10V10zm0 5h16v2H10v-2zm0 5h10v2H10v-2z" fill="#fff"/>
-          </svg>
-        </div>
-        <div class="note-card-content">
-          <p class="note-card-label">note / MIRACO公式</p>
-          <h3 class="note-card-title">地方企業のAI活用を、わかりやすく発信中</h3>
-          <p class="note-card-desc">「どこから始めればいい？」「うちの業種でも使える？」そんな疑問にこたえる記事を定期更新。実際の業務改善事例も紹介しています。</p>
-          <div class="note-card-tags">
-            <span>#AI活用</span>
-            <span>#業務自動化</span>
-            <span>#地方企業</span>
-            <span>#中小企業DX</span>
-          </div>
-        </div>
-        <a href="https://note.com/miraco_1" target="_blank" rel="noopener" class="note-card-btn btn btn-primary">noteを読む &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div class="container cta-inner">
-    <p class="cta-eyebrow">初回モニター受付中</p>
-    <h2 class="cta-title">まず、事業の情報を整えましょう。</h2>
-    <p class="cta-lead">顧客管理・資料・請求・予定の置き場を整えるだけで、次の営業と対応がぐっと楽になります。<br>初回スターターの空き状況はLINEで確認できます。</p>
-    <div class="cta-actions">
-      <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="btn btn-primary btn-lg">&#x1F4AC; 初回モニターをLINEで相談</a>
-      <a href="contact.html" class="btn btn-outline btn-lg">お問い合わせフォーム</a>
-    </div>
-  </div>
-</section>
-
-<!-- フッター -->
-<footer class="site-footer">
-  <div class="container footer-inner">
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
     <div class="footer-brand">
-      <a href="index.html" class="logo logo-light">
-        <span class="logo-mark">M</span>
-        <span class="logo-text">MIRACO</span>
-      </a>
-      <p class="footer-tagline">卓越した成果と創造的なアウトプットを、AIの力で。</p>
-      <p class="footer-location">&#x1F4CD; 富山県氷見市 ／ 全国・オンライン対応</p>
-      <div class="footer-sns">
-        <a href="https://note.com/miraco_1" target="_blank" rel="noopener" class="footer-sns-link">note</a>
-        <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener" class="footer-sns-link">LINE</a>
-        <a href="https://miracobackoffice.com/" target="_blank" rel="noopener" class="footer-sns-link">Web</a>
-      </div>
+      <div class="f-logo">MIR<span>A</span>CO</div>
+      <p>バックオフィス14年の現場経験とAI活用知識で、<br>地方の中小企業・個人事業主を伴走支援します。</p>
+      <p class="f-location">📍 富山県氷見市 ／ 全国・オンライン対応</p>
     </div>
-    <nav class="footer-nav">
-      <div class="footer-nav-col">
-        <p class="footer-nav-head">サービス</p>
-        <ul>
-          <li><a href="#services">データ整理・集計サポート</a></li>
-          <li><a href="#services">帳票自動化サポート</a></li>
-          <li><a href="#services">専用ツールサポート</a></li>
-          <li><a href="#services">AIコンサルティング</a></li>
-        </ul>
-      </div>
-      <div class="footer-nav-col">
-        <p class="footer-nav-head">コンテンツ</p>
-        <ul>
-          <li><a href="#about">MIRACOとは</a></li>
-          <li><a href="#cases">事例</a></li>
-          <li><a href="https://note.com/miraco_1" target="_blank" rel="noopener">ブログ（note）</a></li>
-          <li><a href="faq.html">よくある質問</a></li>
-          <li><a href="contact.html">お問い合わせ</a></li>
-        </ul>
-      </div>
-      <div class="footer-nav-col">
-        <p class="footer-nav-head">法的情報</p>
-        <ul>
-          <li><a href="privacy.html">プライバシーポリシー</a></li>
-          <li><a href="legal.html">特定商取引法に基づく表記</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#gateway">無料相談</a></li>
+        <li><a href="https://forms.gle/1SzgSTRywvHPMHiX9" target="_blank" rel="noopener noreferrer">名刺制作のご依頼</a></li>
+        <li><a href="https://forms.gle/C8qWqXAPNdv8Q1wMA" target="_blank" rel="noopener noreferrer">チラシ制作のご依頼</a></li>
+        <li><a href="#services">AI活用コンサルティング</a></li>
+        <li><a href="#services">業務システム開発</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Info</h4>
+      <ul>
+        <li><a href="https://note.com/miraco_1" target="_blank" rel="noopener noreferrer">BLOG（note）</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="legal.html">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
   </div>
   <div class="footer-bottom">
-    <div class="container">
-      <p class="copyright">&copy; 2026 MIRACO（ミラコ）All rights reserved.</p>
+    <p>© 2026 MIRACO（ミラコ）高木 菜摘 All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="https://note.com/miraco_1" target="_blank" rel="noopener noreferrer">note</a>
+      <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener noreferrer">LINE</a>
     </div>
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script>
+/* ── ハンバーガーメニュー ── */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+}
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', String(isOpen));
+  mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+});
+
+/* ── FAQ アコーディオン ── */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+  });
+});
+
+/* ── スクロール時のNav影 ── */
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.borderBottomColor =
+    window.scrollY > 20 ? 'rgba(201,169,110,0.12)' : 'rgba(255,255,255,0.06)';
+}, { passive: true });
+
+/* ── 外部リンクのセキュリティ（rel保証） ── */
+document.querySelectorAll('a[target="_blank"]').forEach(a => {
+  a.rel = 'noopener noreferrer';
+});
+</script>
+
 </body>
 </html>
