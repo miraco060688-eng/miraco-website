@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>導入事例 | MIRACO</title>
+<meta name="description" content="MIRACOの導入事例。建設業・宿泊業・製造業・介護福祉などさまざまな業種での業務改善・AI活用・自動化の実績をご紹介します。">
+<meta name="author" content="MIRACO（ミラコ）高木菜摘">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="導入事例 | MIRACO（ミラコ）">
+<meta property="og:description" content="建設業・宿泊業・製造業・介護福祉などさまざまな業種でのAI活用・業務改善事例をご紹介します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://miracobackoffice.com/cases.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="MIRACO（ミラコ）">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://miracobackoffice.com/cases.html">
+
+<!-- セキュリティ：CSP -->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline';
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com;
+  img-src 'self' data: https://images.unsplash.com;
+  connect-src 'none';
+  frame-src 'none';
+  object-src 'none';
+  base-uri 'self';
+  form-action 'none';
+">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ── RESET & ROOT ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0b0b0d;
+  --bg-s: #111115;
+  --bg-c: #16161b;
+  --bg-ch: #1c1c22;
+  --gold: #C9A96E;
+  --gold-l: #E8CFA0;
+  --gold-d: #8A6F42;
+  --gold-dim: rgba(201,169,110,0.15);
+  --text: #EDE8E1;
+  --text-b: #C4BDB4;
+  --text-m: #9a9490;
+  --border: rgba(255,255,255,0.06);
+  --border-g: rgba(201,169,110,0.18);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text-b);
+  font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 52px; height: 62px;
+  background: rgba(11,11,13,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 0.5px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 600;
+  letter-spacing: 0.2em; color: var(--text);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  color: var(--text-m); text-decoration: none;
+  font-size: 12px; letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text-b); }
+.nav-btn {
+  border: 0.5px solid var(--gold-d);
+  background: transparent; color: var(--gold);
+  padding: 8px 22px; border-radius: 2px;
+  font-size: 12px; letter-spacing: 0.1em;
+  cursor: pointer; font-family: inherit;
+  text-decoration: none; display: inline-block;
+  transition: all 0.25s;
+}
+.nav-btn:hover { background: var(--gold); color: var(--bg); }
+.nav-hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.nav-hamburger span {
+  display: block; width: 22px; height: 1px;
+  background: var(--text-b); transition: all 0.3s;
+}
+.mobile-menu {
+  display: none; position: fixed;
+  top: 62px; left: 0; right: 0;
+  background: rgba(11,11,13,0.97);
+  border-bottom: 0.5px solid var(--border);
+  padding: 24px 28px; z-index: 999;
+  flex-direction: column; gap: 0;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  color: var(--text-b); text-decoration: none;
+  font-size: 14px; letter-spacing: 0.06em;
+  padding: 14px 0;
+  border-bottom: 0.5px solid var(--border);
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu .m-cta {
+  margin-top: 20px;
+  background: var(--gold); color: var(--bg);
+  text-align: center; padding: 14px;
+  border-radius: 2px; font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+/* ── INNER HERO ── */
+.inner-hero {
+  padding: 140px 52px 80px;
+  text-align: center;
+  border-bottom: 0.5px solid var(--border);
+}
+.inner-hero .s-label { justify-content: center; }
+.inner-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5.5vw, 60px);
+  font-weight: 300; color: var(--text);
+  margin-bottom: 18px;
+}
+.inner-hero .lead {
+  color: var(--text-m); font-size: 16px;
+  max-width: 520px; margin: 0 auto;
+}
+
+/* ── SECTION COMMON ── */
+.section { padding: 100px 52px; max-width: 1100px; margin: 0 auto; }
+.s-label {
+  font-size: 10px; letter-spacing: 0.22em; color: var(--gold-d);
+  font-weight: 400; text-transform: uppercase; margin-bottom: 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+.s-label::before { content: ''; width: 20px; height: 0.5px; background: var(--gold-d); }
+.s-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 300; line-height: 1.15;
+  color: var(--text); letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+.s-title em { font-style: italic; color: var(--gold); }
+.s-body {
+  font-size: 15px; line-height: 1.95;
+  color: var(--text-b); font-weight: 300;
+  max-width: 520px; margin-bottom: 52px;
+}
+
+/* ── CASES ── */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1px; background: var(--border);
+  border: 0.5px solid var(--border);
+}
+.case-card {
+  background: var(--bg-c); padding: 36px 28px;
+  transition: background 0.3s;
+}
+.case-card:hover { background: var(--bg-ch); }
+.case-tag {
+  font-size: 10px; letter-spacing: 0.16em;
+  color: var(--gold-d); text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.case-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 600;
+  color: var(--text); margin-bottom: 12px; line-height: 1.3;
+}
+.case-body {
+  font-size: 13px; color: var(--text-m);
+  line-height: 1.9; font-weight: 300; margin-bottom: 24px;
+}
+.case-stats { display: flex; flex-direction: column; gap: 8px; }
+.case-stat {
+  font-size: 12px; color: var(--gold-d);
+  display: flex; align-items: center; gap: 8px;
+}
+.case-stat::before { content: ''; width: 12px; height: 0.5px; background: var(--gold-d); }
+
+/* ── COMMON ISSUES STRIP ── */
+.issues-strip {
+  background: var(--bg-s);
+  border-top: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+  padding: 100px 52px;
+}
+.issues-inner { max-width: 1100px; margin: 0 auto; }
+.issues-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 0;
+  border: 0.5px solid var(--border);
+  margin-top: 52px;
+}
+.issues-list li {
+  background: var(--bg-c);
+  padding: 24px 32px;
+  border-bottom: 0.5px solid var(--border);
+  font-size: 14px; color: var(--text-b);
+  letter-spacing: 0.02em;
+  display: flex; align-items: center; gap: 16px;
+  transition: background 0.3s;
+}
+.issues-list li:last-child { border-bottom: none; }
+.issues-list li:hover { background: var(--bg-ch); }
+.issues-list li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--gold-d);
+}
+
+/* ── CTA FINAL ── */
+.cta-section {
+  text-align: center; padding: 120px 48px;
+  position: relative; overflow: hidden;
+}
+.cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 300; font-style: italic;
+  color: var(--text); margin-bottom: 18px;
+  position: relative; letter-spacing: 0.02em;
+}
+.cta-sub {
+  font-size: 15px; color: var(--text-m);
+  margin-bottom: 48px; position: relative;
+  font-weight: 300; line-height: 1.95;
+}
+.btn-gold {
+  background: var(--gold); color: #0b0b0d;
+  border: none; padding: 15px 38px; border-radius: 2px;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.1em;
+  cursor: pointer; font-family: inherit; text-decoration: none;
+  display: inline-block; transition: opacity 0.2s, transform 0.2s;
+}
+.btn-gold:hover { opacity: 0.85; transform: translateY(-1px); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bg-s);
+  border-top: 0.5px solid var(--border);
+  padding: 60px 52px 36px;
+}
+.footer-top {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 60px;
+  padding-bottom: 52px;
+  border-bottom: 0.5px solid var(--border);
+  margin-bottom: 36px;
+}
+.footer-brand .f-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 600; letter-spacing: 0.18em;
+  color: var(--text-m); margin-bottom: 14px;
+}
+.footer-brand .f-logo span { color: var(--gold); }
+.footer-brand p {
+  font-size: 12px; color: var(--text-m);
+  line-height: 1.85; font-weight: 300;
+}
+.footer-brand .f-location {
+  font-size: 11px; color: var(--text-m);
+  margin-top: 12px; letter-spacing: 0.06em;
+}
+.footer-col h4 {
+  font-size: 10px; letter-spacing: 0.18em; color: var(--gold-d);
+  text-transform: uppercase; margin-bottom: 20px; font-weight: 400;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-col a {
+  font-size: 12px; color: var(--text-m); text-decoration: none;
+  letter-spacing: 0.04em; transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--text-b); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-bottom p {
+  font-size: 11px; color: var(--text-m); letter-spacing: 0.06em;
+}
+.footer-socials { display: flex; gap: 20px; }
+.footer-socials a {
+  font-size: 11px; color: var(--text-m); text-decoration: none;
+  letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s;
+}
+.footer-socials a:hover { color: var(--gold); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .nav-btn { display: none; }
+  .nav-hamburger { display: flex; }
+
+  .inner-hero { padding: 100px 24px 60px; }
+  .section { padding: 60px 24px; }
+  .issues-strip { padding: 60px 24px; }
+
+  .cases-grid { grid-template-columns: 1fr; }
+
+  footer { padding: 48px 24px 28px; }
+  .footer-top { grid-template-columns: 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="nav-logo">MIR<span>A</span>CO</a>
+  <ul class="nav-links">
+    <li><a href="services.html">サービス</a></li>
+    <li><a href="cases.html" style="color: var(--text-b);">事例</a></li>
+    <li><a href="about.html">代表について</a></li>
+    <li><a href="faq.html">よくある質問</a></li>
+    <li><a href="https://note.com/miraco_1" target="_blank" rel="noopener noreferrer">ブログ</a></li>
+  </ul>
+  <a href="https://calendly.com/miraco-backoffice/30min" class="nav-btn" target="_blank" rel="noopener noreferrer">無料相談を予約</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="services.html">サービス</a>
+  <a href="cases.html">事例</a>
+  <a href="about.html">代表について</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="https://note.com/miraco_1" target="_blank" rel="noopener noreferrer">ブログ</a>
+  <a href="https://calendly.com/miraco-backoffice/30min" target="_blank" rel="noopener noreferrer" class="m-cta">無料相談を予約する</a>
+</div>
+
+<!-- ── INNER HERO ── -->
+<div class="inner-hero">
+  <p class="s-label">Cases</p>
+  <h1>導入事例</h1>
+  <p class="lead">さまざまな業種・現場での改善事例</p>
+</div>
+
+<!-- ── CASES GRID ── -->
+<div class="section">
+  <p class="s-label">実績事例</p>
+  <h2 class="s-title">さまざまな業種・現場での<br><em>改善事例</em></h2>
+  <p class="s-body" style="margin-bottom:12px;">※ 数値はお客様ごとの参考値です。業務内容により効果は異なります。</p>
+
+  <div class="cases-grid" style="margin-top:40px;">
+    <div class="case-card">
+      <p class="case-tag">建設業</p>
+      <p class="case-title">日報・工程管理を<br>デジタル化・自動集計</p>
+      <p class="case-body">紙の日報をデジタル化し、工程ごとの進捗集計・月次報告書の自動化で、現場担当者の事務負担を大幅に軽減。</p>
+      <div class="case-stats">
+        <span class="case-stat">月次報告作成時間 約80%削減</span>
+        <span class="case-stat">転記ミス ゼロへ</span>
+      </div>
+    </div>
+    <div class="case-card">
+      <p class="case-tag">宿泊業</p>
+      <p class="case-title">予約・顧客情報の<br>一元管理と帳票自動化</p>
+      <p class="case-body">複数チャネルの予約データを一元管理し、チェックイン書類・請求書の自動作成で受付業務の手間を大幅削減。</p>
+      <div class="case-stats">
+        <span class="case-stat">受付事務工数 約60%削減</span>
+        <span class="case-stat">帳票発行スピード 即日へ</span>
+      </div>
+    </div>
+    <div class="case-card">
+      <p class="case-tag">製造業</p>
+      <p class="case-title">製造記録・品質管理を<br>ペーパーレス化</p>
+      <p class="case-body">製造記録の入力・集計・報告書作成を自動化し、品質管理データの可視化と月次レポート作成を効率化。</p>
+      <div class="case-stats">
+        <span class="case-stat">記録入力時間 約70%削減</span>
+        <span class="case-stat">品質データ リアルタイム確認</span>
+      </div>
+    </div>
+    <div class="case-card">
+      <p class="case-tag">介護福祉</p>
+      <p class="case-title">介護記録の入力・<br>申し送り作成を効率化</p>
+      <p class="case-body">介護記録・申し送り文書の作成をテンプレート化・自動化。職員の記録時間を短縮し、利用者対応の時間を確保。</p>
+      <div class="case-stats">
+        <span class="case-stat">記録作成時間 約50%削減</span>
+        <span class="case-stat">利用者対応時間 増加</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── COMMON ISSUES ── -->
+<div class="issues-strip">
+  <div class="issues-inner">
+    <p class="s-label">よくある課題</p>
+    <h2 class="s-title">こんなお悩み、<br><em>ありませんか？</em></h2>
+    <ul class="issues-list">
+      <li>「紙の書類が多くて探すのが大変」</li>
+      <li>「毎月同じ作業を繰り返している」</li>
+      <li>「担当者しかわからない業務がある」</li>
+      <li>「請求書・帳票の作成に時間がかかりすぎる」</li>
+      <li>「AIを使いたいが何から始めればいいかわからない」</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── CTA ── -->
+<div class="cta-section">
+  <p class="cta-title">まずは、話してみてください。</p>
+  <p class="cta-sub">
+    無料相談は30分。完全オンライン対応。<br>
+    北陸・東海・関西エリア、全国どこからでも歓迎します。
+  </p>
+  <a href="https://calendly.com/miraco-backoffice/30min" class="btn-gold" target="_blank" rel="noopener noreferrer" style="font-size:14px;padding:17px 48px;">無料相談を予約する（30分・無料）</a>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="f-logo">MIR<span>A</span>CO</div>
+      <p>バックオフィス14年の現場経験とAI活用知識で、<br>地方の中小企業・個人事業主を伴走支援します。</p>
+      <p class="f-location">📍 富山県氷見市 ／ 全国・オンライン対応</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">サービス一覧</a></li>
+        <li><a href="https://forms.gle/1SzgSTRywvHPMHiX9" target="_blank" rel="noopener noreferrer">名刺制作のご依頼</a></li>
+        <li><a href="https://forms.gle/C8qWqXAPNdv8Q1wMA" target="_blank" rel="noopener noreferrer">チラシ制作のご依頼</a></li>
+        <li><a href="https://calendly.com/miraco-backoffice/30min" target="_blank" rel="noopener noreferrer">無料相談を予約</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Info</h4>
+      <ul>
+        <li><a href="about.html">代表について</a></li>
+        <li><a href="cases.html">導入事例</a></li>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="https://note.com/miraco_1" target="_blank" rel="noopener noreferrer">ブログ（note）</a></li>
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="legal.html">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 MIRACO（ミラコ）高木 菜摘 All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="https://note.com/miraco_1" target="_blank" rel="noopener noreferrer">note</a>
+      <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener noreferrer">LINE</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', String(isOpen));
+  mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+});
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.borderBottomColor =
+    window.scrollY > 20 ? 'rgba(201,169,110,0.12)' : 'rgba(255,255,255,0.06)';
+}, { passive: true });
+document.querySelectorAll('a[target="_blank"]').forEach(a => { a.rel = 'noopener noreferrer'; });
+</script>
+
+</body>
+</html>
