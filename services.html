@@ -364,7 +364,10 @@ footer { background:#1a1612; border-top:0.5px solid rgba(255,255,255,0.08); padd
 <div class="cta-section">
   <p class="cta-title">まずは、話してみてください。</p>
   <p class="cta-sub">無料相談は30分。完全オンライン対応。全国どこからでも歓迎します。</p>
-  <a href="booking.html" class="btn-gold" target="_blank" rel="noopener noreferrer">無料相談を予約する（30分・無料）</a>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+    <a href="https://lin.ee/v2A0ds8L" class="btn-ghost" target="_blank" rel="noopener noreferrer">💬 LINEで相談する（無料）</a>
+    <a href="booking.html" class="btn-gold" target="_blank" rel="noopener noreferrer">無料相談を予約する（30分・無料）</a>
+  </div>
 </div>
 
 <footer>
@@ -414,4 +417,13 @@ hamburger.addEventListener('click', () => {
   hamburger.setAttribute('aria-expanded', String(isOpen));
   mobileMenu.setAttribute('aria-hidden', String(!isOpen));
 });
-document.queryS
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    mobileMenu.classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>

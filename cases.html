@@ -104,6 +104,8 @@ nav { position:fixed; top:0; left:0; right:0; z-index:1000; display:flex; align-
 
 .btn-gold { background:var(--gold); color:#fff; border:none; padding:15px 38px; border-radius:2px; font-size:13px; font-weight:500; letter-spacing:0.1em; cursor:pointer; font-family:inherit; text-decoration:none; display:inline-block; transition:opacity 0.2s,transform 0.2s; box-shadow:0 4px 16px rgba(201,169,110,0.3); }
 .btn-gold:hover { opacity:0.88; transform:translateY(-1px); }
+.btn-ghost { background:transparent; color:var(--text-b); border:1px solid rgba(0,0,0,0.18); padding:14px 32px; border-radius:2px; font-size:13px; letter-spacing:0.08em; cursor:pointer; font-family:inherit; text-decoration:none; display:inline-block; transition:all 0.2s; }
+.btn-ghost:hover { border-color:var(--gold-d); color:var(--gold-d); }
 .cta-section { text-align:center; padding:100px 48px; background:var(--bg-s); border-top:0.5px solid var(--border); }
 .cta-title { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,4vw,48px); font-weight:300; font-style:italic; color:var(--text); margin-bottom:16px; }
 .cta-sub { font-size:14px; color:var(--text-m); margin-bottom:36px; line-height:1.95; }
@@ -320,7 +322,10 @@ footer { background:#1a1612; border-top:0.5px solid rgba(255,255,255,0.08); padd
 <div class="cta-section">
   <p class="cta-title">あなたの業種でも、できます。</p>
   <p class="cta-sub">「うちの業務は特殊で…」という方ほど、ぜひ一度話してみてください。</p>
-  <a href="booking.html" class="btn-gold" target="_blank" rel="noopener noreferrer">無料相談を予約する（30分）</a>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+    <a href="https://lin.ee/v2A0ds8L" class="btn-ghost" target="_blank" rel="noopener noreferrer">💬 LINEで相談する（無料）</a>
+    <a href="booking.html" class="btn-gold" target="_blank" rel="noopener noreferrer">無料相談を予約する（30分）</a>
+  </div>
 </div>
 
 <footer>
@@ -370,4 +375,13 @@ hamburger.addEventListener('click', () => {
   hamburger.setAttribute('aria-expanded', String(isOpen));
   mobileMenu.setAttribute('aria-hidden', String(!isOpen));
 });
-document.queryS
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    mobileMenu.classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
