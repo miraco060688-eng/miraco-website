@@ -706,6 +706,80 @@ nav {
 }
 .faq-item.open .faq-a { max-height: 300px; }
 
+/* ── MISSION ── */
+.mission {
+  position: relative;
+  padding: 130px 52px 120px;
+  max-width: 1000px; margin: 0 auto;
+  text-align: center;
+}
+.mission-eyebrow {
+  font-size: 10px; letter-spacing: 0.24em; color: var(--gold-d);
+  font-weight: 400; text-transform: uppercase; margin-bottom: 30px;
+  display: inline-flex; align-items: center; gap: 12px;
+}
+.mission-eyebrow::before, .mission-eyebrow::after {
+  content: ''; width: 24px; height: 0.5px; background: var(--gold-d);
+}
+.mission-statement {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(25px, 3.6vw, 42px);
+  font-weight: 300; line-height: 1.55;
+  color: var(--text); letter-spacing: 0.01em;
+  margin: 0 auto 30px; max-width: 820px;
+}
+.mission-statement em { font-style: italic; color: var(--gold); }
+.mission-lead {
+  font-size: 15px; line-height: 2.05; color: var(--text-b);
+  font-weight: 300; max-width: 600px; margin: 0 auto;
+}
+.mission-divider { width: 0.5px; height: 56px; background: var(--border-g); margin: 56px auto; }
+.mission-sub-label {
+  font-size: 13px; letter-spacing: 0.06em; color: var(--text-m);
+  font-weight: 400; margin-bottom: 28px;
+}
+.mission-sub-label strong { color: var(--gold-d); font-weight: 500; }
+.reasons-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  max-width: 760px; margin: 0 auto 4px;
+}
+.reason-chip {
+  background: var(--bg-c); border: 0.5px solid var(--border-g);
+  border-radius: 3px; padding: 20px 18px;
+  font-size: 13px; color: var(--text-b); line-height: 1.65;
+  font-weight: 400; box-shadow: var(--shadow);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; min-height: 84px;
+}
+.layers {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  text-align: left; margin-top: 60px;
+}
+.layer {
+  background: var(--bg-c); border: 0.5px solid var(--border);
+  border-top: 2px solid var(--gold);
+  border-radius: 4px; padding: 34px 30px; box-shadow: var(--shadow);
+}
+.layer-num {
+  font-size: 10px; letter-spacing: 0.18em; color: var(--gold-d);
+  text-transform: uppercase; font-weight: 400; margin-bottom: 16px; display: block;
+}
+.layer-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px; font-weight: 600; color: var(--text);
+  margin-bottom: 12px; line-height: 1.3;
+}
+.layer-body { font-size: 13px; color: var(--text-m); line-height: 1.9; font-weight: 300; }
+
+/* ── CASE WHY ── */
+.case-why {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic; font-size: 15px;
+  color: var(--gold-d); line-height: 1.5;
+  margin-bottom: 14px; padding-bottom: 14px;
+  border-bottom: 0.5px dashed var(--border-g);
+}
+
 /* ── CTA FINAL ── */
 .cta-section {
   text-align: center; padding: 120px 48px;
@@ -799,6 +873,11 @@ footer {
   .cases-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr 1fr; }
 
+  .mission { padding: 70px 24px; }
+  .reasons-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .reason-chip { min-height: 0; padding: 16px; }
+  .layers { grid-template-columns: 1fr; }
+
   .founder-section { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
   .founder-img-wrap { max-width: 240px; }
 
@@ -868,6 +947,50 @@ footer {
     <div class="hero-actions">
       <a href="booking.html" class="btn-gold" target="_blank" rel="noopener noreferrer">無料相談を予約する（30分）</a>
       <a href="#gateway" class="btn-ghost">どんなことを頼めるの？</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── MISSION ── -->
+<section class="mission" id="mission">
+  <p class="mission-eyebrow">Our Mission</p>
+  <p class="mission-statement">
+    経営者が、大切にしたい<br>
+    <em>「事業を続ける理由」</em>に向かって、<br>
+    より良い経営を続けられるように。
+  </p>
+  <p class="mission-lead">
+    MIRACOがつくるのは、単なる「効率化」や「売上アップ」だけではありません。<br>
+    業務を整理し、経営者が本来向き合うべき仕事に集中できる仕組みを、AIと実務でつくります。
+  </p>
+
+  <div class="mission-divider" aria-hidden="true"></div>
+
+  <p class="mission-sub-label">経営者の数だけ、<strong>事業を続ける理由</strong>があります。</p>
+  <div class="reasons-grid">
+    <div class="reason-chip">お客様に、もっと良いサービスを届けたい</div>
+    <div class="reason-chip">従業員とその家族を守りたい</div>
+    <div class="reason-chip">地域に必要な事業を残したい</div>
+    <div class="reason-chip">家族との時間を取り戻したい</div>
+    <div class="reason-chip">自分の理想や挑戦を、形にしたい</div>
+    <div class="reason-chip">利益を出し、事業を安定させたい</div>
+  </div>
+
+  <div class="layers">
+    <div class="layer">
+      <span class="layer-num">01 ／ 理念</span>
+      <p class="layer-title">「なぜ」を支える</p>
+      <p class="layer-body">経営者それぞれの、事業を営む理由。その「なぜ」をまず聴くことから、MIRACOの支援は始まります。同じ仕組みを一律に当てはめることはしません。</p>
+    </div>
+    <div class="layer">
+      <span class="layer-num">02 ／ 提供価値</span>
+      <p class="layer-title">集中できる仕組み</p>
+      <p class="layer-body">煩雑な業務を整理し、AI・事務・制作・進行管理で実装。経営者が本来向き合うべき仕事に集中できる状態を、一緒につくります。</p>
+    </div>
+    <div class="layer">
+      <span class="layer-num">03 ／ 成果</span>
+      <p class="layer-title">前に進む実感</p>
+      <p class="layer-body">時間の削減、ミス・抜け漏れの防止、売上機会の増加、業務の見える化、施策の実行。数字と手ざわりの両方で、前進を実感できます。</p>
     </div>
   </div>
 </section>
@@ -1054,13 +1177,14 @@ footer {
 <div class="gateway-strip" id="cases">
   <div class="gateway-inner">
     <p class="s-label">Cases</p>
-    <h2 class="s-title">さまざまな業種・現場での<br><em>改善事例</em></h2>
-    <p class="s-body" style="margin-bottom:40px;">※ 数値はお客様ごとの参考値です。業務内容により効果は異なります。</p>
+    <h2 class="s-title">業務の改善は、<br>経営者の<em>「なぜ」</em>から。</h2>
+    <p class="s-body" style="margin-bottom:40px;">MIRACOの事例は、削減した時間の先に「経営者が本当にやりたかったこと」があります。<br>※ 数値はお客様ごとの参考値です。業務内容により効果は異なります。</p>
     <div class="cases-grid">
       <div class="case-card">
         <p class="case-tag">建設業</p>
+        <p class="case-why">“職人としての現場に、<br>もっと集中したい。”</p>
         <p class="case-title">日報・工程管理を<br>デジタル化・自動集計</p>
-        <p class="case-body">紙の日報をデジタル化し、工程ごとの進捗集計・月次報告書の自動化で、現場担当者の事務負担を大幅に軽減。</p>
+        <p class="case-body">紙の日報をデジタル化し、工程ごとの進捗集計・月次報告書の自動化で、現場担当者の事務負担を大幅に軽減。事務作業に追われず、本業に向き合う時間が戻りました。</p>
         <div class="case-stats">
           <span class="case-stat">月次報告作成時間 約80%削減</span>
           <span class="case-stat">転記ミス ゼロへ</span>
@@ -1068,8 +1192,9 @@ footer {
       </div>
       <div class="case-card">
         <p class="case-tag">宿泊業</p>
+        <p class="case-why">“お客様へのおもてなしに、<br>もっと手をかけたい。”</p>
         <p class="case-title">予約・顧客情報の<br>一元管理と帳票自動化</p>
-        <p class="case-body">複数チャネルの予約データを一元管理し、チェックイン書類・請求書の自動作成で受付業務の手間を大幅削減。</p>
+        <p class="case-body">複数チャネルの予約データを一元管理し、チェックイン書類・請求書の自動作成で受付業務の手間を大幅削減。事務から解放された分を、接客とお客様対応に振り向けられるようになりました。</p>
         <div class="case-stats">
           <span class="case-stat">受付事務工数 約60%削減</span>
           <span class="case-stat">帳票発行スピード 即日へ</span>
@@ -1077,8 +1202,9 @@ footer {
       </div>
       <div class="case-card">
         <p class="case-tag">製造業</p>
+        <p class="case-why">“品質を守りながら、<br>人の負担を減らしたい。”</p>
         <p class="case-title">製造記録・品質管理を<br>ペーパーレス化</p>
-        <p class="case-body">製造ラインの紙記録をデジタル化。品質データの月次集計・報告書作成が自動化され、担当者の事務負担が大幅に削減されました。</p>
+        <p class="case-body">製造ラインの紙記録をデジタル化。品質データの月次集計・報告書作成が自動化され、担当者の事務負担が大幅に削減。トレーサビリティも高まり、品質と働きやすさを両立できました。</p>
         <div class="case-stats">
           <span class="case-stat">記録入力時間 約70%削減</span>
           <span class="case-stat">品質トラブル原因追跡 即日対応可能に</span>
