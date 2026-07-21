@@ -96,6 +96,21 @@ nav { position:fixed; top:0; left:0; right:0; z-index:1000; display:flex; align-
 .case-result-num { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:300; color:var(--gold); line-height:1; margin-bottom:4px; }
 .case-result-label { font-size:11px; color:var(--text-m); letter-spacing:0.06em; }
 
+/* CAN-DO CHIPS */
+.cando-chips { display:flex; flex-wrap:wrap; gap:10px; margin-top:34px; }
+.cando-chip { background:var(--bg-c); border:0.5px solid var(--border-g); border-radius:999px; padding:9px 18px; font-size:12.5px; color:var(--text-b); letter-spacing:0.02em; }
+.cando-chip span { color:var(--gold-d); margin-right:6px; }
+
+/* SUPPORT CARDS（できること） */
+.support-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.support-card { background:var(--bg-c); border:0.5px solid var(--border); border-radius:14px; padding:32px 30px; box-shadow:var(--shadow); transition:transform 0.25s, box-shadow 0.25s; }
+.support-card:hover { transform:translateY(-3px); box-shadow:0 8px 30px rgba(0,0,0,0.11); }
+.support-icon { font-size:26px; line-height:1; margin-bottom:16px; }
+.support-cat { font-size:10.5px; letter-spacing:0.14em; color:var(--gold-d); text-transform:uppercase; margin-bottom:10px; }
+.support-title { font-family:'Cormorant Garamond',serif; font-size:23px; font-weight:600; color:var(--text); line-height:1.3; margin-bottom:12px; }
+.support-body { font-size:13.5px; color:var(--text-m); line-height:1.9; font-weight:300; margin-bottom:16px; }
+.support-empathy { font-size:12.5px; color:var(--gold-d); line-height:1.85; border-top:0.5px solid var(--border); padding-top:14px; }
+
 /* STATS STRIP */
 .stats-strip { background:var(--bg-s); border-top:0.5px solid var(--border); border-bottom:0.5px solid var(--border); padding:60px 52px; }
 .stats-inner { max-width:1100px; margin:0 auto; }
@@ -144,9 +159,13 @@ footer { background:#1a1612; border-top:0.5px solid rgba(255,255,255,0.08); padd
   .footer-top { grid-template-columns:1fr; gap:40px; }
   .footer-bottom { flex-direction:column; align-items:flex-start; }
 }
+@media (max-width:760px) {
+  .support-grid { grid-template-columns:1fr; }
+}
 @media (max-width:480px) {
   .case-results { grid-template-columns:1fr; }
   .stats-grid { grid-template-columns:1fr 1fr; }
+  .support-card { padding:26px 22px; }
 }
 </style>
 </head>
@@ -178,165 +197,106 @@ footer { background:#1a1612; border-top:0.5px solid rgba(255,255,255,0.08); padd
 <section class="page-hero">
   <p class="eyebrow"><span class="eyebrow-line"></span>Cases<span class="eyebrow-line"></span></p>
   <h1>「全部ひとりで」を、<br><em>手放していい</em>。</h1>
-  <p>ひとりで、あるいは少人数でがんばる経営者の方からのご相談が多くあります。「うちでも使えるか？」はぜひ無料相談でご確認ください。<br>※ 掲載の事例は、いただくご相談をもとにした業種別の代表的なモデルケースです。数値は目安で、実在の特定企業の測定値ではありません。</p>
+  <p>経理や注文の仕組みづくり、助成金・ドローンなどの各種申請、書類・チラシ制作まで——業種を問わず、ひとり・少人数でがんばる経営者の“手が回らない”を幅広くお手伝いします。「これもお願いできる？」は、ぜひ無料相談で。</p>
 </section>
 
-<!-- STATS -->
+<!-- できること：横断チップ -->
 <div class="stats-strip">
   <div class="stats-inner">
-    <p class="s-label">改善の目安（モデルケース）</p>
-    <div class="stats-grid">
-      <div class="stat-item">
-        <p class="stat-num">80%</p>
-        <p class="stat-label">月次報告 作成時間削減</p>
-      </div>
-      <div class="stat-item">
-        <p class="stat-num">60%</p>
-        <p class="stat-label">受付事務 工数削減</p>
-      </div>
-      <div class="stat-item">
-        <p class="stat-num">70%</p>
-        <p class="stat-label">記録入力 時間削減</p>
-      </div>
-      <div class="stat-item">
-        <p class="stat-num">50%</p>
-        <p class="stat-label">申し送り 作成時間削減</p>
-      </div>
+    <p class="s-label">MIRACOに頼めること</p>
+    <div class="cando-chips">
+      <span class="cando-chip"><span>◇</span>経理・記帳の自動サポート</span>
+      <span class="cando-chip"><span>◇</span>予約・注文システムづくり</span>
+      <span class="cando-chip"><span>◇</span>事業の立ち上げサポート</span>
+      <span class="cando-chip"><span>◇</span>助成金・補助金の申請</span>
+      <span class="cando-chip"><span>◇</span>ドローン飛行の申請</span>
+      <span class="cando-chip"><span>◇</span>農業まわりのサポート</span>
+      <span class="cando-chip"><span>◇</span>各種書類の作成・整備</span>
+      <span class="cando-chip"><span>◇</span>チラシ・名刺などの制作</span>
     </div>
-    <p style="font-size:11px;color:var(--text-m);margin-top:18px;line-height:1.7;">※ 数値は代表的なモデルケースの目安です。実在の特定企業の測定値ではなく、業務内容により効果は異なります。</p>
+    <p style="font-size:11px;color:var(--text-m);margin-top:20px;line-height:1.7;">※ 内容は業務に合わせて組み合わせ・カスタマイズします。ここにないことも、まずはご相談ください。</p>
   </div>
 </div>
 
 <main>
 <div class="section">
-  <p class="s-label">業務改善のモデルケース</p>
-  <h2 class="s-title">さまざまな業種・現場での<br><em>改善のかたち</em></h2>
+  <p class="s-label">できること</p>
+  <h2 class="s-title">業種ではなく、<br><em>「やること」</em>でお手伝いします</h2>
 
-  <div class="cases-detailed">
+  <div class="support-grid">
 
-    <!-- 建設業 -->
-    <div class="case-detail-card">
-      <div class="case-img-col">
-        <img class="case-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=560&q=85" alt="建設現場・工程管理のイメージ" loading="lazy">
-        <span class="case-industry-badge">建設業</span>
-      </div>
-      <div class="case-content">
-        <p class="case-title">日報・工程管理を<br>デジタル化・自動集計</p>
-        <p class="case-body">現場の施工状況は多忙な職人さんが紙で記録。月末に担当者がまとめて集計・報告書を作成する作業が毎月10時間以上かかっていた。</p>
-        <div class="case-empathy">
-          <p>「現場に出たいのに、事務作業で夜まで残ってしまう」。その時間を、少しでも現場や家族のために取り戻せるように。</p>
-        </div>
-        <div class="case-challenge">
-          <p class="case-challenge-label">課題</p>
-          <p>紙の日報の手書き転記ミス、月末の集計工数、報告書フォーマットの統一不備。</p>
-        </div>
-        <div class="case-results">
-          <div class="case-result-item">
-            <p class="case-result-num">80%↓</p>
-            <p class="case-result-label">月次報告作成時間</p>
-          </div>
-          <div class="case-result-item">
-            <p class="case-result-num">0件</p>
-            <p class="case-result-label">転記ミス（ゼロへ）</p>
-          </div>
-        </div>
-      </div>
+    <div class="support-card">
+      <div class="support-icon">🧾</div>
+      <p class="support-cat">経理・バックオフィス</p>
+      <p class="support-title">経理・記帳の<br>自動サポート</p>
+      <p class="support-body">教育・飲食など、日々の記帳や集計、請求まわりの作業を、AIと仕組みでできるだけ手離れよく。数字の管理を「後回し」から「回る」状態に。</p>
+      <p class="support-empathy">「数字が苦手で、つい後回しにしてしまう」——その負担を、続けられる形に。</p>
     </div>
 
-    <!-- 宿泊業 -->
-    <div class="case-detail-card">
-      <div class="case-img-col">
-        <img class="case-img" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=560&q=85" alt="旅館・ホテルのフロント業務イメージ" loading="lazy">
-        <span class="case-industry-badge">宿泊業</span>
-      </div>
-      <div class="case-content">
-        <p class="case-title">予約・顧客情報の<br>一元管理と帳票自動化</p>
-        <p class="case-body">電話・OTA・自社サイトからの予約が別々のファイルで管理されており、チェックイン時の書類準備や請求書作成に毎回手作業が必要だった。</p>
-        <div class="case-empathy">
-          <p>「おもてなしに集中したいのに、書類仕事に追われる」。手元の作業を減らし、お客様と向き合う時間を増やせるように。</p>
-        </div>
-        <div class="case-challenge">
-          <p class="case-challenge-label">課題</p>
-          <p>複数チャネルの予約情報の手動転記、チェックイン書類の毎回作成、請求書ミスのリスク。</p>
-        </div>
-        <div class="case-results">
-          <div class="case-result-item">
-            <p class="case-result-num">60%↓</p>
-            <p class="case-result-label">受付事務工数</p>
-          </div>
-          <div class="case-result-item">
-            <p class="case-result-num">即日</p>
-            <p class="case-result-label">帳票発行スピード</p>
-          </div>
-        </div>
-      </div>
+    <div class="support-card">
+      <div class="support-icon">📲</div>
+      <p class="support-cat">仕組みづくり</p>
+      <p class="support-title">予約・注文<br>システムづくり</p>
+      <p class="support-body">飲食店などの予約・注文を、電話とノートの手作業から仕組みへ。受け漏れや二重予約を減らし、日々の対応をラクにします。</p>
+      <p class="support-empathy">「抜け漏れが不安で、気が休まらない」——その不安を、安心に。</p>
     </div>
 
-    <!-- 製造業 -->
-    <div class="case-detail-card">
-      <div class="case-img-col">
-        <img class="case-img" src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=560&q=85" alt="製造工場・品質管理のイメージ" loading="lazy">
-        <span class="case-industry-badge">製造業</span>
-      </div>
-      <div class="case-content">
-        <p class="case-title">製造記録・品質管理を<br>ペーパーレス化</p>
-        <p class="case-body">製造ラインごとの記録を紙で管理。品質データの集計・月次報告書の作成に毎月数十時間を費やしていた。データの検索も困難。</p>
-        <div class="case-empathy">
-          <p>「品質は落とせない、でも人手も足りない」。記録の負担を減らし、無理なく続けられる体制に近づけるように。</p>
-        </div>
-        <div class="case-challenge">
-          <p class="case-challenge-label">課題</p>
-          <p>紙記録の集計工数、データ活用の困難さ、品質トラブル時の原因追跡の遅さ。</p>
-        </div>
-        <div class="case-results">
-          <div class="case-result-item">
-            <p class="case-result-num">70%↓</p>
-            <p class="case-result-label">記録入力時間</p>
-          </div>
-          <div class="case-result-item">
-            <p class="case-result-num">即時</p>
-            <p class="case-result-label">品質データ確認</p>
-          </div>
-        </div>
-      </div>
+    <div class="support-card">
+      <div class="support-icon">🌱</div>
+      <p class="support-cat">スタートアップ</p>
+      <p class="support-title">事業の<br>立ち上げサポート</p>
+      <p class="support-body">これから始める方へ。何から手をつければいいか、必要な準備や手続きを一緒に整理し、最初の一歩を形にします。</p>
+      <p class="support-empathy">「やりたいけど、進め方が分からない」——その迷いに、伴走します。</p>
     </div>
 
-    <!-- 介護福祉 -->
-    <div class="case-detail-card">
-      <div class="case-img-col">
-        <img class="case-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=560&q=85" alt="介護・福祉施設のケアイメージ" loading="lazy">
-        <span class="case-industry-badge">介護福祉</span>
-      </div>
-      <div class="case-content">
-        <p class="case-title">介護記録の入力・<br>申し送り作成を効率化</p>
-        <p class="case-body">利用者ごとの介護記録と申し送り文書の作成に、毎シフト終了後30分以上かかっていた。書く内容も担当者によってばらつきがあった。</p>
-        <div class="case-empathy">
-          <p>「利用者さんと向き合いたいのに、記録で残業」。書く時間を短くし、ケアと自分の暮らしの両方を守れるように。</p>
-        </div>
-        <div class="case-challenge">
-          <p class="case-challenge-label">課題</p>
-          <p>記録作成の時間的負担、担当者による内容のばらつき、残業増加による離職リスク。</p>
-        </div>
-        <div class="case-results">
-          <div class="case-result-item">
-            <p class="case-result-num">50%↓</p>
-            <p class="case-result-label">記録作成時間</p>
-          </div>
-          <div class="case-result-item">
-            <p class="case-result-num">増加</p>
-            <p class="case-result-label">利用者対応時間</p>
-          </div>
-        </div>
-      </div>
+    <div class="support-card">
+      <div class="support-icon">📮</div>
+      <p class="support-cat">申請サポート</p>
+      <p class="support-title">助成金・補助金の<br>申請サポート</p>
+      <p class="support-body">使える制度を探すところから、申請書類の作成・整理まで。複雑な手続きを、できるところは代わりに、一緒に進めます。</p>
+      <p class="support-empathy">「難しそうで手が出ない」制度を、使える形に。</p>
+    </div>
+
+    <div class="support-card">
+      <div class="support-icon">🚁</div>
+      <p class="support-cat">申請サポート</p>
+      <p class="support-title">ドローン飛行の<br>申請サポート</p>
+      <p class="support-body">飛行許可・承認申請などの必要書類づくりをサポート。慣れない手続きの負担を減らし、飛ばすことに集中できるように。</p>
+      <p class="support-empathy">「手続きが複雑で進まない」——その部分を、代わりに整えます。</p>
+    </div>
+
+    <div class="support-card">
+      <div class="support-icon">🌾</div>
+      <p class="support-cat">現場サポート</p>
+      <p class="support-title">農業まわりの<br>サポート</p>
+      <p class="support-body">記録・申請・事務まわりなど、農業の「手が回らない」を支援。現場の作業以外の負担を、できるだけ軽くします。</p>
+      <p class="support-empathy">「作業に集中したいのに、事務に追われる」——その時間を守ります。</p>
+    </div>
+
+    <div class="support-card">
+      <div class="support-icon">📄</div>
+      <p class="support-cat">書類</p>
+      <p class="support-title">各種書類の<br>作成・整備</p>
+      <p class="support-body">申請書や定型フォーマットなど、必要な書類を整えます。毎回イチから作る手間をなくし、使い回せる形に。</p>
+      <p class="support-empathy">「毎回ゼロから作るのが大変」——その繰り返しを、なくします。</p>
+    </div>
+
+    <div class="support-card">
+      <div class="support-icon">🎨</div>
+      <p class="support-cat">制作</p>
+      <p class="support-title">チラシ・名刺<br>などの制作</p>
+      <p class="support-body">集客や信頼につながる紙・デザインづくり。伝えたいことを、きちんと伝わる形にします。</p>
+      <p class="support-empathy">「伝えたいのに、形にできない」——その思いを、形に。</p>
     </div>
 
   </div>
+
 </div>
 </main>
 
 <div class="cta-section">
-  <p class="cta-title">あなたの業種でも、できます。</p>
-  <p class="cta-sub">「うちの業務は特殊で…」という方ほど、ぜひ一度話してみてください。</p>
+  <p class="cta-title">その業務も、きっと頼めます。</p>
+  <p class="cta-sub">「これってお願いできる？」というものほど、ぜひ一度話してみてください。<br>ここに載っていないことも、まずはお気軽にご相談を。</p>
   <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
     <a href="https://lin.ee/v2A0ds8L" class="btn-ghost" target="_blank" rel="noopener noreferrer">💬 LINEで相談する（無料）</a>
     <a href="booking.html" class="btn-gold" target="_blank" rel="noopener noreferrer">無料相談を予約する（30分）</a>
