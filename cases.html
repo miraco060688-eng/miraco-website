@@ -105,8 +105,15 @@ nav { position:fixed; top:0; left:0; right:0; z-index:1000; display:flex; align-
 .support-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
 .support-card { background:var(--bg-c); border:0.5px solid var(--border); border-radius:14px; padding:32px 30px; box-shadow:var(--shadow); transition:transform 0.25s, box-shadow 0.25s; }
 .support-card:hover { transform:translateY(-3px); box-shadow:0 8px 30px rgba(0,0,0,0.11); }
-.support-icon { font-size:26px; line-height:1; margin-bottom:16px; }
+.support-index { font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:300; color:var(--gold); line-height:1; margin-bottom:18px; letter-spacing:0.04em; }
 .support-cat { font-size:10.5px; letter-spacing:0.14em; color:var(--gold-d); text-transform:uppercase; margin-bottom:10px; }
+
+/* 伴走（強み）バンド */
+.approach-band { max-width:1100px; margin:0 auto 44px; background:var(--bg-c); border:0.5px solid var(--border-g); border-left:3px solid var(--gold); border-radius:14px; padding:38px 40px; box-shadow:var(--shadow); }
+.approach-band .a-label { font-size:10.5px; letter-spacing:0.16em; color:var(--gold-d); text-transform:uppercase; margin-bottom:14px; }
+.approach-band h3 { font-family:'Cormorant Garamond',serif; font-size:clamp(22px,3vw,30px); font-weight:600; color:var(--text); line-height:1.35; margin-bottom:16px; }
+.approach-band p { font-size:14px; color:var(--text-b); line-height:1.95; font-weight:300; max-width:760px; }
+.approach-band p + p { margin-top:12px; }
 .support-title { font-family:'Cormorant Garamond',serif; font-size:23px; font-weight:600; color:var(--text); line-height:1.3; margin-bottom:12px; }
 .support-body { font-size:13.5px; color:var(--text-m); line-height:1.9; font-weight:300; margin-bottom:16px; }
 .support-empathy { font-size:12.5px; color:var(--gold-d); line-height:1.85; border-top:0.5px solid var(--border); padding-top:14px; }
@@ -223,18 +230,26 @@ footer { background:#1a1612; border-top:0.5px solid rgba(255,255,255,0.08); padd
   <p class="s-label">できること</p>
   <h2 class="s-title">業種ではなく、<br><em>「やること」</em>でお手伝いします</h2>
 
+  <!-- 伴走スタイル（一番の強み） -->
+  <div class="approach-band">
+    <p class="a-label">MIRACOの伴走スタイル</p>
+    <h3>いまのExcel・Wordは、そのまま。<br>その人のペースで、少しずつ。</h3>
+    <p>新しいツールにゼロから乗り換える必要はありません。いまお使いのExcelやWordの形を引き継いだまま、無理のない範囲から少しずつ自動化していきます。</p>
+    <p>大切にしているのは、その人のペースで進めること。今日の業務を止めずに、「これは自動でよかったんだ」を、ひとつずつ増やしていく伴走が得意です。</p>
+  </div>
+
   <div class="support-grid">
 
     <div class="support-card">
-      <div class="support-icon">🧾</div>
+      <div class="support-index">01</div>
       <p class="support-cat">経理・バックオフィス</p>
       <p class="support-title">経理・記帳の<br>自動サポート</p>
-      <p class="support-body">教育・飲食など、日々の記帳や集計、請求まわりの作業を、AIと仕組みでできるだけ手離れよく。数字の管理を「後回し」から「回る」状態に。</p>
+      <p class="support-body">教育・飲食などの記帳・集計・請求まわりを、少しずつ自動化。たとえば毎月の請求書を自動で発行する仕組みまで、実際にお作りしています。</p>
       <p class="support-empathy">「数字が苦手で、つい後回しにしてしまう」——その負担を、続けられる形に。</p>
     </div>
 
     <div class="support-card">
-      <div class="support-icon">📲</div>
+      <div class="support-index">02</div>
       <p class="support-cat">仕組みづくり</p>
       <p class="support-title">予約・注文<br>システムづくり</p>
       <p class="support-body">飲食店などの予約・注文を、電話とノートの手作業から仕組みへ。受け漏れや二重予約を減らし、日々の対応をラクにします。</p>
@@ -242,7 +257,15 @@ footer { background:#1a1612; border-top:0.5px solid rgba(255,255,255,0.08); padd
     </div>
 
     <div class="support-card">
-      <div class="support-icon">🌱</div>
+      <div class="support-index">03</div>
+      <p class="support-cat">書類・自動化</p>
+      <p class="support-title">定型書類の<br>自動作成</p>
+      <p class="support-body">1つの依頼内容から、複数の定型書類（依頼書など）を自動で作成する仕組みを実際に構築。申請書やフォーマットの整備も含め、毎回イチから作る手間をなくします。</p>
+      <p class="support-empathy">「毎回ゼロから作るのが大変」——その繰り返しを、なくします。</p>
+    </div>
+
+    <div class="support-card">
+      <div class="support-index">04</div>
       <p class="support-cat">スタートアップ</p>
       <p class="support-title">事業の<br>立ち上げサポート</p>
       <p class="support-body">これから始める方へ。何から手をつければいいか、必要な準備や手続きを一緒に整理し、最初の一歩を形にします。</p>
@@ -250,7 +273,7 @@ footer { background:#1a1612; border-top:0.5px solid rgba(255,255,255,0.08); padd
     </div>
 
     <div class="support-card">
-      <div class="support-icon">📮</div>
+      <div class="support-index">05</div>
       <p class="support-cat">申請サポート</p>
       <p class="support-title">助成金・補助金の<br>申請サポート</p>
       <p class="support-body">使える制度を探すところから、申請書類の作成・整理まで。複雑な手続きを、できるところは代わりに、一緒に進めます。</p>
@@ -258,7 +281,7 @@ footer { background:#1a1612; border-top:0.5px solid rgba(255,255,255,0.08); padd
     </div>
 
     <div class="support-card">
-      <div class="support-icon">🚁</div>
+      <div class="support-index">06</div>
       <p class="support-cat">申請サポート</p>
       <p class="support-title">ドローン飛行の<br>申請サポート</p>
       <p class="support-body">飛行許可・承認申請などの必要書類づくりをサポート。慣れない手続きの負担を減らし、飛ばすことに集中できるように。</p>
@@ -266,7 +289,7 @@ footer { background:#1a1612; border-top:0.5px solid rgba(255,255,255,0.08); padd
     </div>
 
     <div class="support-card">
-      <div class="support-icon">🌾</div>
+      <div class="support-index">07</div>
       <p class="support-cat">現場サポート</p>
       <p class="support-title">農業まわりの<br>サポート</p>
       <p class="support-body">記録・申請・事務まわりなど、農業の「手が回らない」を支援。現場の作業以外の負担を、できるだけ軽くします。</p>
@@ -274,15 +297,7 @@ footer { background:#1a1612; border-top:0.5px solid rgba(255,255,255,0.08); padd
     </div>
 
     <div class="support-card">
-      <div class="support-icon">📄</div>
-      <p class="support-cat">書類</p>
-      <p class="support-title">各種書類の<br>作成・整備</p>
-      <p class="support-body">申請書や定型フォーマットなど、必要な書類を整えます。毎回イチから作る手間をなくし、使い回せる形に。</p>
-      <p class="support-empathy">「毎回ゼロから作るのが大変」——その繰り返しを、なくします。</p>
-    </div>
-
-    <div class="support-card">
-      <div class="support-icon">🎨</div>
+      <div class="support-index">08</div>
       <p class="support-cat">制作</p>
       <p class="support-title">チラシ・名刺<br>などの制作</p>
       <p class="support-body">集客や信頼につながる紙・デザインづくり。伝えたいことを、きちんと伝わる形にします。</p>
@@ -290,6 +305,7 @@ footer { background:#1a1612; border-top:0.5px solid rgba(255,255,255,0.08); padd
     </div>
 
   </div>
+
 
 </div>
 </main>
