@@ -57,8 +57,54 @@ function doGet(e) {
   if (action === 'slots') {
     return json_(getBusySlots_(e.parameter.date));
   }
+  if (action === 'month') {
+    return json_(getFullDays_(e.parameter.ym));
+  }
   return json_({ ok: true, service: 'MIRACO booking backend' });
 }
+
+/**
+ * 指定月の「満席日（全スロットが前後バッファ込みで埋まっている日）」を返す。
+ * カレンダー画面で「満」マークを出すために使う。
+ * @param {string} ym 'YYYY-MM'
+ */
+function getFullDays_(ym) {
+  const m = String(ym || '').match(/^(\d{4})-(\d{2})$/);
+  if (!m) return { fullDays: [] };
+  const y = +m[1], mo = +m[2] - 1;
+
+  const cal = CalendarApp.getCalendarById(CONFIG.CALENDAR_ID) || CalendarApp.getDefaultCalendar();
+  if (!cal) return { fullDays: [] };
+
+  const buf = CONFIG.BUFFER_MINUTES * 60000;
+  const daysInMonth = new Date(y, mo + 1, 0).getDate();
+  const rangeStart = new Date(y, mo, 1, 0, 0, 0);
+  const rangeEnd = new Date(y, mo, daysInMonth, 23, 59, 59);
+  // 月全体を1回だけ読む（前後バッファ分を広げる）
+  const events = cal.getEvents(new Date(rangeStart.getTime() - buf), new Date(rangeEnd.getTime() + buf))
+    .filter(function (ev) { return ev.isAllDayEvent() ? CONFIG.BLOCK_ALL_DAY_EVENTS : true; });
+
+  const full = [];
+  for (let d = 1; d <= daysInMonth; d++) {
+    const dow = new Date(y, mo, d).getDay();
+    const isWeekend = (dow === 0 || dow === 6);
+    const slots = isWeekend ? CONFIG.WEEKEND_SLOTS : CONFIG.WEEKDAY_SLOTS;
+    const allBusy = slots.length > 0 && slots.every(function (t) {
+      const hm = t.split(':').map(Number);
+      const s = new Date(y, mo, d, hm[0], hm[1], 0);
+      const e2 = new Date(s.getTime() + CONFIG.SLOT_MINUTES * 60000);
+      const ws = new Date(s.getTime() - buf), we = new Date(e2.getTime() + buf);
+      return events.some(function (ev) {
+        if (ev.isAllDayEvent()) return true;
+        return ev.getStartTime() < we && ev.getEndTime() > ws;
+      });
+    });
+    if (allBusy) full.push(y + '-' + pad2_(mo + 1) + '-' + pad2_(d));
+  }
+  return { fullDays: full };
+}
+
+function pad2_(n) { return String(n).padStart(2, '0'); }
 
 /**
  * 指定日の busy スロットを返す。
