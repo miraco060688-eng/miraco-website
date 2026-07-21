@@ -37,8 +37,10 @@ const CONFIG = {
   WEEKDAY_SLOTS: ['18:00', '21:00'],          // 平日（月〜金）
   WEEKEND_SLOTS: ['10:00', '15:00', '20:00'], // 土・日
 
-  // 終日予定（例：「休み」など）も予約不可にするか。
-  BLOCK_ALL_DAY_EVENTS: true,
+  // 終日予定（誕生日・祝日など）も予約不可にするか。
+  // true にすると「終日」予定のある日はその日を丸ごと予約不可にします。
+  // 誕生日や祝日カレンダーで塞がってしまうのを防ぐため、既定は false（時間指定の予定だけで判定）。
+  BLOCK_ALL_DAY_EVENTS: false,
 
   // 予約を受けたらカレンダーに予定を作るか（作ると、その予約自体も
   // 次の人の空き判定に反映され、前後3時間が自動でふさがる）。
@@ -95,7 +97,6 @@ function getFullDays_(ym) {
       const e2 = new Date(s.getTime() + CONFIG.SLOT_MINUTES * 60000);
       const ws = new Date(s.getTime() - buf), we = new Date(e2.getTime() + buf);
       return events.some(function (ev) {
-        if (ev.isAllDayEvent()) return true;
         return ev.getStartTime() < we && ev.getEndTime() > ws;
       });
     });
@@ -141,9 +142,7 @@ function getBusySlots_(dateStr) {
     // このスロットの前後バッファを含めた「予約するとかぶる窓」
     const winStart = new Date(slotStart.getTime() - buf);
     const winEnd   = new Date(slotEnd.getTime() + buf);
-    // 終日予定はその日全体を対象に
     return events.some(function (ev) {
-      if (ev.isAllDayEvent()) return true;
       return ev.getStartTime() < winEnd && ev.getEndTime() > winStart;
     });
   });
@@ -218,7 +217,6 @@ function isSlotFree_(start) {
     return true;
   });
   return !events.some(function (ev) {
-    if (ev.isAllDayEvent()) return true;
     return ev.getStartTime() < winEnd && ev.getEndTime() > winStart;
   });
 }
