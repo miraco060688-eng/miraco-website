@@ -366,6 +366,10 @@
    ============================================================ */
 const CONFIG = {
   // Google Apps Script のウェブアプリURL（デプロイ後に貼り付け）
+  // ★ カレンダー連携（予定の前後3時間を予約不可にする）を有効にするには
+  //   gas/Code.gs をデプロイし、発行URLをここに貼り付けます。手順は gas/SETUP.md 参照。
+  //   ※ 空き判定・前後3時間バッファは GAS 側（サーバー）で判定します。
+  //     時間スロットを変える場合は Code.gs 側の値も必ず一致させてください。
   GAS_URL: 'YOUR_GAS_WEB_APP_URL',
 
   // 平日（月〜金）の時間スロット
@@ -617,9 +621,14 @@ function validateForm() {
 document.getElementById('btnSubmit').addEventListener('click', async () => {
   if (!validateForm()) return;
 
+  const sd = state.selectedDate;
+  // 開始時刻を JST（+09:00）で明示。閲覧者のタイムゾーンに関わらず正しい時刻で送る。
+  const startISO = `${sd.year}-${padZero(sd.month + 1)}-${padZero(sd.day)}T${state.selectedTime}:00+09:00`;
+
   const payload = {
     date:    state.selectedDate.label,
     time:    state.selectedTime,
+    startISO: startISO,
     meeting: CONFIG.meetingLabel,
     name:    document.getElementById('inputName').value.trim(),
     email:   document.getElementById('inputEmail').value.trim(),
