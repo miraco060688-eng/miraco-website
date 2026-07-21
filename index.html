@@ -706,6 +706,80 @@ nav {
 }
 .faq-item.open .faq-a { max-height: 300px; }
 
+/* ── MISSION ── */
+.mission {
+  position: relative;
+  padding: 130px 52px 120px;
+  max-width: 1000px; margin: 0 auto;
+  text-align: center;
+}
+.mission-eyebrow {
+  font-size: 10px; letter-spacing: 0.24em; color: var(--gold-d);
+  font-weight: 400; text-transform: uppercase; margin-bottom: 30px;
+  display: inline-flex; align-items: center; gap: 12px;
+}
+.mission-eyebrow::before, .mission-eyebrow::after {
+  content: ''; width: 24px; height: 0.5px; background: var(--gold-d);
+}
+.mission-statement {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(25px, 3.6vw, 42px);
+  font-weight: 300; line-height: 1.55;
+  color: var(--text); letter-spacing: 0.01em;
+  margin: 0 auto 30px; max-width: 820px;
+}
+.mission-statement em { font-style: italic; color: var(--gold); }
+.mission-lead {
+  font-size: 15px; line-height: 2.05; color: var(--text-b);
+  font-weight: 300; max-width: 600px; margin: 0 auto;
+}
+.mission-divider { width: 0.5px; height: 56px; background: var(--border-g); margin: 56px auto; }
+.mission-sub-label {
+  font-size: 13px; letter-spacing: 0.06em; color: var(--text-m);
+  font-weight: 400; margin-bottom: 28px;
+}
+.mission-sub-label strong { color: var(--gold-d); font-weight: 500; }
+.reasons-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  max-width: 760px; margin: 0 auto 4px;
+}
+.reason-chip {
+  background: var(--bg-c); border: 0.5px solid var(--border-g);
+  border-radius: 3px; padding: 20px 18px;
+  font-size: 13px; color: var(--text-b); line-height: 1.65;
+  font-weight: 400; box-shadow: var(--shadow);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; min-height: 84px;
+}
+.layers {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  text-align: left; margin-top: 60px;
+}
+.layer {
+  background: var(--bg-c); border: 0.5px solid var(--border);
+  border-top: 2px solid var(--gold);
+  border-radius: 4px; padding: 34px 30px; box-shadow: var(--shadow);
+}
+.layer-num {
+  font-size: 10px; letter-spacing: 0.18em; color: var(--gold-d);
+  text-transform: uppercase; font-weight: 400; margin-bottom: 16px; display: block;
+}
+.layer-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px; font-weight: 600; color: var(--text);
+  margin-bottom: 12px; line-height: 1.3;
+}
+.layer-body { font-size: 13px; color: var(--text-m); line-height: 1.9; font-weight: 300; }
+
+/* ── CASE WHY ── */
+.case-why {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic; font-size: 15px;
+  color: var(--gold-d); line-height: 1.5;
+  margin-bottom: 14px; padding-bottom: 14px;
+  border-bottom: 0.5px dashed var(--border-g);
+}
+
 /* ── CTA FINAL ── */
 .cta-section {
   text-align: center; padding: 120px 48px;
@@ -799,6 +873,11 @@ footer {
   .cases-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr 1fr; }
 
+  .mission { padding: 70px 24px; }
+  .reasons-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .reason-chip { min-height: 0; padding: 16px; }
+  .layers { grid-template-columns: 1fr; }
+
   .founder-section { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
   .founder-img-wrap { max-width: 240px; }
 
@@ -857,13 +936,13 @@ footer {
     <div class="grid-bg"></div>
   </div>
   <div class="hero-inner">
-    <p class="eyebrow"><span class="eyebrow-line"></span>DX &amp; AI Back-office Support<span class="eyebrow-line"></span></p>
+    <p class="eyebrow"><span class="eyebrow-line"></span>富山県の中小企業・個人事業主向け ／ AI活用・業務自動化・デザイン制作<span class="eyebrow-line"></span></p>
     <h1 class="hero-h1">その「面倒くさい」を、<br><em>仕組みで軽くする。</em></h1>
     <p class="hero-sub-h">ひとりで抱えてきた仕事に、整う流れを。</p>
     <p class="hero-body">
-      バックオフィス14年の現場経験とAI活用知識を組み合わせ、<br>
-      中小企業・個人事業主の業務改善を伴走支援します。<br>
-      難しい知識は不要。まずは話してみてください。
+      富山県氷見市を拠点に、地方の中小企業・個人事業主の<strong>AI活用・業務自動化・デザイン制作</strong>を全国オンラインで支援。<br>
+      バックオフィス14年の現場経験を持つ代表が、直接伴走します。<br>
+      IT知識は不要です。まずは30分の無料相談からどうぞ。
     </p>
     <div class="hero-actions">
       <a href="booking.html" class="btn-gold" target="_blank" rel="noopener noreferrer">無料相談を予約する（30分）</a>
@@ -872,51 +951,105 @@ footer {
   </div>
 </section>
 
+<!-- ── MISSION ── -->
+<section class="mission" id="mission">
+  <p class="mission-eyebrow">Our Mission</p>
+  <p class="mission-statement">
+    経営者が、大切にしたい<br>
+    <em>「事業を続ける理由」</em>に向かって、<br>
+    より良い経営を続けられるように。
+  </p>
+  <p class="mission-lead">
+    MIRACOがつくるのは、単なる「効率化」や「売上アップ」だけではありません。<br>
+    業務を整理し、経営者が本来向き合うべき仕事に集中できる仕組みを、AIと実務でつくります。
+  </p>
+
+  <div class="mission-divider" aria-hidden="true"></div>
+
+  <p class="mission-sub-label">経営者の数だけ、<strong>事業を続ける理由</strong>があります。</p>
+  <div class="reasons-grid">
+    <div class="reason-chip">お客様に、もっと良いサービスを届けたい</div>
+    <div class="reason-chip">従業員とその家族を守りたい</div>
+    <div class="reason-chip">地域に必要な事業を残したい</div>
+    <div class="reason-chip">家族との時間を取り戻したい</div>
+    <div class="reason-chip">自分の理想や挑戦を、形にしたい</div>
+    <div class="reason-chip">利益を出し、事業を安定させたい</div>
+  </div>
+
+  <div class="layers">
+    <div class="layer">
+      <span class="layer-num">01 ／ 理念</span>
+      <p class="layer-title">「なぜ」を支える</p>
+      <p class="layer-body">経営者それぞれの、事業を営む理由。その「なぜ」をまず聴くことから、MIRACOの支援は始まります。同じ仕組みを一律に当てはめることはしません。</p>
+    </div>
+    <div class="layer">
+      <span class="layer-num">02 ／ 提供価値</span>
+      <p class="layer-title">集中できる仕組み</p>
+      <p class="layer-body">煩雑な業務を整理し、AI・事務・制作・進行管理で実装。「やらなくてよいこと」を手放し、経営の判断に時間を割ける状態を一緒につくります。</p>
+    </div>
+    <div class="layer">
+      <span class="layer-num">03 ／ 成果</span>
+      <p class="layer-title">前に進む実感</p>
+      <p class="layer-body">時間の削減、ミス・抜け漏れの防止、売上機会の増加、業務の見える化、施策の実行。数字と手ざわりの両方で、前進を実感できます。</p>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:56px;">
+    <a href="#gateway" class="btn-ghost" style="display:inline-block;">MIRACOの「頼み方」を見る ↓</a>
+  </div>
+</section>
+
 <!-- ── GATEWAY ── -->
 <div class="gateway-strip" id="gateway">
   <div class="gateway-inner">
-    <p class="s-label">まず、どこから始める？</p>
-    <h2 class="s-title">あなたの目的に合わせた、<br><em>3つの入口</em></h2>
+    <p class="s-label">MIRACOの3つの頼み方</p>
+    <h2 class="s-title">小さく試して、<br><em>仕組みごと任せる。</em></h2>
+    <p class="s-body">最初から大きな契約は不要です。お試し → 単発依頼 → 継続サポートの3段階で、必要な分だけご利用いただけます。</p>
 
     <div class="gateway-grid">
-      <!-- 01 相談 -->
+      <!-- STEP1 フロント：お試し -->
       <div class="gw-card">
-        <img class="gw-photo" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=700&q=85" alt="オンラインで業務課題を相談するイメージ" loading="lazy">
-        <p class="gw-title">まずは話を<br>聞いてみたい</p>
+        <img class="gw-photo" src="assets/images/soudan.jpg" alt="お客様の課題をヒアリングしながら説明する相談の様子" loading="lazy">
+        <p class="svc-tag">STEP 1 ／ まずはお試し</p>
+        <p class="gw-title">小さく<br>試したい</p>
         <p class="gw-desc">
-          「何から始めればいいか分からない」「うちの業務に使えるか不安」
-          そんな方向け。30分のオンライン相談で、あなたの課題を一緒に整理します。完全無料です。
+          30分のオンライン無料相談で課題を一緒に整理。または名刺¥5,000〜・チラシ¥8,000〜のスポット制作から。
+          「この人に頼めそうか」をリスクなく確かめられる入口です。
         </p>
         <div class="gw-links">
           <a href="booking.html" class="gw-link-primary" target="_blank" rel="noopener noreferrer">無料相談を予約する →</a>
-        </div>
-      </div>
-
-      <!-- 02 名刺・チラシ -->
-      <div class="gw-card">
-        <img class="gw-photo" src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=700&q=85" alt="デザイン制作・名刺チラシ作成のイメージ" loading="lazy">
-        <p class="gw-title">名刺・チラシを<br>お願いしたい</p>
-        <p class="gw-desc">
-          想いが伝わるデザインを、AIツールを活用して短納期・低コストで制作します。納品は印刷用データでお渡しします。
-          まずはヒアリングフォームを送信してください。内容確認後にご連絡します。
-        </p>
-        <div class="gw-links">
-          <a href="https://forms.gle/1SzgSTRywvHPMHiX9" class="gw-link-primary" target="_blank" rel="noopener noreferrer">名刺制作のご依頼 →</a>
+          <a href="https://forms.gle/1SzgSTRywvHPMHiX9" class="gw-link-sec" target="_blank" rel="noopener noreferrer">名刺制作のご依頼 →</a>
           <a href="https://forms.gle/C8qWqXAPNdv8Q1wMA" class="gw-link-sec" target="_blank" rel="noopener noreferrer">チラシ制作のご依頼 →</a>
         </div>
       </div>
 
-      <!-- 03 AI・自動化 -->
+      <!-- STEP2 ミドル：単発依頼 -->
       <div class="gw-card">
-        <img class="gw-photo" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=700&q=85" alt="AIを活用して業務改善を進めるチームのイメージ" loading="lazy">
-        <p class="gw-title">AIで仕事を<br>変えたい</p>
+        <img class="gw-photo" src="assets/images/kaizen.jpg" alt="パソコンの業務フロー図を一緒に確認しながら業務改善を進める様子" loading="lazy">
+        <p class="svc-tag">STEP 2 ／ 単発で頼む</p>
+        <p class="gw-title">1つの困りごとを<br>解決したい</p>
         <p class="gw-desc">
-          AI活用コンサルティング・業務プロセス自動化・業務システム開発など。
-          じっくり詳しいサービス内容を見てから相談したい方はこちら。
+          業務システム開発¥30,000〜、PC・クラウドのデータ整理、見積・請求業務の自動化など。
+          「まずこの1つだけ」の単発プロジェクトでお引き受けします。
         </p>
         <div class="gw-links">
-          <a href="services.html" class="gw-link-primary">サービス詳細を見る →</a>
+          <a href="services.html" class="gw-link-primary">サービス詳細・料金を見る →</a>
           <a href="booking.html" class="gw-link-sec" target="_blank" rel="noopener noreferrer">まず相談する →</a>
+        </div>
+      </div>
+
+      <!-- STEP3 バック：継続サポート -->
+      <div class="gw-card">
+        <img class="gw-photo" src="assets/images/bansou.jpg" alt="お客様の話をノートに記録しながら1対1で伴走する様子" loading="lazy">
+        <p class="svc-tag">STEP 3 ／ 継続で任せる</p>
+        <p class="gw-title">仕組みごと<br>任せたい</p>
+        <p class="gw-desc">
+          AI活用の顧問サポート・バックオフィス構築・月次の伴走支援。
+          ツール選定からマニュアル化・定着まで、「誰でも回せる仕組み」を一緒につくり、育てていきます。
+        </p>
+        <div class="gw-links">
+          <a href="booking.html" class="gw-link-primary" target="_blank" rel="noopener noreferrer">無料相談から始める →</a>
+          <a href="cases.html" class="gw-link-sec">導入事例を見る →</a>
         </div>
       </div>
     </div>
@@ -943,8 +1076,8 @@ footer {
     <div class="svc-card">
       <p class="svc-tag">03 / Design</p>
       <p class="svc-name">名刺・チラシ制作</p>
-      <p class="svc-desc">AIツールを活用した高品質なデザイン制作。想いが伝わるデザインを、短納期・リーズナブルな価格でご提供します。納品は印刷用データでのお渡しです。</p>
-      <p class="svc-price">名刺 ¥5,000 / チラシ片面 ¥8,000 / チラシ両面 ¥14,000 / データ納品</p>
+      <p class="svc-desc">名刺¥5,000〜・チラシ¥8,000〜。修正2回まで無料。打ち合わせはオンライン60分。データ納品（PDF/AI）。AIツールを活用し、ご入金確認後3営業日以内で初稿をご提出します。</p>
+      <p class="svc-price">名刺 ¥5,000〜 / チラシ片面 ¥8,000〜 / チラシ両面 ¥14,000〜 / データ納品</p>
     </div>
     <div class="svc-card">
       <p class="svc-tag">04 / System</p>
@@ -987,7 +1120,8 @@ footer {
         育児と仕事を抱えながら、相談できる人がいなかった。<br>
         そんなとき、AIが思考のパートナーになってくれた。<br>
         その感動を、身近な人に届けたい。<br>
-        MIRACOはその想いから始まっています。
+        MIRACOはその想いから始まっています。<br>
+        だからこそ、まずはあなたの「なぜ」から聴かせてください。
       </p>
       <a href="about.html" class="btn-ghost" style="padding:11px 24px;font-size:12px;display:inline-block;">代表メッセージを読む</a>
     </div>
@@ -1048,27 +1182,181 @@ footer {
 <div class="gateway-strip" id="cases">
   <div class="gateway-inner">
     <p class="s-label">Cases</p>
-    <h2 class="s-title">さまざまな業種・現場での<br><em>改善事例</em></h2>
-    <p class="s-body" style="margin-bottom:40px;">※ 数値はお客様ごとの参考値です。業務内容により効果は異なります。</p>
+    <h2 class="s-title">業務の改善は、<br>経営者の<em>「なぜ」</em>から。</h2>
+    <p class="s-body" style="margin-bottom:40px;">MIRACOがお手伝いするのは「業種」ではなく、「やること」。削減した時間の先に、経営者が本当にやりたかったことがあります。<br>※ 内容は業務に合わせて組み合わせ・カスタマイズします。ここにないことも、まずはご相談ください。</p>
     <div class="cases-grid">
       <div class="case-card">
-        <p class="case-tag">建設業</p>
-        <p class="case-title">日報・工程管理を<br>デジタル化・自動集計</p>
-        <p class="case-body">紙の日報をデジタル化し、工程ごとの進捗集計・月次報告書の自動化で、現場担当者の事務負担を大幅に軽減。</p>
+        <p class="case-tag">経理・自動化</p>
+        <p class="case-why">数字の管理に、<br>追われないように。</p>
+        <p class="case-title">記帳・請求を<br>少しずつ自動化</p>
+        <p class="case-body">教育・飲食などの記帳・集計・請求まわりを、AIと仕組みで少しずつ自動化。毎月の請求書を自動で発行する仕組みまで、実際にお作りしています。</p>
         <div class="case-stats">
-          <span class="case-stat">月次報告作成時間 約80%削減</span>
-          <span class="case-stat">転記ミス ゼロへ</span>
+          <span class="case-stat">いまのExcel・Wordはそのまま</span>
+          <span class="case-stat">毎月の請求書発行を自動化</span>
         </div>
       </div>
       <div class="case-card">
-        <p class="case-tag">宿泊業</p>
-        <p class="case-title">予約・顧客情報の<br>一元管理と帳票自動化</p>
-        <p class="case-body">複数チャネルの予約データを一元管理し、チェックイン書類・請求書の自動作成で受付業務の手間を大幅削減。</p>
+        <p class="case-tag">書類・自動化</p>
+        <p class="case-why">毎回ゼロから、<br>作らなくていいように。</p>
+        <p class="case-title">1つの依頼から<br>複数書類を自動作成</p>
+        <p class="case-body">1つの依頼内容から、複数の定型書類（依頼書など）を自動で作成する仕組みを実際に構築。申請書やフォーマット整備まで、書類仕事の繰り返しをなくします。</p>
         <div class="case-stats">
-          <span class="case-stat">受付事務工数 約60%削減</span>
-          <span class="case-stat">帳票発行スピード 即日へ</span>
+          <span class="case-stat">転記の手間をなくす</span>
+          <span class="case-stat">作成時間を短縮</span>
         </div>
       </div>
       <div class="case-card">
-        <p class="case-tag">製造業</p>
-        <p class="case-title">製造記録・品質管理�
+        <p class="case-tag">仕組みづくり</p>
+        <p class="case-why">現場やおもてなしに、<br>集中できるように。</p>
+        <p class="case-title">予約・注文を<br>手作業から仕組みへ</p>
+        <p class="case-body">飲食店などの予約・注文を、電話とノートの手作業から仕組みへ。受け漏れや二重予約を減らし、日々の対応をラクにします。</p>
+        <div class="case-stats">
+          <span class="case-stat">受け漏れ・二重予約を防止</span>
+          <span class="case-stat">日々の対応の手間を軽減</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="cases.html" class="btn-ghost" style="display:inline-block;">すべての事例を見る →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── Q&A ── -->
+<div class="section" id="faq">
+  <p class="s-label">よくある質問</p>
+  <h2 class="s-title">まず気になる、<br><em>Q &amp; A</em></h2>
+  <p class="s-body">よくいただく質問をまとめました。解決しない場合はお気軽に無料相談へどうぞ。</p>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">MIRACOはどんな業務を改善してくれますか？<span class="faq-arrow"></span></button>
+      <p class="faq-a">見積書・請求書の作成、日報・記録の入力集計、予約・注文の仕組みづくり、助成金・各種申請のサポート、名刺・チラシのデザイン制作など、幅広い業務をお手伝いしています。「うちでも使える？」は無料相談でご確認ください。</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">費用の目安を教えてください。<span class="faq-arrow"></span></button>
+      <p class="faq-a">名刺制作は¥5,000〜、チラシ片面は¥8,000〜、業務システム開発は¥30,000〜が目安です。AI活用コンサルティング・業務自動化はプロジェクト内容により異なります。まずは無料相談でご状況をお聞かせください。</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">IT知識がなくても大丈夫ですか？<span class="faq-arrow"></span></button>
+      <p class="faq-a">大丈夫です。「Excelもほとんど使わない」「スマホでしかやり取りできない」という方も多数ご依頼いただいています。専門用語は使いません。現場の言葉でご説明します。</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">富山県外でも依頼できますか？<span class="faq-arrow"></span></button>
+      <p class="faq-a">はい。すべてオンラインで対応しています。北陸・東海・関西を中心に全国からご依頼を承っています。相談・打ち合わせ・納品まですべてオンラインで完結します。</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">相談から着手まで、どのくらいかかりますか？<span class="faq-arrow"></span></button>
+      <p class="faq-a">初回の無料相談（オンライン30分）のあと、通常3営業日以内にプランをご提案します。ご契約後は最短2週間で業務改善をスタートできます。</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">まず相談だけでも大丈夫ですか？<span class="faq-arrow"></span></button>
+      <p class="faq-a">もちろんです。初回の無料相談にご契約の義務はありません。「何から始めればいいか分からない」「うちに合うか確認したい」という段階でお気軽にお申し込みください。</p>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:40px;">
+    <a href="faq.html" class="btn-ghost" style="display:inline-block;">よくある質問をすべて見る →</a>
+  </div>
+</div>
+
+<!-- ── BLOG / NOTE ── -->
+<div class="gateway-strip">
+  <div class="gateway-inner">
+    <p class="s-label">Blog</p>
+    <h2 class="s-title">noteブログで、<br><em>AI活用のヒントを</em></h2>
+    <p class="s-body" style="margin-bottom:40px;">地方の中小企業・個人事業主がAIをすぐに使えるよう、現場目線の実践ノウハウを発信中。記事からこのサイトに来た方は、そのまま各サービスページへどうぞ。</p>
+    <div class="blog-card">
+      <div class="blog-text">
+        <p class="blog-tag">Note / Blog</p>
+        <p class="blog-title">MIRACO公式note ― AI活用・業務改善の現場レポート</p>
+        <p class="blog-desc">「AIって何から始めれば？」「うちの業種で使えるの？」そんな疑問に答える記事を発信しています。難しい用語なし・地方企業の実例あり。</p>
+        <div class="blog-tags">
+          <span class="blog-tag-pill">AI活用</span>
+          <span class="blog-tag-pill">業務自動化</span>
+          <span class="blog-tag-pill">地方DX</span>
+          <span class="blog-tag-pill">ChatGPT入門</span>
+          <span class="blog-tag-pill">バックオフィス改善</span>
+        </div>
+        <a href="https://note.com/miraco_1" class="btn-gold" target="_blank" rel="noopener noreferrer" style="display:inline-block;">noteで記事を読む →</a>
+      </div>
+      <div class="blog-visual" aria-hidden="true">
+        <div class="blog-visual-inner">n</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CTA FINAL ── -->
+<div class="cta-section">
+  <p class="cta-title">まずは、<em>話してみてください。</em></p>
+  <p class="cta-sub">30分のオンライン無料相談。課題が明確でなくても大歓迎です。<br>北陸・東海・関西エリア、全国どこからでも対応します。</p>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+    <a href="https://lin.ee/v2A0ds8L" class="btn-ghost" target="_blank" rel="noopener noreferrer">💬 LINEで相談する（無料）</a>
+    <a href="booking.html" class="btn-gold" target="_blank" rel="noopener noreferrer">無料相談を予約する（30分）</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="f-logo">MIR<span>A</span>CO</div>
+      <p>バックオフィス14年の現場経験とAI活用知識で、<br>地方の中小企業・個人事業主を伴走支援します。</p>
+      <p class="f-location">📍 富山県氷見市 ／ 全国・オンライン対応</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">サービス一覧</a></li>
+        <li><a href="https://forms.gle/1SzgSTRywvHPMHiX9" target="_blank" rel="noopener noreferrer">名刺制作のご依頼</a></li>
+        <li><a href="https://forms.gle/C8qWqXAPNdv8Q1wMA" target="_blank" rel="noopener noreferrer">チラシ制作のご依頼</a></li>
+        <li><a href="booking.html" target="_blank" rel="noopener noreferrer">無料相談を予約</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Info</h4>
+      <ul>
+        <li><a href="about.html">代表について</a></li>
+        <li><a href="cases.html">導入事例</a></li>
+        <li><a href="events.html">イベント・セミナー</a></li>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="https://note.com/miraco_1" target="_blank" rel="noopener noreferrer">BLOG（note）</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="legal.html">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 MIRACO（ミラコ）高木 菜摘 All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="https://note.com/miraco_1" target="_blank" rel="noopener noreferrer">note</a>
+      <a href="https://www.instagram.com/miraco_ai/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener noreferrer">LINE</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+function closeMobileMenu() {
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+  mobileMenu.classList.remove('open');
+}
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', String(isOpen));
+  mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+});
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+  });
+});
+</script>
+</body>
+</html>

@@ -1156,6 +1156,10 @@ img { max-width: 100%; display: block; }
   box-shadow: var(--shadow-md);
 }
 .form-group { margin-bottom: 1.25rem; }
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 640px) {
+  .form-row-2 { grid-template-columns: 1fr; }
+}
 .form-label {
   display: block;
   font-size: .85rem;

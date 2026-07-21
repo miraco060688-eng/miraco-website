@@ -323,4 +323,13 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     btn.setAttribute('aria-expanded', String(isOpen));
   });
 });
-document.queryS
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    mobileMenu.classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
