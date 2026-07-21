@@ -110,6 +110,17 @@
       width:3px;height:3px;border-radius:50%;background:var(--gold);
     }
     .cal-day.selected.today-mark::after{background:#fff}
+    /* 満席の日 */
+    .cal-day.full{
+      color:var(--grey);
+      background:var(--grey-bg);
+      cursor:not-allowed;
+      pointer-events:none;
+    }
+    .full-badge{
+      position:absolute;bottom:1px;left:50%;transform:translateX(-50%);
+      font-size:8px;line-height:1;letter-spacing:0;color:#c08a8a;font-weight:500;
+    }
 
     /* ── SLOT LOADING ── */
     .slot-loading{display:flex;align-items:center;gap:10px;padding:20px 0;color:var(--text-m);font-size:13px}
@@ -366,7 +377,11 @@
    ============================================================ */
 const CONFIG = {
   // Google Apps Script のウェブアプリURL（デプロイ後に貼り付け）
-  GAS_URL: 'YOUR_GAS_WEB_APP_URL',
+  // ★ カレンダー連携（予定の前後3時間を予約不可にする）を有効にするには
+  //   gas/Code.gs をデプロイし、発行URLをここに貼り付けます。手順は gas/SETUP.md 参照。
+  //   ※ 空き判定・前後3時間バッファは GAS 側（サーバー）で判定します。
+  //     時間スロットを変える場合は Code.gs 側の値も必ず一致させてください。
+  GAS_URL: 'https://script.google.com/macros/s/AKfycbyoPKcUgMti90yx7DMlnxS5kLd8UcrtEZ5MqnoiG3ZalUdjb5qxaddRaCGVfgfPuLuUtA/exec',
 
   // 平日（月〜金）の時間スロット
   weekdaySlots: ['18:00', '21:00'],
@@ -391,6 +406,7 @@ const state = {
   selectedDate: null,  // { year, month, day, label, isWeekend }
   selectedTime: null,
   busySlots: [],
+  monthCache: {},      // 'YYYY-MM' -> 満席日の配列（キャッシュ）
   step: 1,
 };
 
@@ -466,13 +482,55 @@ function renderCalendar() {
       cls.push('disabled');
     } else {
       cls.push('available');
-      el.addEventListener('click', () => selectDate(yr, mo, d));
+      el.dataset.day = d;
+      el.addEventListener('click', () => {
+        if (el.classList.contains('full')) return;
+        selectDate(yr, mo, d);
+      });
     }
     if (isSelected) cls.push('selected');
 
     el.className = cls.join(' ');
     grid.appendChild(el);
   }
+
+  // 満席日に「満」マークを付ける（カレンダー連携済みの場合のみ）
+  markFullDays(yr, mo);
+}
+
+/* 指定月の満席日を GAS から取得（キャッシュ付き） */
+async function fetchMonthFull(ym) {
+  if (!CONFIG.GAS_URL || CONFIG.GAS_URL === 'YOUR_GAS_WEB_APP_URL') return [];
+  if (state.monthCache[ym]) return state.monthCache[ym];
+  try {
+    const res = await fetch(`${CONFIG.GAS_URL}?action=month&ym=${ym}`, { method: 'GET' });
+    const json = await res.json();
+    const arr = Array.isArray(json.fullDays) ? json.fullDays : [];
+    state.monthCache[ym] = arr;
+    return arr;
+  } catch {
+    return [];
+  }
+}
+
+/* カレンダー上の満席日に「満」バッジを付け、選択不可にする */
+async function markFullDays(yr, mo) {
+  const ym = `${yr}-${padZero(mo + 1)}`;
+  const fullDays = await fetchMonthFull(ym);
+  if (!fullDays.length) return;
+  // 非同期の間に月が変わっていたら何もしない
+  if (state.year !== yr || state.month !== mo) return;
+  const set = new Set(fullDays);
+  document.querySelectorAll('#calGrid .cal-day.available').forEach(el => {
+    const d = el.dataset.day;
+    if (!d) return;
+    const ds = `${ym}-${padZero(+d)}`;
+    if (set.has(ds) && !el.querySelector('.full-badge')) {
+      el.classList.remove('available');
+      el.classList.add('full');
+      el.insertAdjacentHTML('beforeend', '<span class="full-badge">満</span>');
+    }
+  });
 }
 
 function selectDate(yr, mo, day) {
@@ -617,9 +675,14 @@ function validateForm() {
 document.getElementById('btnSubmit').addEventListener('click', async () => {
   if (!validateForm()) return;
 
+  const sd = state.selectedDate;
+  // 開始時刻を JST（+09:00）で明示。閲覧者のタイムゾーンに関わらず正しい時刻で送る。
+  const startISO = `${sd.year}-${padZero(sd.month + 1)}-${padZero(sd.day)}T${state.selectedTime}:00+09:00`;
+
   const payload = {
     date:    state.selectedDate.label,
     time:    state.selectedTime,
+    startISO: startISO,
     meeting: CONFIG.meetingLabel,
     name:    document.getElementById('inputName').value.trim(),
     email:   document.getElementById('inputEmail').value.trim(),
