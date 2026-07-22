@@ -49,8 +49,20 @@ const CONFIG = {
   // 予約を記録するスプレッドシートのID（任意。空なら記録しない）。
   SHEET_ID: '',
 
-  // 予約通知メールの送信先（任意。空なら送らない。自分のメール推奨）。
+  // 予約通知メールの送信先（あなたのメール）。ここを入れると予約時にあなたにも通知が届きます。
   NOTIFY_EMAIL: '',
+
+  // ── Google Meet（オンライン相談URL）の設定 ──
+  // 【おすすめ・簡単】固定のMeetリンクをここに貼ると、確認メールに必ずそのURLが入ります。
+  //   取得方法：meet.google.com →「新しい会議を作成」→「後で使用する会議リンクを作成」で出るURL。
+  //   例：'https://meet.google.com/abc-defg-hij'
+  //   （予約は前後3時間空くので、固定リンクでも予約同士がかぶりません）
+  FIXED_MEET_URL: '',
+
+  // 【上級・任意】true にすると予約ごとに"新しいMeetリンク"を自動生成します。
+  //   ※ 事前に Apps Script で拡張サービス「Google Calendar API」を有効化しておくこと（SETUP参照）。
+  //   FIXED_MEET_URL が入っている場合はそちらが優先されます。
+  AUTO_CREATE_MEET: false,
 };
 
 /** 空き状況の問い合わせ（GET）と疎通確認 */
@@ -155,52 +167,145 @@ function doPost(e) {
   try {
     const data = JSON.parse(e.postData.contents);
 
+    let meetUrl = '';
+
     // 予約直前にもう一度サーバ側で空きを確認（二重予約・直前予定を防ぐ）
     if (data.startISO) {
       const start = new Date(data.startISO);
       if (isNaN(start.getTime()) || !isSlotFree_(start)) {
         return json_({ ok: false, error: 'slot_unavailable' });
       }
+      const end = new Date(start.getTime() + CONFIG.SLOT_MINUTES * 60000);
       if (CONFIG.CREATE_EVENT_ON_BOOKING) {
-        const cal = CalendarApp.getCalendarById(CONFIG.CALENDAR_ID) || CalendarApp.getDefaultCalendar();
-        const end = new Date(start.getTime() + CONFIG.SLOT_MINUTES * 60000);
-        cal.createEvent(
-          '【無料相談】' + (data.name || ''),
-          start, end,
-          {
-            description: [
-              'お名前: ' + (data.name || ''),
-              'メール: ' + (data.email || ''),
-              '会社/屋号/業種: ' + (data.company || ''),
-              'ご相談内容: ' + (data.message || ''),
-            ].join('\n'),
-            guests: data.email || '',
-            sendInvites: true,
-          }
-        );
+        meetUrl = createBookingEvent_(start, end, data);
       }
     }
 
     if (CONFIG.SHEET_ID) {
       const sh = SpreadsheetApp.openById(CONFIG.SHEET_ID).getSheets()[0];
-      sh.appendRow([new Date(), data.date, data.time, data.name, data.email, data.company, data.message]);
+      sh.appendRow([new Date(), data.date, data.time, data.name, data.email, data.company, data.message, meetUrl]);
     }
-    if (CONFIG.NOTIFY_EMAIL) {
-      MailApp.sendEmail(
-        CONFIG.NOTIFY_EMAIL,
-        '【MIRACO】新しい無料相談の予約',
-        [
-          '日時: ' + (data.date || '') + ' ' + (data.time || ''),
-          'お名前: ' + (data.name || ''),
-          'メール: ' + (data.email || ''),
-          '会社/屋号/業種: ' + (data.company || ''),
-          'ご相談内容: ' + (data.message || ''),
-        ].join('\n')
-      );
-    }
-    return json_({ ok: true });
+
+    // お客様・運営者の双方に、日時＋MeetURL入りのメールを送る
+    sendBookingEmails_(data, meetUrl);
+
+    return json_({ ok: true, meet: meetUrl });
   } catch (err) {
     return json_({ ok: false, error: String(err) });
+  }
+}
+
+/**
+ * 予約をカレンダーに登録し、Google Meet の URL を返す。
+ * ・FIXED_MEET_URL があればそれを使う（簡単・確実）。
+ * ・無くて AUTO_CREATE_MEET が true なら、予約ごとに新しいMeetを自動生成（拡張サービス必要）。
+ */
+function createBookingEvent_(start, end, data) {
+  const title = '【無料相談】' + (data.name || '');
+  const desc = [
+    'お名前: ' + (data.name || ''),
+    'メール: ' + (data.email || ''),
+    '会社/屋号/業種: ' + (data.company || ''),
+    'ご相談内容: ' + (data.message || ''),
+  ].join('\n');
+
+  // 自動生成（拡張サービス「Google Calendar API」が有効な場合のみ）
+  if (!CONFIG.FIXED_MEET_URL && CONFIG.AUTO_CREATE_MEET) {
+    try {
+      const ev = Calendar.Events.insert({
+        summary: title,
+        description: desc,
+        start: { dateTime: start.toISOString(), timeZone: CONFIG.TIMEZONE },
+        end:   { dateTime: end.toISOString(),   timeZone: CONFIG.TIMEZONE },
+        attendees: data.email ? [{ email: data.email }] : [],
+        conferenceData: {
+          createRequest: {
+            requestId: 'miraco-' + start.getTime(),
+            conferenceSolutionKey: { type: 'hangoutsMeet' },
+          },
+        },
+      }, CONFIG.CALENDAR_ID, { conferenceDataVersion: 1, sendUpdates: 'all' });
+
+      if (ev.hangoutLink) return ev.hangoutLink;
+      if (ev.conferenceData && ev.conferenceData.entryPoints) {
+        for (var i = 0; i < ev.conferenceData.entryPoints.length; i++) {
+          if (ev.conferenceData.entryPoints[i].entryPointType === 'video') {
+            return ev.conferenceData.entryPoints[i].uri;
+          }
+        }
+      }
+      return '';
+    } catch (err) {
+      // 自動生成に失敗しても予約自体は通常のカレンダー登録で残す
+    }
+  }
+
+  // 通常のカレンダー登録（FIXED_MEET_URL があれば説明にも入れる）
+  const cal = CalendarApp.getCalendarById(CONFIG.CALENDAR_ID) || CalendarApp.getDefaultCalendar();
+  const fullDesc = CONFIG.FIXED_MEET_URL
+    ? desc + '\n\nGoogle Meet: ' + CONFIG.FIXED_MEET_URL
+    : desc;
+  cal.createEvent(title, start, end, {
+    description: fullDesc,
+    guests: data.email || '',
+    sendInvites: true,
+  });
+  return CONFIG.FIXED_MEET_URL || '';
+}
+
+/** お客様・運営者の双方に、予約内容＋MeetURL入りのメールを送信 */
+function sendBookingEmails_(data, meetUrl) {
+  const dateTime = (data.date || '') + '　' + (data.time || '') + '〜';
+  const meetBlock = meetUrl
+    ? ('▼ オンライン相談用URL（Google Meet）\n' + meetUrl + '\n当日は上記URLからご参加ください。\n\n')
+    : '当日のGoogle MeetのURLは、別途ご案内します。\n\n';
+
+  // お客様あて
+  if (data.email) {
+    try {
+      MailApp.sendEmail({
+        to: data.email,
+        name: 'MIRACO（ミラコ）',
+        subject: '【MIRACO】無料相談のご予約ありがとうございます',
+        body: [
+          (data.name || '') + ' 様',
+          '',
+          'この度は無料相談をご予約いただきありがとうございます。',
+          '以下の日時でお待ちしております。',
+          '',
+          '■ 日時：' + dateTime,
+          '■ 形式：オンライン（Google Meet・約30分）',
+          '',
+          meetBlock +
+          'ご不明点はこのメールへの返信、またはLINEからお気軽にどうぞ。',
+          '',
+          '───────────────',
+          'MIRACO（ミラコ）　高木 菜摘',
+          'https://miracobackoffice.com/',
+        ].join('\n'),
+      });
+    } catch (err) {}
+  }
+
+  // 運営者（あなた）あて
+  if (CONFIG.NOTIFY_EMAIL) {
+    try {
+      MailApp.sendEmail({
+        to: CONFIG.NOTIFY_EMAIL,
+        subject: '【MIRACO】無料相談の予約が入りました（' + dateTime + '）',
+        body: [
+          '無料相談の予約が入りました。',
+          '',
+          '■ 日時：' + dateTime,
+          '■ お名前：' + (data.name || ''),
+          '■ メール：' + (data.email || ''),
+          '■ 会社/屋号/業種：' + (data.company || ''),
+          '■ ご相談内容：' + (data.message || ''),
+          '',
+          meetBlock,
+        ].join('\n'),
+      });
+    } catch (err) {}
   }
 }
 
