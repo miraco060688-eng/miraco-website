@@ -133,7 +133,7 @@ function sendConfirmationToApplicant(data) {
     '【場所】    ' + (data.eventPlace || '') + '\n' +
     '【参加費】  ' + (data.eventFee   || '') + '\n' +
     '【持ち物】  スマートフォンだけでOKです\n\n' +
-    '会場の詳細は、開催前日までにこのメールアドレス宛にご案内します。\n' +
+    '当日は会場へ直接お越しください。\n' +
     'ご不明な点は、このメールへの返信またはLINEからお気軽にどうぞ。\n\n' +
     OWNER_NAME + '\n' + SITE_URL;
 
@@ -171,7 +171,7 @@ function buildApplicantHtml(data) {
       row('持ち物',   'スマートフォンだけでOKです') +
     '</table>' +
     '<div style="background:#faf6f0;padding:16px 20px;border-radius:4px;font-size:13px;line-height:1.9">' +
-      '会場の詳細は、開催前日までにこのメールアドレス宛にご案内します。<br>' +
+      '当日は会場へ直接お越しください。<br>' +
       'ご不明な点は、このメールへの返信または' +
       '<a href="' + LINE_URL + '" style="color:#C9A96E">LINE</a>' +
       'からお気軽にどうぞ。' +
