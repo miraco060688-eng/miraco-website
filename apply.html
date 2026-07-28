@@ -440,6 +440,22 @@ footer {
 
 .hp { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
 
+/* 満員のお知らせ */
+.full-notice {
+  background: var(--bg-ch); border: 0.5px solid var(--border-g);
+  border-left: 3px solid var(--gold); border-radius: 0 3px 3px 0;
+  padding: 24px 28px; margin-bottom: 28px;
+  font-size: 14px; line-height: 2; color: var(--text-b);
+}
+.full-notice-title {
+  font-size: 15px; font-weight: 500; color: var(--text);
+  letter-spacing: 0.04em; margin-bottom: 10px;
+}
+.full-notice strong { color: var(--gold-d); font-weight: 500; }
+@media (max-width: 640px) {
+  .full-notice { padding: 20px 18px; }
+}
+
 /* 完了画面 */
 .done-card {
   background: var(--bg-c); border: 0.5px solid var(--border-g);
@@ -503,7 +519,7 @@ footer {
     <span class="apply-event-tag">高岡・対面 ／ 少人数（2〜4名）</span>
     <p class="apply-event-title" id="evTitle">AI活用を楽しむ会 ── スマホでAIを使いこなす</p>
     <dl>
-      <dt>日時</dt><dd id="evDate">2026年7月31日（金）17:30〜20:00</dd>
+      <dt>日時</dt><dd id="evDate">2026年7月31日（金）17:30〜20:00（17:30〜18:00に集合、集まり次第スタート）</dd>
       <dt>場所</dt><dd id="evPlace">高岡市社会福祉協議会館（高岡市清水町1丁目7番30号）</dd>
       <dt>定員</dt><dd id="evCap">2〜4名</dd>
       <dt>参加費</dt><dd id="evFee">無料</dd>
@@ -517,6 +533,17 @@ footer {
     その一歩目を、<strong>2時間かけて一緒に越える会</strong>です。<br><br>
     説明は最小限にします。ほとんどの時間、手元のスマホで実際に触ります。
   </p>
+
+  <!-- 満員のお知らせ -->
+  <div class="full-notice" id="fullNotice" style="display:none;">
+    <p class="full-notice-title">おかげさまで定員に達しました</p>
+    <p>
+      7月31日の回は、定員4名がうまりました。ありがとうございます。<br>
+      このフォームは<strong>キャンセル待ち</strong>として受け付けています。
+      空きが出た場合のみ、こちらからご連絡します。<br>
+      次回の開催が決まりましたら、優先してご案内します。
+    </p>
+  </div>
 
   <!-- フォーム -->
   <div id="formPanel">
@@ -620,9 +647,11 @@ footer {
    ============================================================ */
 const EVENT = {
   name:  'AI活用を楽しむ会 ── スマホでAIを使いこなす',
-  date:  '2026年7月31日（金）17:30〜20:00',
+  date:  '2026年7月31日（金）17:30〜20:00（17:30〜18:00に集合、集まり次第スタート）',
   place: '高岡市社会福祉協議会館（富山県高岡市清水町1丁目7番30号／TEL 0766-23-2917）',
   fee:   '無料',
+  // 満員になったら true。フォームは動いたまま、キャンセル待ちの案内を表示します
+  full: true,
 };
 
 /* Google Apps Script のウェブアプリURL（event-gas.js をデプロイして取得）*/
@@ -670,7 +699,8 @@ $('btnSubmit').addEventListener('click', async () => {
 
   const payload = {
     type:      'event',
-    eventName: EVENT.name,
+    // 満員中はキャンセル待ちと分かるようにして送る（メール本文・記録に反映されます）
+    eventName: EVENT.full ? EVENT.name + '（キャンセル待ち）' : EVENT.name,
     eventDate: EVENT.date,
     eventPlace: EVENT.place,
     eventFee:  EVENT.fee,
@@ -719,6 +749,17 @@ $('evTitle').textContent = EVENT.name;
 $('evDate').textContent  = EVENT.date;
 $('evPlace').textContent = EVENT.place;
 $('evFee').textContent   = EVENT.fee;
+
+/* 満員のときは、お知らせを出してボタンの文言を変える（送信自体は通常どおり動きます） */
+if (EVENT.full) {
+  $('fullNotice').style.display = 'block';
+  $('btnSubmit').textContent = 'キャンセル待ちで申し込む';
+  document.querySelector('.apply-event-tag').textContent = '満員御礼 ／ キャンセル待ち受付中';
+  document.querySelector('.done-title').textContent = 'キャンセル待ちで承りました';
+  document.querySelector('.done-text').innerHTML =
+    'ご記入のメールアドレス宛に、受付の確認メールをお送りしました。<br>' +
+    '空きが出た場合のみ、こちらからご連絡します。';
+}
 </script>
 
 <!-- FOOTER -->
