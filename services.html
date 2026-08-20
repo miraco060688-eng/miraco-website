@@ -118,10 +118,16 @@ nav {
   box-shadow:var(--shadow);
 }
 .design-highlight-text { flex:1; }
+.design-fig { flex-shrink:0; width:300px; margin:0; }
 .design-img {
-  flex-shrink:0; width:260px; border-radius:4px;
-  object-fit:cover; aspect-ratio:4/3;
+  width:100%; height:auto; border-radius:4px; display:block;
+  object-fit:cover; aspect-ratio:3/4;
+  background:var(--bg-c);
   box-shadow:0 4px 20px rgba(0,0,0,0.1);
+}
+.design-cap {
+  margin-top:10px; font-size:11px; line-height:1.7;
+  color:var(--text-m); text-align:center; letter-spacing:.02em;
 }
 .price-table { margin-top:20px; border:0.5px solid var(--border); border-radius:4px; overflow:hidden; }
 .price-row { display:flex; justify-content:space-between; padding:12px 20px; border-bottom:0.5px solid var(--border); font-size:14px; }
@@ -171,7 +177,7 @@ footer { background:#1a1612; border-top:0.5px solid rgba(255,255,255,0.08); padd
   .section { padding:60px 24px; }
   .svc-detail-grid { grid-template-columns:1fr; }
   .design-highlight { flex-direction:column; padding:32px 24px; }
-  .design-img { width:100%; }
+  .design-fig { width:100%; max-width:320px; margin:0 auto; }
   .flow-strip { padding:60px 24px; }
   .flow-grid { grid-template-columns:1fr 1fr; }
   footer { padding:48px 24px 28px; }
@@ -258,7 +264,10 @@ footer { background:#1a1612; border-top:0.5px solid rgba(255,255,255,0.08); padd
 
     <!-- 03 名刺・チラシ制作（ハイライト） -->
     <div class="design-highlight">
-      <img class="design-img" src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=85" alt="名刺・チラシなどのデザイン制作イメージ" loading="lazy">
+      <figure class="design-fig">
+        <img class="design-img" src="assets/images/design-sample.jpg" alt="MIRACOが制作した名刺・チラシ・案内資料のデザイン見本" loading="lazy" width="1000" height="1333">
+        <figcaption class="design-cap">掲載しているのはデザインの見本です</figcaption>
+      </figure>
       <div class="design-highlight-text">
         <p class="svc-cat">Design</p>
         <p class="svc-name">名刺・チラシ制作</p>
