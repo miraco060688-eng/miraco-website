@@ -893,6 +893,11 @@ footer {
 @media (max-width: 480px) {
   /* 「選んでよかった」と言われる会社へ。= 18文字。画面幅から逆算して必ず1行に収める */
   .hero-h1 { font-size: min(22px, calc((100vw - 48px) / 18.6)); white-space: nowrap; }
+  /* 小さく試して、仕組みとして残す。= 16文字。画面幅から逆算して1行に */
+  .s-title { font-size: min(26px, calc((100vw - 48px) / 16.6)); white-space: nowrap; }
+  /* カード見出しはスマホでは改行を外し、13文字ぶんで1行に */
+  .gw-title br { display: none; }
+  .gw-title { font-size: min(24px, calc((100vw - 110px) / 13.4)); white-space: nowrap; }
   .services-grid { grid-template-columns: 1fr; }
   .flow-grid { grid-template-columns: 1fr; }
   .hero-actions { flex-direction: column; align-items: center; }
@@ -942,7 +947,7 @@ footer {
     <p class="hero-body">
       富山・石川を中心に、地域で商いを続けてきた事業者の<strong>事務・情報・営業の流れ</strong>を整えます。<br>
       助言だけで終わりません。隣で一緒に手を動かし、次からご自身で回せる手順として残します。<br>
-      IT知識は不要です。まずは30分、話してみませんか。いま止まっている仕事を1つ選んで、次の一手までお持ち帰りいただけます。
+      IT知識は不要です。まずは30分、話してみませんか。いま止まっている仕事を一つ選んで、次の一手までお持ち帰りいただけます。
     </p>
     <div class="hero-actions">
       <a href="booking.html" class="btn-gold" target="_blank" rel="noopener noreferrer">まずは30分、話してみる</a>
@@ -1027,10 +1032,10 @@ footer {
       <div class="gw-card">
         <img class="gw-photo" src="assets/images/kaizen.jpg" alt="パソコンの業務フロー図を一緒に確認しながら業務改善を進める様子" loading="lazy">
         <p class="svc-tag">STEP 2 ／ 単発で頼む</p>
-        <p class="gw-title">1つの困りごとを<br>解決したい</p>
+        <p class="gw-title">一つの困りごとを<br>解決したい</p>
         <p class="gw-desc">
           業務システム開発¥30,000〜、PC・クラウドのデータ整理、見積・請求業務の自動化など。
-          「まずこの1つだけ」の単発プロジェクトでお引き受けします。
+          「まずこの一つだけ」の単発プロジェクトでお引き受けします。
         </p>
         <div class="gw-links">
           <a href="services.html" class="gw-link-primary">サービス詳細・料金を見る →</a>
@@ -1199,8 +1204,8 @@ footer {
       <div class="case-card">
         <p class="case-tag">書類・自動化</p>
         <p class="case-why">毎回ゼロから、<br>作らなくていいように。</p>
-        <p class="case-title">1つの依頼から<br>複数書類を自動作成</p>
-        <p class="case-body">1つの依頼内容から、複数の定型書類（依頼書など）を自動で作成する仕組みを実際に構築。申請書やフォーマット整備まで、書類仕事の繰り返しをなくします。</p>
+        <p class="case-title">一つの依頼から<br>複数書類を自動作成</p>
+        <p class="case-body">一つの依頼内容から、複数の定型書類（依頼書など）を自動で作成する仕組みを実際に構築。申請書やフォーマット整備まで、書類仕事の繰り返しをなくします。</p>
         <div class="case-stats">
           <span class="case-stat">転記の手間をなくす</span>
           <span class="case-stat">作成時間を短縮</span>
@@ -1291,7 +1296,7 @@ footer {
 <!-- ── CTA FINAL ── -->
 <div class="cta-section">
   <p class="cta-title">まずは、<em>話してみてください。</em></p>
-  <p class="cta-sub">30分のオンライン無料相談。いま止まっている仕事を1つ選んで、次の一手までお持ち帰りいただけます。<br>課題が明確でなくても大丈夫です。北陸・東海・関西エリア、全国どこからでも対応します。</p>
+  <p class="cta-sub">30分のオンライン無料相談。いま止まっている仕事を一つ選んで、次の一手までお持ち帰りいただけます。<br>課題が明確でなくても大丈夫です。北陸・東海・関西エリア、全国どこからでも対応します。</p>
   <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
     <a href="https://lin.ee/v2A0ds8L" class="btn-ghost" target="_blank" rel="noopener noreferrer">💬 LINEで相談する（無料）</a>
     <a href="booking.html" class="btn-gold" target="_blank" rel="noopener noreferrer">まずは30分、話してみる</a>
