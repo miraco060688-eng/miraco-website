@@ -641,7 +641,7 @@ footer {
   <div class="footer-top">
     <div class="footer-brand">
       <div class="f-logo">MIR<span>A</span>CO</div>
-      <p>バックオフィス14年の現場経験とAI活用知識で、<br>地方の中小企業・個人事業主を伴走支援します。</p>
+      <p>バックオフィス15年の現場経験とAI活用知識で、<br>地方の中小企業・個人事業主を伴走支援します。</p>
       <p class="f-location">📍 富山・石川 ／ 全国・オンライン対応</p>
     </div>
     <div class="footer-col">
@@ -691,6 +691,83 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
     mobileMenu.classList.remove('open');
   });
 });
+</script>
+
+<!-- MOTION: スクロールで静かに現れる（外部ライブラリなし／動きを減らす設定を尊重） -->
+<style>
+@media (prefers-reduced-motion: no-preference) {
+  .rv { opacity: 0; transform: translateY(14px); }
+  .rv-on { opacity: 1; transform: none;
+    transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
+  .rv-d1 { transition-delay: .08s; }
+  .rv-d2 { transition-delay: .16s; }
+  .rv-d3 { transition-delay: .24s; }
+}
+</style>
+<script>
+(function(){
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+
+  var SEL = [
+    // 共通
+    '.page-hero .eyebrow', '.page-hero h1', '.page-hero p',
+    '.s-label', '.section-label', '.section-title', '.cta-section',
+    // トップ
+    '.hero-h1', '.hero-sub-h', '.hero-body', '.hero-actions',
+    '.mission-eyebrow', '.mission-statement', '.mission-lead', '.mission-sub-label',
+    '.reason-chip', '.layer', '.case-card', '.blog-card',
+    // サービス・事例・FAQ
+    '.svc-detail-card', '.svc-cat', '.price-row', '.flow-grid > *',
+    '.support-card', '.faq-item', '.faq-category-label',
+    // 代表・イベント・申込
+    '.value-card', '.tl-item', '.history-section',
+    '.event-card', '.apply-event', '.apply-lead', '.form-card', '.done-card',
+    '.signup-detail-card', '.signup-detail-item',
+    // チェックリスト・問い合わせ
+    '.cl-lead', '.cl-cat', '.cl-result',
+    '.contact-info-item', '.contact-form-card'
+  ].join(',');
+
+  var nodes = [];
+  try { nodes = Array.prototype.slice.call(document.querySelectorAll(SEL)); } catch(e) { return; }
+
+  nodes = nodes.filter(function(el){
+    if (el.closest && el.closest('nav, footer, .mobile-menu, .cl-bar')) return false;
+    if (el.dataset && el.dataset.noRv) return false;
+    return true;
+  });
+
+  var seen = [];
+  nodes.forEach(function(el){
+    if (seen.indexOf(el) > -1) return;
+    seen.push(el);
+    el.classList.add('rv');
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (!en.isIntersecting) return;
+      var el = en.target;
+      var sibs = el.parentNode ? Array.prototype.slice.call(el.parentNode.children).filter(function(c){
+        return c.classList && c.classList.contains('rv');
+      }) : [];
+      var i = sibs.indexOf(el);
+      if (i === 1) el.classList.add('rv-d1');
+      else if (i === 2) el.classList.add('rv-d2');
+      else if (i >= 3) el.classList.add('rv-d3');
+      el.classList.add('rv-on');
+      io.unobserve(el);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+
+  seen.forEach(function(el){ io.observe(el); });
+
+  // 保険: 3秒後に未表示のものは強制表示（読めない事故を防ぐ）
+  setTimeout(function(){
+    seen.forEach(function(el){ el.classList.add('rv-on'); });
+  }, 3000);
+})();
 </script>
 </body>
 </html>
