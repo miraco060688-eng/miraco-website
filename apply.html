@@ -508,7 +508,7 @@ footer {
 <section class="page-hero">
   <p class="eyebrow"><span class="eyebrow-line"></span>Application<span class="eyebrow-line"></span></p>
   <h1>イベント<em>お申し込み</em></h1>
-  <p>下のフォームにご記入ください。1分ほどで終わります。<br>送信後、確認メールが自動で届きます。</p>
+  <p>下のフォームにご記入ください。2分ほどで終わります。<br>送信後、確認メールが自動で届きます。<br><strong>お申し込みは8月28日（金）12:00までにお願いします。</strong></p>
 </section>
 
 <main>
@@ -516,29 +516,32 @@ footer {
 
   <!-- 申し込み対象イベント -->
   <div class="apply-event">
-    <span class="apply-event-tag">高岡・対面 ／ 少人数（2〜4名）</span>
-    <p class="apply-event-title" id="evTitle">AI活用を楽しむ会 ── スマホでAIを使いこなす</p>
+    <span class="apply-event-tag">氷見・対面 ／ 定員15名</span>
+    <p class="apply-event-title" id="evTitle">AI活用講座 ── 事務作業の「考え方」から</p>
     <dl>
-      <dt>日時</dt><dd id="evDate">2026年7月31日（金）17:30〜20:00（17:30〜18:00に集合、集まり次第スタート）</dd>
-      <dt>場所</dt><dd id="evPlace">高岡市社会福祉協議会館 小会議室（高岡市清水町1丁目7番30号）</dd>
-      <dt>定員</dt><dd id="evCap">2〜4名</dd>
-      <dt>参加費</dt><dd id="evFee">無料</dd>
-      <dt>持ち物</dt><dd>スマートフォンだけでOKです</dd>
+      <dt>日時</dt><dd id="evDate">2026年8月28日（金）18:00〜20:00</dd>
+      <dt>場所</dt><dd id="evPlace">民泊庄司（〒935-0002 富山県氷見市阿尾875-1）／駐車場7台まで</dd>
+      <dt>定員</dt><dd id="evCap">15名</dd>
+      <dt>参加費</dt><dd id="evFee">500円（当日、受付でお願いします）</dd>
+      <dt>持ち物</dt><dd>スマートフォン（必須）／ノートパソコンをお持ちの方はあわせてどうぞ</dd>
+      <dt>事前準備</dt><dd><strong>Googleアカウント（Gmail）でログインできる状態にしてきてください。</strong>アプリ「Gemini Notebook」も入れてきていただけると助かります。</dd>
+      <dt>申込締切</dt><dd>2026年8月28日（金）12:00</dd>
     </dl>
   </div>
 
   <p class="apply-lead">
-    Claude・ChatGPT・Gemini・Canva。<br>
-    名前は知っているけれど、開いて、そのまま閉じた。<br>
-    その一歩目を、<strong>2時間かけて一緒に越える会</strong>です。<br><br>
-    説明は最小限にします。ほとんどの時間、手元のスマホで実際に触ります。
+    「事務作業って、そもそも何のため？」<br>
+    AIの前に、まず<strong>仕事の考え方と段取りの捉え方</strong>から整理します。<br>
+    そのうえで、Googleの<strong>Gemini Notebook</strong>（もとの名前は NotebookLM）を使って、
+    <strong>自分の会社の資料に聞く</strong>やり方を一緒に試す2時間です。<br><br>
+    パソコンが苦手な方でも大丈夫。資料はこちらで用意しますので、手ぶらでも最後まで参加できます。
   </p>
 
   <!-- 満員のお知らせ -->
   <div class="full-notice" id="fullNotice" style="display:none;">
     <p class="full-notice-title">おかげさまで定員に達しました</p>
     <p>
-      7月31日の回は、定員4名がうまりました。ありがとうございます。<br>
+      8月28日の回は、定員15名がうまりました。ありがとうございます。<br>
       このフォームは<strong>キャンセル待ち</strong>として受け付けています。
       空きが出た場合のみ、こちらからご連絡します。<br>
       次回の開催が決まりましたら、優先してご案内します。
@@ -596,6 +599,77 @@ footer {
         <p class="hint">ひとつでも書いていただけると、その場で一緒に解決できます。</p>
       </div>
 
+      <div class="fg" id="fg-google">
+        <label for="selectGoogle">Googleアカウント（Gmail）は、スマホでログインできる状態ですか<span class="opt">任意</span></label>
+        <select id="selectGoogle">
+          <option value="">選択してください</option>
+          <option value="はい、ログインできる">はい、ログインできる</option>
+          <option value="持っているが、パスワードが分からない">持っているが、パスワードが分からない</option>
+          <option value="持っていない／よく分からない">持っていない／よく分からない</option>
+        </select>
+        <p class="hint">当日はGoogleの「Gemini Notebook」を使います。下の2つを選ばれた方には、当日までに個別にご連絡して、一緒に準備します。ご心配なく。</p>
+      </div>
+
+      <div class="fg" id="fg-who">
+        <label for="selectWho">いま、事務をしているのは<span class="opt">任意</span></label>
+        <select id="selectWho">
+          <option value="">選択してください</option>
+          <option value="社長・代表である自分がやっている">社長・代表である自分がやっている</option>
+          <option value="自分＋家族や1〜2人">自分＋家族や1〜2人</option>
+          <option value="専任の事務担当がいる">専任の事務担当がいる</option>
+          <option value="まだ事務らしい事務はしていない">まだ事務らしい事務はしていない</option>
+        </select>
+      </div>
+
+      <div class="fg" id="fg-hours">
+        <label for="selectHours">1週間のうち、事務にどれくらい使っていますか<span class="opt">任意</span></label>
+        <select id="selectHours">
+          <option value="">選択してください</option>
+          <option value="3時間くらい">3時間くらい</option>
+          <option value="3〜10時間">3〜10時間</option>
+          <option value="10時間以上">10時間以上</option>
+          <option value="わからない">わからない</option>
+        </select>
+      </div>
+
+      <div class="fg" id="fg-pain">
+        <label for="inputPain">「これさえ無ければ」と思う事務を、ひとつだけ<span class="opt">任意</span></label>
+        <textarea id="inputPain" placeholder="例：請求書を毎月1枚ずつ作るのが終わらない／領収書が月末に山になる"></textarea>
+        <p class="hint">当日、みなさんのこの一行を題材にします。立派な文章でなくて大丈夫です。</p>
+      </div>
+
+      <div class="fg" id="fg-profit">
+        <label for="selectProfit">毎月の粗利（売上−仕入・外注）は、いまどこまで分かりますか<span class="opt">任意</span></label>
+        <select id="selectProfit">
+          <option value="">選択してください</option>
+          <option value="毎月、見ている">毎月、見ている</option>
+          <option value="年に1回、決算のときに分かる">年に1回、決算のときに分かる</option>
+          <option value="見ていない／どう出すのか分からない">見ていない／どう出すのか分からない</option>
+        </select>
+        <p class="hint">金額は伺いません。分かる状態にあるかどうかだけ教えてください。</p>
+      </div>
+
+      <div class="fg" id="fg-linename">
+        <label for="inputLineName">LINEのお名前（表示名）<span class="opt">任意</span></label>
+        <input type="text" id="inputLineName" placeholder="お名前と違う場合だけご記入ください">
+        <p class="hint">LINEでご連絡するときに、どなたか分かるようにするためです。</p>
+      </div>
+
+      <div class="fg" id="fg-consult">
+        <label for="selectConsult">後日30分、あなたの会社の形に合わせて整理する時間を作れます<span class="opt">任意</span></label>
+        <select id="selectConsult">
+          <option value="">選択してください</option>
+          <option value="希望する">希望する</option>
+          <option value="いまは決めない">いまは決めない</option>
+        </select>
+        <p class="hint">オンラインか電話で30分、無料です。売り込みはしません。</p>
+      </div>
+
+      <div class="fg-check" id="fg-pc">
+        <input type="checkbox" id="checkPC">
+        <label for="checkPC">当日、ノートパソコンも持っていきます</label>
+      </div>
+
       <div class="hp">
         <label>この欄は入力しないでください<input type="text" id="inputHp" tabindex="-1" autocomplete="off"></label>
       </div>
@@ -625,7 +699,8 @@ footer {
       <p class="done-title">お申し込みを承りました</p>
       <p class="done-text">
         ご記入のメールアドレス宛に、確認メールをお送りしました。<br>
-        当日は高岡市社会福祉協議会館の小会議室へ直接お越しください。
+        当日は<strong>民泊庄司（富山県氷見市阿尾875-1）</strong>へ直接お越しください。<br>
+        <strong>Googleアカウント（Gmail）でログインできる状態</strong>にしてきてください。
       </p>
       <dl class="done-detail" id="doneDetail"></dl>
       <div class="done-actions">
@@ -646,12 +721,12 @@ footer {
    ここを書き換えれば、次のイベントにも使い回せます
    ============================================================ */
 const EVENT = {
-  name:  'AI活用を楽しむ会 ── スマホでAIを使いこなす',
-  date:  '2026年7月31日（金）17:30〜20:00（17:30〜18:00に集合、集まり次第スタート）',
-  place: '高岡市社会福祉協議会館 小会議室（富山県高岡市清水町1丁目7番30号／TEL 0766-23-2917）',
-  fee:   '無料',
+  name:  'AI活用講座 ── 事務作業の「考え方」から',
+  date:  '2026年8月28日（金）18:00〜20:00',
+  place: '民泊庄司（〒935-0002 富山県氷見市阿尾875-1／駐車場7台まで）',
+  fee:   '500円（当日、受付でお願いします）',
   // 満員になったら true。フォームは動いたまま、キャンセル待ちの案内を表示します
-  full: true,
+  full: false,
 };
 
 /* Google Apps Script のウェブアプリURL（event-gas.js をデプロイして取得）*/
@@ -710,7 +785,18 @@ $('btnSubmit').addEventListener('click', async () => {
     tel:     $('inputTel').value.trim(),
     job:     $('inputJob').value.trim(),
     level:   $('selectLevel').value,
-    message: $('inputMessage').value.trim(),
+    message: [
+      $('inputMessage').value.trim(),
+      $('selectGoogle').value          ? '【Googleアカウント】' + $('selectGoogle').value : '',
+      $('inputPain').value.trim()      ? '【これさえ無ければと思う事務】' + $('inputPain').value.trim() : '',
+      $('selectWho').value             ? '【事務をしているのは】' + $('selectWho').value : '',
+      $('selectHours').value           ? '【週の事務時間】' + $('selectHours').value : '',
+      $('selectProfit').value          ? '【粗利の把握】' + $('selectProfit').value : '',
+      $('checkPC').checked             ? '【ノートPC】持参する' : '',
+      $('selectConsult').value         ? '【後日30分の無料相談】' + $('selectConsult').value : '',
+      $('inputLineName').value.trim()  ? '【LINEの表示名】' + $('inputLineName').value.trim() : '',
+    ].filter(Boolean).join('
+'),
   };
 
   $('loadingOverlay').classList.add('show');
