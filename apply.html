@@ -795,8 +795,7 @@ $('btnSubmit').addEventListener('click', async () => {
       $('checkPC').checked             ? '【ノートPC】持参する' : '',
       $('selectConsult').value         ? '【後日30分の無料相談】' + $('selectConsult').value : '',
       $('inputLineName').value.trim()  ? '【LINEの表示名】' + $('inputLineName').value.trim() : '',
-    ].filter(Boolean).join('
-'),
+    ].filter(Boolean).join(String.fromCharCode(10)),
   };
 
   $('loadingOverlay').classList.add('show');
