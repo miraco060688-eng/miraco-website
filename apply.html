@@ -508,7 +508,7 @@ footer {
 <section class="page-hero">
   <p class="eyebrow"><span class="eyebrow-line"></span>Application<span class="eyebrow-line"></span></p>
   <h1>イベント<em>お申し込み</em></h1>
-  <p>下のフォームにご記入ください。2分ほどで終わります。<br>送信後、確認メールが自動で届きます。<br><strong>お申し込みは8月28日（金）12:00までにお願いします。</strong></p>
+  <p><strong>8月28日（金）の回は、無事に終了しました。ご参加ありがとうございました。</strong><br>次回の開催が決まりましたら、このページと公式LINEでご案内します。</p>
 </section>
 
 <main>
@@ -536,6 +536,16 @@ footer {
     <strong>「あれ、どこに書いてあったっけ」を探さずに聞ける</strong>ようにする2時間です。<br><br>
     パソコンが苦手な方でも大丈夫。資料はこちらで用意しますので、手ぶらでも最後まで参加できます。
   </p>
+
+  <!-- 受付終了のお知らせ -->
+  <div class="full-notice" id="endedNotice" style="display:none;">
+    <p class="full-notice-title">この回の受付は終了しました</p>
+    <p>
+      2026年8月28日（金）の「AI活用講座」は、<strong>無事に終了しました</strong>。ご参加いただいた皆さま、ありがとうございました。<br>
+      次回の日程はまだ決まっていません。決まり次第、このページと公式LINEでご案内します。<br>
+      <a href="https://lin.ee/v2A0ds8L" target="_blank" rel="noopener noreferrer">LINE公式アカウントを友だち追加する</a>と、先行してお知らせが届きます。
+    </p>
+  </div>
 
   <!-- 満員のお知らせ -->
   <div class="full-notice" id="fullNotice" style="display:none;">
@@ -727,6 +737,8 @@ const EVENT = {
   fee:   '500円（当日、受付でお願いします）',
   // 満員になったら true。フォームは動いたまま、キャンセル待ちの案内を表示します
   full: false,
+  // 開催が終わったら true。フォームを閉じて「受付終了」の案内だけを表示します
+  ended: true,
 };
 
 /* Google Apps Script のウェブアプリURL（event-gas.js をデプロイして取得）*/
@@ -835,8 +847,15 @@ $('evDate').textContent  = EVENT.date;
 $('evPlace').textContent = EVENT.place;
 $('evFee').textContent   = EVENT.fee;
 
+/* 終了したときは、フォームを閉じて受付終了の案内だけを出す */
+if (EVENT.ended) {
+  $('endedNotice').style.display = 'block';
+  $('formPanel').style.display = 'none';
+  document.querySelector('.apply-event-tag').textContent = '終了しました';
+}
+
 /* 満員のときは、お知らせを出してボタンの文言を変える（送信自体は通常どおり動きます） */
-if (EVENT.full) {
+if (!EVENT.ended && EVENT.full) {
   $('fullNotice').style.display = 'block';
   $('btnSubmit').textContent = 'キャンセル待ちで申し込む';
   document.querySelector('.apply-event-tag').textContent = '満員御礼 ／ キャンセル待ち受付中';
