@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /apply.html
+Disallow: /signup.html
+
+Sitemap: https://miracobackoffice.com/sitemap.xml
